@@ -29,6 +29,15 @@
         ],
         "createdAt": "2026-10-17T23:48:45.338Z",
         "reason": "builder: services rows are 62px min-height with centered text; the ul border-top is a list rule, not a container edge"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-17T23:50:45.737Z",
+        "reason": "builder: body steps are 13/17/22px (~1.3x each); display headings are clamp() 34-104px, which the detector doesn't count"
       }
     ]
   }

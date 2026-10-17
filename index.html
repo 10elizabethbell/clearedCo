@@ -46,19 +46,19 @@ p{margin:0}
 .icon{width:1em;height:1em;flex:none}
 
 /* ---------- header ---------- */
-.hd{position:relative;z-index:20;background:var(--indigo)}
+.hd{position:relative;z-index:20}
 .hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
 .brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .brand b{font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.brand small{display:block;font-size:13px;letter-spacing:.06em;color:var(--lav-soft);font-weight:700;margin-top:4px}
+.brand small{display:block;font-size:13px;letter-spacing:.02em;color:var(--lav-soft);font-weight:700;margin-top:4px}
 .hd-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:17px;text-decoration:none;white-space:nowrap}
 .hd-contact .icon{width:20px;height:20px;color:var(--lavender)}
 .hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
 
 /* ---------- hero ---------- */
-.hero{padding:22px 0 8px;position:relative}
-.hero h1{font-size:clamp(46px,14vw,104px);line-height:.92;letter-spacing:-.02em}
+.hero{padding:22px 0 8px;position:relative;background:radial-gradient(120% 60% at 50% 88%,#43398f 0%,rgba(67,57,143,0) 70%)}
+.hero h1{font-size:clamp(46px,14vw,96px);line-height:.92;letter-spacing:-.02em}
 .hero .promise{margin-top:16px;font-size:clamp(17px,4.6vw,20px);line-height:1.45;color:#e6e2ff;max-width:34ch}
 .actions{display:grid;gap:10px;margin-top:22px}
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--lavender);cursor:pointer;transition:background .2s,color .2s,transform .15s}
@@ -69,31 +69,29 @@ p{margin:0}
 .btn-ghost:hover{background:rgba(201,194,255,.14)}
 
 /* the window: signature element */
-.window{position:relative;margin:26px -6px 0;border-radius:10px;background:var(--frame);padding:10px;box-shadow:0 18px 40px -14px rgba(0,0,0,.5),inset 0 -3px 0 rgba(31,26,70,.08)}
+/* the frame is painted wood drawn on .frame (see paintFrames); padding = rail width + sill */
+.window{position:relative;margin:26px -4px 0;padding:13px 13px 31px}
+.window::before{content:"";position:absolute;inset:0 0 18px;border-radius:6px;box-shadow:0 22px 40px -18px rgba(0,0,0,.55)}
+.frame{position:absolute;left:-8px;right:-8px;top:0;bottom:0;width:calc(100% + 16px);height:100%;pointer-events:none;z-index:2}
 .pane{position:relative;height:clamp(280px,46svh,380px);border-radius:3px;overflow:hidden;background:linear-gradient(#5a4ca6,#9a89cf 62%,#cfc2e8);touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
 .pane:active{cursor:grabbing}
 .pane canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.mullion-v,.mullion-h{position:absolute;background:var(--frame);pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.mullion-v{top:0;bottom:0;left:50%;width:9px;transform:translateX(-50%)}
-.mullion-h{left:0;right:0;top:46%;height:9px}
-.sill{position:absolute;left:-10px;right:-10px;bottom:-12px;height:14px;border-radius:4px;background:#fff;box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
 
 /* ---------- seams: moving water line between sections ---------- */
 .seam{display:block;height:44px;margin-top:-1px;position:relative}
 .seam svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .seam .fill{fill:var(--to)}
 .seam .line{fill:none;stroke:var(--line,rgba(255,255,255,.55));stroke-width:2;vector-effect:non-scaling-stroke}
-.seam .line2{fill:none;stroke:var(--line2,rgba(201,194,255,.35));stroke-width:1.5;vector-effect:non-scaling-stroke}
 
 /* ---------- light sections ---------- */
-.light{background:var(--mist);color:var(--indigo-ink)}
+.light{background:var(--mist);color:var(--indigo-ink);--water:#0f8aa0}
 .light h2{font-size:clamp(34px,9vw,56px)}
 section.block{padding:30px 0 52px}
 
 /* services: whole row is the link, only the arrow reacts */
 .services{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--mist-2)}
 .services li{border-bottom:1px solid var(--mist-2)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:8px 2px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.005em}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:8px 2px;text-decoration:none;font-weight:700;font-size:22px;letter-spacing:-.005em}
 .row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
 .arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);color:var(--indigo-ink);flex:none;transition:background .2s,color .2s}
 .arrow .icon{width:18px;height:18px}
@@ -102,13 +100,13 @@ section.block{padding:30px 0 52px}
 
 .area{margin-top:44px}
 .area h2{font-size:clamp(28px,7vw,40px)}
-.area p{margin-top:12px;font-size:20px;font-weight:600}
+.area p{margin-top:12px;font-size:22px;font-weight:600}
 .area .base{font-size:17px;font-weight:500;color:var(--muted);margin-top:4px}
 
 .steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:s}
-.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;background:var(--indigo);color:#fff}
-.steps b{display:block;font-size:20px;font-weight:800;line-height:1.35;margin-top:2px}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:22px;background:var(--indigo);color:#fff}
+.steps b{display:block;font-size:22px;font-weight:800;line-height:1.35;margin-top:2px}
 .steps span{display:block;color:var(--muted);margin-top:3px}
 .how{margin-top:48px}
 .how h2{font-size:clamp(28px,7vw,40px)}
@@ -119,14 +117,14 @@ section.block{padding:30px 0 52px}
 .proofgrid{display:flex;flex-direction:column}
 .proofgrid .side{display:contents}
 .proofgrid h2{order:-1}
-.proof .window{margin:24px 0 12px}
+.proof .window{margin:24px -4px 4px}
 .proofgrid .fb{order:2}
 .photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
 .photo img{width:100%;height:100%;object-fit:cover}
 .tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:20px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55);transition:transform .15s}
+.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:17px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)}
 .fb .icon{width:30px;height:30px;color:#1877f2}
-.fb .go{margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
+.fb .go{flex:none;margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
 .fb .go .icon{width:16px;height:16px;color:currentColor}
 .fb:hover .go{background:#1877f2;color:#fff}
 
@@ -135,32 +133,34 @@ section.block{padding:30px 0 52px}
 form{margin-top:24px;display:grid;gap:22px;max-width:640px}
 label.f{display:grid;gap:8px;font-weight:800;font-size:17px}
 label.f > span{display:block}
-label.f em,.legend em{font-style:normal;font-weight:500;color:var(--muted);font-size:15px}
-input[type=text],input[type=tel],textarea{width:100%;font:500 17px/1.4 var(--font);color:var(--indigo-ink);background:#fff;border:2px solid var(--mist-2);border-radius:12px;padding:14px 14px;min-height:54px;transition:border-color .15s,box-shadow .15s}
+label.f em,.legend em{font-style:normal;font-weight:500;color:var(--muted);font-size:17px}
+input[type=text],input[type=tel],textarea{width:100%;font:500 17px/1.4 var(--font);color:var(--indigo-ink);background:#fff;border:2px solid #857cc2;border-radius:12px;padding:14px 14px;min-height:54px;transition:border-color .15s,box-shadow .15s}
 textarea{min-height:96px;resize:vertical}
+input,textarea{caret-color:var(--indigo)}
 input:hover,textarea:hover{border-color:var(--water)}
 input:focus,textarea:focus{outline:none;border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 .legend{font-weight:800;font-size:17px;padding:0;margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip input{position:absolute;width:1px;height:1px;opacity:0}
-.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid var(--mist-2);font-weight:700;font-size:17px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
-.chip span::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid #a9a3d6;flex:none;transition:background .15s,border-color .15s}
+.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid #857cc2;font-weight:700;font-size:17px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.chip span::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid #857cc2;flex:none;transition:background .15s,border-color .15s}
 .chip:hover span{border-color:var(--water)}
 .chip input:focus-visible + span{border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
 .chip input:checked + span{background:var(--indigo);border-color:var(--indigo);color:#fff}
 .chip input:checked + span::before{background:var(--lavender) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%231f1a46' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border-color:var(--lavender)}
 .chip input:checked:hover + span,.chip input:checked:focus-visible + span{border-color:var(--water)}
-.err{color:#b3243b;font-weight:700;font-size:15px;min-height:0}
-.err:empty{display:none}
+.err{color:#b3243b;font-weight:700;font-size:17px;min-height:0}
+.err:empty{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.send[hidden]{display:none}
 .send{margin-top:4px}
 .send .btn{width:100%;background:var(--indigo);border-color:var(--indigo);color:#fff}
 .send .btn:hover,.send .btn:focus-visible{border-color:var(--water);background:var(--indigo-2)}
 .send .btn:focus-visible{outline:3px solid var(--water);outline-offset:3px}
-.send p{margin-top:10px;font-size:15px;color:var(--muted);text-align:center}
+.send p{margin-top:10px;font-size:17px;color:var(--muted);text-align:center}
 .done{margin-top:6px;padding:18px;border-radius:var(--r);background:#fff;border:2px solid var(--mist-2)}
 .done[hidden]{display:none}
-.done b{display:block;font-size:20px}
+.done b{display:block;font-size:22px}
 .done p{margin-top:6px;color:var(--muted)}
 .done textarea{margin-top:12px;min-height:130px;font-size:17px;background:var(--mist)}
 .done .btns{display:grid;gap:10px;margin-top:12px}
@@ -170,15 +170,16 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 /* ---------- footer ---------- */
 .ft{padding:30px 0 calc(40px + env(safe-area-inset-bottom))}
 .ft .brand img{width:56px;height:56px}
-.ft-name{margin-top:16px;font-weight:800;font-size:20px}
+.ft-name{margin-top:16px;font-weight:800;font-size:22px}
 .ft-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;color:var(--lav-soft)}
 .ft-list a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-weight:700;text-underline-offset:4px}
 .ft-list a .icon{width:20px;height:20px;color:var(--lavender)}
-.ft-small{margin-top:22px;font-size:15px;color:var(--lav-soft)}
+.ft-small{margin-top:22px;font-size:17px;color:var(--lav-soft)}
 
 /* ---------- larger phones / tablets ---------- */
 @media (min-width:600px){
   :root{--pad:32px}
+  .fb{font-size:22px}
   .actions{grid-template-columns:auto auto;justify-content:start}
   .window{margin-left:0;margin-right:0}
   .done .btns{grid-template-columns:1fr 1fr}
@@ -187,10 +188,12 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 @media (min-width:1024px){
   .hd .wrap{height:76px}
   .brand img{width:52px;height:52px}
-  .brand b{font-size:20px}
+  .brand b{font-size:22px}
   .hero{padding:40px 0 30px}
   .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .hero .promise{max-width:30ch}
+  .hero h1{font-size:clamp(64px,7.4vw,96px)}
+  .hero{background:radial-gradient(55% 80% at 76% 52%,#43398f 0%,rgba(67,57,143,0) 72%)}
   .window{margin-top:0}
   .pane{height:min(560px,64svh)}
   .seam{height:64px}
@@ -199,14 +202,22 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
   .area,.how{margin-top:0}
   .how{margin-top:56px}
   .proof{padding:48px 0 90px}
-  .proofgrid{display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:64px;align-items:center}
+  .proofgrid{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:72px;align-items:center}
   .proofgrid .side{display:block}
-  .proofgrid .window{margin:0 0 12px}
+  .proofgrid .window{margin:0}
+  .proof .side h2{font-size:clamp(56px,6vw,80px)}
   .proof .side h2{font-size:clamp(44px,5vw,64px)}
-  .fb{margin-top:28px;max-width:440px}
-  .quotegrid{max-width:760px}
+  .fb{margin-top:28px;max-width:460px;font-size:22px}
   .quote form{margin-top:28px}
   .ft .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+}
+/* ---------- phone held sideways ---------- */
+@media (orientation:landscape) and (max-height:500px){
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  .hero h1{font-size:clamp(40px,11vh,64px)}
+  .actions{grid-template-columns:1fr}
+  .window{margin:0}
+  .pane{height:calc(100svh - 120px)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.arrow,.fb{transition:none}}
 </style>
@@ -242,23 +253,22 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="wrap">
       <div>
         <h1>See the difference.</h1>
-        <p class="promise">Window cleaning and pressure washing, done like it's our own home. We don't pack up until you can see the difference.</p>
+        <p class="promise">Window cleaning and pressure washing. We take care of your home like it's our own, inside and out.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#quote">Get a free quote</a>
           <a class="btn btn-ghost" href="#work">See our work</a>
         </div>
       </div>
-      <div class="window" aria-label="A fogged window. Drag your finger across it to wipe the glass clear.">
+      <div class="window" role="img" aria-label="A fogged window. Drag your finger across it to wipe the glass clear.">
         <div class="pane" id="pane">
           <canvas id="glass" aria-hidden="true"></canvas>
-          <div class="mullion-v"></div><div class="mullion-h"></div>
         </div>
-        <div class="sill"></div>
+        <canvas class="frame" data-mullions="1" aria-hidden="true"></canvas>
       </div>
     </div>
   </section>
 
-  <div class="seam" style="--to:var(--mist)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+  <div class="seam" style="--to:var(--mist)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 
   <section class="light block" id="services">
     <div class="wrap lightgrid">
@@ -271,28 +281,27 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <li><a class="row" href="#quote" data-service="Driveway">Driveways<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
           <li><a class="row" href="#quote" data-service="Deck">Decks<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
           <li><a class="row" href="#quote" data-service="Patio">Patios<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Mold on wood">Mold &amp; buildup on wood<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Mold on wood">Mold on wood<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
         </ul>
       </div>
       <div>
         <div class="area">
           <h2>Where we work</h2>
           <p>Boardman, Canfield and nearby.</p>
-          <p class="base">Based in Canfield, Ohio.</p>
         </div>
         <div class="how">
           <h2>How it works</h2>
           <ol class="steps">
             <li><div><b>Message us</b><span>What needs cleaning, and where.</span></div></li>
-            <li><div><b>Free quote</b><span>We look it over and give you a price before any work starts.</span></div></li>
-            <li><div><b>We clean it</b><span>And we're not done until you can see the difference.</span></div></li>
+            <li><div><b>Free quote</b><span>We look it over and give you a price.</span></div></li>
+            <li><div><b>We clean it</b><span>Inside and out, as agreed in the quote.</span></div></li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="seam" style="--to:var(--indigo-2);background:var(--mist);--line:rgba(111,100,184,.55);--line2:rgba(111,100,184,.3)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+  <div class="seam" style="--to:var(--indigo-2);background:var(--mist);--line:rgba(111,100,184,.55)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 
   <section class="proof" id="work">
     <div class="wrap proofgrid">
@@ -301,23 +310,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <img src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams, before cleaning, with a back lawn and trees beyond" width="695" height="760" loading="lazy" decoding="async" draggable="false">
           <span class="tag">Before</span>
         </div>
-        <div class="sill"></div>
+        <canvas class="frame" aria-hidden="true"></canvas>
       </div>
       <div class="side">
         <h2>Recent work</h2>
-        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see the after, and more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see the after photo, and more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
       </div>
     </div>
   </section>
 
-  <div class="seam" style="--to:var(--mist);background:var(--indigo-2)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+  <div class="seam" style="--to:var(--mist);background:var(--indigo-2)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 
   <section class="light block quote" id="quote">
     <div class="wrap quotegrid">
       <h2>Get your free quote</h2>
       <form id="quoteForm" novalidate>
         <label class="f"><span>Your name</span>
-          <input type="text" name="name" autocomplete="name" required>
+          <input type="text" name="name" autocomplete="name" required aria-describedby="formErr">
         </label>
         <fieldset>
           <legend class="legend">What needs cleaning?</legend>
@@ -358,7 +367,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </section>
 
-  <div class="seam" style="--to:var(--indigo);background:var(--mist);--line:rgba(111,100,184,.55);--line2:rgba(111,100,184,.3)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+  <div class="seam" style="--to:var(--indigo);background:var(--mist);--line:rgba(111,100,184,.55)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 </main>
 
 <footer class="ft">
@@ -372,7 +381,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <li><a href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg>Facebook</a></li>
       </ul>
     </div>
-    <p class="ft-small">Free quotes in Boardman, Canfield and nearby.</p>
   </div>
 </footer>
 
@@ -380,7 +388,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 /* ---------- business config: fill PHONE (10 digits) once the owner gives it ----------
    With a phone: header shows the tap-to-call number, the form hands off by text message. */
 const CONFIG = {
-  PHONE: '',                       // e.g. '3305551234'
+  PHONE: '',                       // e.g. '3305551234' or '(330) 555-1234'
   FB_ID: '61589631985029',
   FB_URL: 'https://www.facebook.com/profile.php?id=61589631985029',
   NAME: 'ClearedCo'
@@ -388,6 +396,7 @@ const CONFIG = {
 
 /* ---------- contact wiring ---------- */
 (function contact(){
+  CONFIG.PHONE = CONFIG.PHONE.replace(/\D/g, '').slice(-10);
   const fmt = p => '(' + p.slice(0,3) + ') ' + p.slice(3,6) + '-' + p.slice(6);
   if (CONFIG.PHONE) {
     const hd = document.getElementById('hdContact');
@@ -431,14 +440,16 @@ const CONFIG = {
   form.addEventListener('submit', e => {
     e.preventDefault();
     const d = new FormData(form);
-    if (!d.get('name').trim()) { err.textContent = 'Please add your name so we know who to answer.'; form.name.focus(); return; }
-    if (!d.getAll('svc').length && !d.get('notes').trim()) { err.textContent = 'Pick what needs cleaning, or tell us in "Anything else?".'; return; }
+    if (!d.get('name').trim()) { err.textContent = 'Please add your name so we know who to answer.'; form.name.setAttribute('aria-invalid', 'true'); form.name.focus(); return; }
+    form.name.removeAttribute('aria-invalid');
+    if (!d.getAll('svc').length && !d.get('notes').trim()) { err.textContent = 'Pick what needs cleaning, or describe it under Anything else.'; form.querySelector('.chip input').focus(); return; }
     err.textContent = '';
     const text = compose(), enc = encodeURIComponent(text);
     if (CONFIG.PHONE) { location.href = 'sms:+1' + CONFIG.PHONE + '?&body=' + enc; return; }
     const link = 'https://m.me/' + CONFIG.FB_ID + '?text=' + enc;
-    msgBox.value = text; open.href = link; done.hidden = false;
-    copy(text).then(() => { location.href = link; });
+    msgBox.value = text; open.href = link; done.hidden = false; form.querySelector('.send').hidden = true;
+    // the in-app browser may never settle the clipboard promise: go after 400ms regardless
+    Promise.race([copy(text), new Promise(r => setTimeout(r, 400))]).then(() => { location.href = link; });
   });
   copyBtn.addEventListener('click', () => {
     msgBox.select();
@@ -469,40 +480,51 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
     REGROW: 0.0032,      // fog returning per frame (higher = clean patch fogs over sooner)
     BRUSH: 30,           // finger radius, css px
     GHOST_IDLE: 4500,    // ms without touch before the window wipes itself again
-    GHOST_SPEED: 0.75,   // self-wipe speed
-    SPAWN: 0.9,          // running drops per second
-    MAX_RUNNERS: 9,
-    BEADS_DESKTOP: 90, BEADS_PHONE: 45,
+    GHOST_PASSES: 1.4,   // self-wipe: side-to-side passes per second
+    GHOST_PAUSE: 1.5,    // s the hand rests before moving to another pane
+    SWELL: 0.7,          // beads that start swelling into runners, per second
+    RUN_AT: 3.2,         // bead radius (css px) at which it lets go and runs
+    MAX_RUNNERS_PHONE: 4, MAX_RUNNERS_DESKTOP: 9,
+    BEADS_PHONE: 45, BEADS_DESKTOP: 90,
     DPR_CAP: 1.5
   };
+  const PALETTE = {
+    sky: ['#3a2f7e', '#5e50ae', '#a592d8', '#f0b5a6'],
+    trees: ['#463a86', '#30276a'], lawn: ['#342c6c', '#251f52'],
+    house: '#271f58', lit: '#ffd08a', glow: '255,200,130',
+    fog: '238,235,252', fogTop: .56, fogBottom: .74,
+    rim: '25,18,64'
+  };
+  const PANES = [[0, 0, .5, .46], [.5, 0, 1, .46], [0, .46, .5, 1], [.5, .46, 1, 1]];  // match the mullions
   const pane = document.getElementById('pane'), cv = document.getElementById('glass');
   const ctx = cv.getContext('2d');
   const scene = document.createElement('canvas'), frost = document.createElement('canvas');
   const mask = document.createElement('canvas'), comp = document.createElement('canvas');
-  const sx = scene.getContext('2d'), fx = frost.getContext('2d'), mx = mask.getContext('2d'), cx = comp.getContext('2d');
-  let W = 0, H = 0, dpr = 1, cssW = 0, cssH = 0, MS = 0.5;   // MS: fog mask resolution vs css px
-  let beads = [], runners = [], spawnAcc = 0;
-  const ptr = { down:false, x:0, y:0, px:null, py:null, cx:0, cy:0, vx:0, vy:0, lastInput:-1e9 };
-  const ghost = { x:null, y:null, t:0 };
-  let rnd = mulberry(7);
+  const sx = scene.getContext('2d'), fx = frost.getContext('2d'), mx = mask.getContext('2d', { willReadFrequently: true }), cx = comp.getContext('2d');
+  let W = 0, H = 0, dpr = 1, cssW = 0, cssH = 0, MS = 0.5, phone = true;
+  let beads = [], runners = [], swellAcc = 0, maskData = null, maskAge = 9, lights = [];
+  const ptr = { down:false, x:0, y:0, px:null, py:null, hx:null, hy:null, moved:0, lastInput:-1e9 };
+  const ghost = { pane: 3, pass: 0, passes: 4, p: 0, dir: 1, pause: 0, x: null, y: null };
 
   function mulberry(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  const maxRunners = () => phone ? T.MAX_RUNNERS_PHONE : T.MAX_RUNNERS_DESKTOP;
+  const maxBeads = () => phone ? T.BEADS_PHONE : T.BEADS_DESKTOP;
 
   // outside: a dusk yard in the logo's colors, drawn once per size
   function drawScene(){
-    const w = W, h = H, s = dpr; rnd = mulberry(11);
-    const g = sx.createLinearGradient(0, 0, 0, h);
-    g.addColorStop(0, '#231c54'); g.addColorStop(.38, '#4a3e98'); g.addColorStop(.62, '#8f7cc8'); g.addColorStop(.74, '#e6a9a8'); g.addColorStop(.78, '#3a2f6e'); g.addColorStop(1, '#2a2258');
+    const w = W, h = H, s = dpr, rnd = mulberry(11); lights = [];
+    const g = sx.createLinearGradient(0, 0, 0, h*.76);
+    PALETTE.sky.forEach((c, i) => g.addColorStop(i/3, c));
     sx.fillStyle = g; sx.fillRect(0, 0, w, h);
-    // low sun glow
-    const sun = sx.createRadialGradient(w*.3, h*.74, 0, w*.3, h*.74, w*.5);
-    sun.addColorStop(0, 'rgba(255,206,170,.55)'); sun.addColorStop(1, 'rgba(255,206,170,0)');
+    const sunX = w*.28, sunY = h*.74;
+    const sun = sx.createRadialGradient(sunX, sunY, 0, sunX, sunY, w*.5);
+    sun.addColorStop(0, 'rgba(255,214,180,.6)'); sun.addColorStop(1, 'rgba(255,214,180,0)');
     sx.fillStyle = sun; sx.fillRect(0, 0, w, h);
-    // stars
-    for (let i = 0; i < 40; i++) { sx.fillStyle = 'rgba(255,255,255,' + (0.35 + rnd()*0.5) + ')'; sx.beginPath(); sx.arc(rnd()*w, rnd()*h*.35, (0.5 + rnd()*0.9)*s, 0, 7); sx.fill(); }
-    // tree line: organic, layered
+    lights.push([sunX, sunY, w*.35, '255,214,180', .28]);
+    for (let i = 0; i < 40; i++) { sx.fillStyle = 'rgba(255,255,255,' + (0.35 + rnd()*0.5) + ')'; sx.beginPath(); sx.arc(rnd()*w, rnd()*h*.32, (0.5 + rnd()*0.9)*s, 0, 7); sx.fill(); }
     const horizon = h*.75;
-    [['#3b3076', .02, 26], ['#2a2259', .0, 18]].forEach(([col, lift, amp], k) => {
+    PALETTE.trees.forEach((col, k) => {
+      const amp = k ? 18 : 26, lift = k ? 0 : .02;
       sx.fillStyle = col; sx.beginPath(); sx.moveTo(0, h);
       for (let x = 0; x <= w + 8*s; x += 4*s) {
         const n = Math.sin(x/(23*s)+k*2)*.5 + Math.sin(x/(9*s)+k)*.3 + Math.sin(x/(4.3*s))*.2;
@@ -513,28 +535,38 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
     });
     // neighbour's house with lit windows
     const hx = w*.62, hw = Math.min(w*.3, 190*s), hy = horizon - 8*s, hh = hw*.42;
-    sx.fillStyle = '#211a4d';
+    sx.fillStyle = PALETTE.house;
     sx.beginPath(); sx.moveTo(hx - hw*.08, hy - hh); sx.lineTo(hx + hw*.5, hy - hh - hw*.3); sx.lineTo(hx + hw*1.08, hy - hh); sx.lineTo(hx + hw, hy - hh); sx.lineTo(hx + hw, h); sx.lineTo(hx, h); sx.lineTo(hx, hy - hh); sx.closePath(); sx.fill();
     [[.14, .35], [.6, .35]].forEach(([fx0, fy0]) => {
       const x = hx + hw*fx0, y = hy - hh + hh*fy0, ww = hw*.22, wh = hh*.42;
       const glow = sx.createRadialGradient(x+ww/2, y+wh/2, 0, x+ww/2, y+wh/2, ww*1.6);
-      glow.addColorStop(0, 'rgba(255,196,110,.35)'); glow.addColorStop(1, 'rgba(255,196,110,0)');
+      glow.addColorStop(0, 'rgba(' + PALETTE.glow + ',.35)'); glow.addColorStop(1, 'rgba(' + PALETTE.glow + ',0)');
       sx.fillStyle = glow; sx.fillRect(x - ww, y - wh, ww*3, wh*3);
-      sx.fillStyle = '#ffcf85'; sx.fillRect(x, y, ww, wh);
+      sx.fillStyle = PALETTE.lit; sx.fillRect(x, y, ww, wh);
       sx.fillStyle = 'rgba(33,26,77,.8)'; sx.fillRect(x + ww/2 - s, y, 2*s, wh); sx.fillRect(x, y + wh/2 - s, ww, 2*s);
+      lights.push([x + ww/2, y + wh/2, ww*2.4, PALETTE.glow, .45]);
     });
-    // lawn
     const lawn = sx.createLinearGradient(0, horizon, 0, h);
-    lawn.addColorStop(0, '#2c2560'); lawn.addColorStop(1, '#1f1a46');
+    lawn.addColorStop(0, PALETTE.lawn[0]); lawn.addColorStop(1, PALETTE.lawn[1]);
     sx.fillStyle = lawn; sx.fillRect(0, hy + 2*s, w, h);
   }
-  // inside of the fog: the scene softened + haze + condensation grain
+  // inside the fog: scene softened, a veil that thickens toward the bottom of each pane,
+  // lights blooming through it, and condensation grain
   function drawFrost(){
     const tiny = document.createElement('canvas'); tiny.width = Math.max(8, W/14|0); tiny.height = Math.max(8, H/14|0);
     const tx = tiny.getContext('2d'); tx.imageSmoothingQuality = 'high'; tx.drawImage(scene, 0, 0, tiny.width, tiny.height);
     fx.imageSmoothingEnabled = true; fx.imageSmoothingQuality = 'high';
     fx.drawImage(tiny, 0, 0, W, H);
-    fx.fillStyle = 'rgba(236,233,252,.66)'; fx.fillRect(0, 0, W, H);
+    [[0, .46], [.46, 1]].forEach(([a, b]) => {
+      const g = fx.createLinearGradient(0, a*H, 0, b*H);
+      g.addColorStop(0, 'rgba(' + PALETTE.fog + ',' + PALETTE.fogTop + ')'); g.addColorStop(1, 'rgba(' + PALETTE.fog + ',' + PALETTE.fogBottom + ')');
+      fx.fillStyle = g; fx.fillRect(0, a*H, W, (b - a)*H);
+    });
+    lights.forEach(([x, y, r, c, a]) => {
+      const g = fx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, 'rgba(' + c + ',' + a + ')'); g.addColorStop(1, 'rgba(' + c + ',0)');
+      fx.fillStyle = g; fx.fillRect(x - r, y - r, r*2, r*2);
+    });
     const r2 = mulberry(5), n = (W*H)/(70*dpr*dpr);
     for (let i = 0; i < n; i++) {
       const x = r2()*W, y = r2()*H, r = (0.5 + r2()*r2()*1.9)*dpr;
@@ -542,104 +574,151 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
       fx.fillStyle = 'rgba(255,255,255,.30)'; fx.beginPath(); fx.arc(x, y, r*.8, 0, 7); fx.fill();
     }
   }
-  function makeBeads(){
-    beads = []; const n = cssW < 600 ? T.BEADS_PHONE : T.BEADS_DESKTOP;
-    for (let i = 0; i < n; i++) beads.push(bead(rnd()*cssW, rnd()*cssH));
-  }
-  function bead(x, y){ return { x, y, r: 1.6 + Math.random()*Math.random()*3.2 }; }
+  const bead = (x, y, r, a) => ({ x, y, r: r || 1.4 + Math.random()*Math.random()*2.6, a: a == null ? 1 : a, grow: false });
+  function makeBeads(){ beads = []; for (let i = 0; i < maxBeads(); i++) beads.push(bead(Math.random()*cssW, Math.random()*cssH)); }
+  const fogAt = (x, y) => { if (!maskData) return 1; const i = ((y*MS|0)*mask.width + (x*MS|0))*4 + 3; return (maskData[i] || 0)/255; };
 
   function resize(){
     const r = pane.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
     if (w === cssW && h === cssH) return;     // address bar slide: keep what was wiped
-    cssW = w; cssH = h; dpr = Math.min(T.DPR_CAP, window.devicePixelRatio || 1);
+    cssW = w; cssH = h; phone = w < 600; MS = phone ? 1 : 0.5;
+    dpr = Math.min(phone ? 1 : T.DPR_CAP, window.devicePixelRatio || 1);   // fog is soft: phones lose nothing at 1x
     W = cv.width = scene.width = frost.width = comp.width = Math.round(w*dpr);
     H = cv.height = scene.height = frost.height = comp.height = Math.round(h*dpr);
     mask.width = Math.max(4, Math.round(w*MS)); mask.height = Math.max(4, Math.round(h*MS));
     drawScene(); drawFrost();
-    mx.fillStyle = '#000'; mx.fillRect(0, 0, mask.width, mask.height);
+    pane.style.backgroundImage = 'url(' + scene.toDataURL('image/jpeg', .9) + ')'; pane.style.backgroundSize = '100% 100%';
+    mx.fillStyle = '#000'; mx.fillRect(0, 0, mask.width, mask.height); maskData = null;
     makeBeads(); runners = [];
-    if (REDUCED) { wipeLine(cssW*.18, cssH*.5, cssW*.82, cssH*.42, 1); render(); }
+    if (REDUCED) { stillWipe(); render(); }
   }
 
-  // wipe the fog between two css-px points
+  // wipe the fog between two css-px points; the finger soaks up any water it passes
   function wipeLine(x0, y0, x1, y1, strength){
-    const rad = T.BRUSH*MS, dist = Math.hypot(x1-x0, y1-y0), steps = Math.max(1, Math.ceil(dist/(T.BRUSH*.35)));
+    const rad = T.BRUSH*MS, dist = Math.hypot(x1-x0, y1-y0), steps = Math.max(1, Math.ceil(dist/(T.BRUSH*.3)));
     mx.globalCompositeOperation = 'destination-out';
     for (let i = 0; i <= steps; i++) {
       const x = (x0 + (x1-x0)*i/steps)*MS, y = (y0 + (y1-y0)*i/steps)*MS;
       const g = mx.createRadialGradient(x, y, 0, x, y, rad);
-      g.addColorStop(0, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(.6, 'rgba(0,0,0,' + strength*.85 + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      g.addColorStop(0, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(.4, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
       mx.fillStyle = g; mx.beginPath(); mx.arc(x, y, rad, 0, 7); mx.fill();
     }
     mx.globalCompositeOperation = 'source-over';
-    // water the finger pushes along: wipe up beads, sometimes drop a runner at the edge
-    for (let i = beads.length - 1; i >= 0; i--) { const b = beads[i]; if (Math.hypot(b.x - x1, b.y - y1) < T.BRUSH) beads.splice(i, 1); }
-    if (!REDUCED && dist > 2 && Math.random() < 0.05 && runners.length < T.MAX_RUNNERS) runners.push(runner(x1 + (Math.random()-.5)*T.BRUSH, y1 + T.BRUSH*.9, 3.2 + Math.random()*1.8));
+    const soak = d => Math.hypot(d.x - x1, d.y - y1) < T.BRUSH*.9;
+    beads = beads.filter(b => !soak(b)); runners = runners.filter(d => !soak(d));
   }
-  function runner(x, y, r){ return { x, y, r, v: 0, hold: 0.2 + Math.random()*0.6, ph: Math.random()*6.28, lx: x, ly: y }; }
+  // the water a stroke pushes ahead of it gathers at its lower edge and runs
+  function pushedWater(x, y){
+    if (REDUCED || runners.length >= maxRunners()) return;
+    runners.push(runner(x + (Math.random() - .5)*T.BRUSH*.5, y + T.BRUSH*.95, 3.4 + Math.random()*1.4));
+  }
+  const runner = (x, y, r) => ({ x, y, r, tx: x, v: 0, hold: 0.15 + Math.random()*0.4, lx: x, ly: y, trail: 0 });
 
   function stepDrops(t, dt){
-    spawnAcc += dt*T.SPAWN;
-    while (spawnAcc > 1) { spawnAcc -= 1; if (runners.length < T.MAX_RUNNERS) runners.push(runner(rnd()*cssW, rnd()*cssH*.45, 2.6 + rnd()*2.4)); }
-    // beads condense back slowly
-    const cap = cssW < 600 ? T.BEADS_PHONE : T.BEADS_DESKTOP;
-    if (beads.length < cap && Math.random() < dt*3) beads.push(bead(Math.random()*cssW, Math.random()*cssH));
-    mx.globalCompositeOperation = 'destination-out';
+    // a bead swells, then lets go
+    swellAcc += dt*T.SWELL;
+    if (swellAcc > 1) {
+      swellAcc = 0;
+      if (runners.length + beads.filter(b => b.grow).length < maxRunners()) {
+        const c = beads.filter(b => !b.grow && b.y < cssH*.7 && b.a > .9);
+        if (c.length) c[Math.random()*c.length|0].grow = true;
+      }
+    }
+    for (let i = beads.length - 1; i >= 0; i--) {
+      const b = beads[i];
+      if (b.a < 1) b.a = Math.min(1, b.a + dt*.8);
+      if (b.grow) { b.r += dt*2.6; if (b.r >= T.RUN_AT) { beads.splice(i, 1); runners.push(runner(b.x, b.y, b.r)); } }
+    }
+    // condensation returns only where the fog has come back
+    if ((maskAge += dt) > .5) { maskAge = 0; maskData = mx.getImageData(0, 0, mask.width, mask.height).data; }
+    if (beads.length < maxBeads() && Math.random() < dt*4) { const x = Math.random()*cssW, y = Math.random()*cssH; if (fogAt(x, y) > .8) beads.push(bead(x, y, null, 0)); }
+
+    mx.globalCompositeOperation = 'destination-out'; mx.lineCap = 'round'; mx.strokeStyle = 'rgba(0,0,0,.5)';
     for (let i = runners.length - 1; i >= 0; i--) {
       const d = runners[i];
-      if (d.hold > 0) { d.hold -= dt; d.v *= 0.8; }
+      if (d.hold > 0) { d.hold -= dt; d.v *= 0.7; }
       else {
-        d.v = Math.min(d.v + dt*(40 + d.r*30), 30 + d.r*22);
-        if (Math.random() < dt*0.9) d.hold = 0.15 + Math.random()*0.7;   // stop-go, like real glass
+        d.v = Math.min(d.v + dt*(40 + d.r*30), 20 + d.r*16);
+        if (Math.random() < dt*0.6) d.hold = 0.12 + Math.random()*0.6;   // stop-go, like real glass
       }
-      d.y += d.v*dt;
-      d.x += Math.sin(t*2.3 + d.ph)*0.12 + Math.sin(t*0.7 + d.ph*2)*0.08;
-      // finger nudges drops it passes
-      const px = ptr.down ? ptr.cx : ghost.x, py = ptr.down ? ptr.cy : ghost.y;
-      if (px != null) { const dx = d.x - px, dy = d.y - py, dd = Math.hypot(dx, dy); if (dd < T.BRUSH*1.3 && dd > 0.1) { const f = (1 - dd/(T.BRUSH*1.3))*2.2; d.x += dx/dd*f + ptr.vx*0.02; d.y += dy/dd*f*0.5; } }
-      // absorb beads in the path, grow
-      for (let j = beads.length - 1; j >= 0; j--) { const b = beads[j]; if (Math.abs(b.x - d.x) < d.r + b.r && Math.abs(b.y - d.y) < d.r + b.r) { d.r = Math.min(7, Math.hypot(d.r, b.r*.6)); beads.splice(j, 1); } }
-      // the clear trail it leaves through the fog
-      const tr = d.r*0.75*MS;
-      mx.lineCap = 'round'; mx.lineWidth = tr*2; mx.strokeStyle = 'rgba(0,0,0,.55)';
+      const dy = d.v*dt; d.y += dy;
+      // runs straight down; leans only toward a bead just below it
+      for (const b of beads) if (!b.grow && b.y > d.y && b.y - d.y < d.r*2.5 && Math.abs(b.x - d.x) < d.r*2) { d.tx = b.x; break; }
+      d.x += (d.tx - d.x)*Math.min(1, dt*12);
+      for (let j = beads.length - 1; j >= 0; j--) { const b = beads[j]; if (Math.hypot(b.x - d.x, b.y - d.y) < d.r + b.r) { d.r = Math.min(6, Math.hypot(d.r, b.r*.6)); beads.splice(j, 1); } }
+      mx.lineWidth = d.r*.9*MS;
       mx.beginPath(); mx.moveTo(d.lx*MS, d.ly*MS); mx.lineTo(d.x*MS, d.y*MS); mx.stroke();
       d.lx = d.x; d.ly = d.y;
-      if (d.y > cssH + 10) runners.splice(i, 1);
+      // a trail dotted with the little drops it leaves behind
+      if ((d.trail += dy) > 12 + Math.random()*8) {
+        d.trail = 0; const br = 0.7 + Math.random()*0.6;
+        beads.push(bead(d.x + (Math.random() - .5)*d.r*.4, d.y - d.r*1.6, br));
+        d.r -= 0.12;
+      }
+      if (d.r < 2) { runners.splice(i, 1); beads.push(bead(d.x, d.y, d.r)); }
+      else if (d.y > cssH + 10) runners.splice(i, 1);
     }
     mx.globalCompositeOperation = 'source-over';
   }
 
-  function drawDrop(x, y, r, stretch){
-    x *= dpr; y *= dpr; r *= dpr;
-    const ry = r*(1 + stretch);
-    const g = ctx.createRadialGradient(x - r*.25, y - ry*.3, r*.1, x, y, ry);
-    g.addColorStop(0, 'rgba(255,255,255,.22)'); g.addColorStop(.55, 'rgba(160,150,220,.10)'); g.addColorStop(.85, 'rgba(25,18,64,.38)'); g.addColorStop(1, 'rgba(25,18,64,0)');
-    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(x, y, r, ry, 0, 0, 7); ctx.fill();
-    ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.beginPath(); ctx.arc(x - r*.32, y - ry*.38, Math.max(.6*dpr, r*.24), 0, 7); ctx.fill();
+  // a drop is a tiny lens: the scene upside down inside it, a darker rim at the bottom
+  function drawDrop(x, y, r, stretch, a){
+    const px = x*dpr, py = y*dpr, rx = r*dpr, ry = rx*(1 + stretch);
+    ctx.globalAlpha = a;
+    if (r > 2.4) {
+      ctx.save(); ctx.beginPath(); ctx.ellipse(px, py, rx, ry, 0, 0, 7); ctx.clip();
+      ctx.translate(px, py); ctx.scale(-0.28, -0.28); ctx.drawImage(scene, -px, -py); ctx.restore();
+    }
+    const g = ctx.createRadialGradient(px, py - ry*.3, rx*.2, px, py, ry);
+    g.addColorStop(0, 'rgba(255,255,255,' + (r > 2.4 ? 0 : .16) + ')'); g.addColorStop(.7, 'rgba(' + PALETTE.rim + ',.12)'); g.addColorStop(1, 'rgba(' + PALETTE.rim + ',.5)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(px, py, rx, ry, 0, 0, 7); ctx.fill();
+    ctx.globalAlpha = 1;
   }
 
   function render(){
     cx.globalCompositeOperation = 'source-over'; cx.clearRect(0, 0, W, H); cx.drawImage(frost, 0, 0);
     cx.globalCompositeOperation = 'destination-in'; cx.imageSmoothingEnabled = true; cx.drawImage(mask, 0, 0, W, H);
-    ctx.drawImage(scene, 0, 0); ctx.drawImage(comp, 0, 0);
-    for (const b of beads) drawDrop(b.x, b.y, b.r, 0);
-    for (const d of runners) drawDrop(d.x, d.y, d.r, d.hold > 0 ? 0.05 : 0.35);
+    ctx.clearRect(0, 0, W, H); ctx.drawImage(comp, 0, 0);   // the scene itself is the pane's css background
+    for (const b of beads) drawDrop(b.x, b.y, b.r, 0, b.a);
+    for (const d of runners) drawDrop(d.x, d.y, d.r, d.hold > 0 ? 0.08 : 0.3, 1);
   }
+
+  // self-wipe: a hand doing side-to-side passes inside one pane, drifting down, then resting
+  function planPane(k){
+    const [a, b, c, e] = PANES[k], m = T.BRUSH*.7;
+    ghost.pane = k; ghost.pass = 0; ghost.p = 0; ghost.dir = Math.random() < .5 ? 1 : -1;
+    ghost.box = [a*cssW + m, b*cssH + m, c*cssW - m, e*cssH - m];
+    ghost.passes = Math.max(2, Math.min(6, Math.floor((ghost.box[3] - ghost.box[1])/(T.BRUSH*1.2)) + 1));
+  }
+  function stepGhost(dt){
+    if (ghost.pause > 0) { ghost.pause -= dt; ghost.x = null; return; }
+    if (!ghost.box) planPane(ghost.pane);
+    ghost.p += dt*T.GHOST_PASSES;
+    if (ghost.p >= 1) {
+      ghost.p = 0; ghost.pass++; ghost.dir *= -1;
+      if (ghost.pass >= ghost.passes) {
+        pushedWater(ghost.x, ghost.y); ghost.pause = T.GHOST_PAUSE; ghost.x = null;
+        let k; do { k = Math.random()*4|0; } while (k === ghost.pane); planPane(k); return;
+      }
+    }
+    const [x0, y0, x1, y1] = ghost.box, e = .5 - .5*Math.cos(Math.PI*ghost.p);
+    const step = (y1 - y0)/Math.max(1, ghost.passes - 1);
+    const nx = ghost.dir > 0 ? x0 + (x1 - x0)*e : x1 - (x1 - x0)*e;
+    const ny = y0 + step*ghost.pass + Math.sin(Math.PI*ghost.p)*5;
+    if (ghost.x != null) wipeLine(ghost.x, ghost.y, nx, ny, .9);
+    ghost.x = nx; ghost.y = ny;
+  }
+  function stillWipe(){ planPane(0); for (let i = 0; i < 400 && ghost.pass < ghost.passes; i++) stepGhost(1/60); }
 
   const job = { visible: true, step(t, dt){
     // pointer: read the rect every frame so a scrolling page never misplaces the finger
     const r = pane.getBoundingClientRect();
     if (ptr.down) {
-      ptr.cx = ptr.x - r.left; ptr.cy = ptr.y - r.top;
-      if (ptr.px != null) { ptr.vx = (ptr.cx - ptr.px)/Math.max(dt, .001); ptr.vy = (ptr.cy - ptr.py)/Math.max(dt, .001); wipeLine(ptr.px, ptr.py, ptr.cx, ptr.cy, 1); }
-      ptr.px = ptr.cx; ptr.py = ptr.cy; ghost.x = null;
-    } else if (performance.now() - ptr.lastInput > T.GHOST_IDLE) {
-      // self-wipe: a hand making loose overlapping passes
-      ghost.t += dt*T.GHOST_SPEED;
-      const g = ghost.t, nx = cssW*(.5 + .36*Math.sin(g*1.3) + .06*Math.sin(g*3.1)), ny = cssH*(.48 + .3*Math.sin(g*2.1 + .8) + .05*Math.cos(g*4.3));
-      if (ghost.x != null) wipeLine(ghost.x, ghost.y, nx, ny, .9);
-      ghost.x = nx; ghost.y = ny;
-    } else ghost.x = null;
+      const x = ptr.x - r.left, y = ptr.y - r.top;
+      if (ptr.px != null) { ptr.moved += Math.hypot(x - ptr.px, y - ptr.py); wipeLine(ptr.px, ptr.py, x, y, 1); }
+      ptr.px = x; ptr.py = y; ghost.x = null;
+    } else if (performance.now() - ptr.lastInput > T.GHOST_IDLE) stepGhost(dt);
+    else ghost.x = null;
     mx.fillStyle = 'rgba(0,0,0,' + T.REGROW + ')'; mx.fillRect(0, 0, mask.width, mask.height);
     stepDrops(t, dt);
     render();
@@ -647,7 +726,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // input: pointer (mouse, pen, touch); touch-action:none on the pane so every direction wipes
   pane.addEventListener('pointerdown', e => {
-    ptr.down = true; ptr.x = e.clientX; ptr.y = e.clientY; ptr.px = null; ptr.lastInput = performance.now();
+    ptr.down = true; ptr.x = e.clientX; ptr.y = e.clientY; ptr.px = null; ptr.moved = 0; ptr.lastInput = performance.now();
     try { pane.setPointerCapture(e.pointerId); } catch (_) {}
     e.preventDefault(); Loop.wake();
   });
@@ -655,36 +734,80 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
     ptr.x = e.clientX; ptr.y = e.clientY; ptr.lastInput = performance.now();
     if (e.pointerType === 'mouse' && !ptr.down) { // desktop: hovering wipes too
       const r = pane.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-      if (ptr.hx != null) wipeLine(ptr.hx, ptr.hy, x, y, .9);
-      ptr.hx = x; ptr.hy = y; ptr.cx = x; ptr.cy = y; ghost.x = null;
+      if (ptr.hx != null) { wipeLine(ptr.hx, ptr.hy, x, y, .9); ptr.moved += Math.hypot(x - ptr.hx, y - ptr.hy); }
+      ptr.hx = x; ptr.hy = y; ghost.x = null;
+      if (REDUCED) render();
+    } else if (REDUCED && ptr.down) {
+      const r = pane.getBoundingClientRect(), x = ptr.x - r.left, y = ptr.y - r.top;
+      if (ptr.px != null) wipeLine(ptr.px, ptr.py, x, y, 1);
+      ptr.px = x; ptr.py = y; render();
     }
   });
-  pane.addEventListener('pointerleave', () => { ptr.hx = null; });
-  const up = () => { ptr.down = false; ptr.px = null; ptr.lastInput = performance.now(); };
+  pane.addEventListener('pointerleave', () => { if (ptr.hx != null && ptr.moved > 60) pushedWater(ptr.hx, ptr.hy); ptr.hx = null; ptr.moved = 0; });
+  const up = () => {
+    if (ptr.down && ptr.moved > 40 && ptr.px != null) pushedWater(ptr.px, ptr.py);
+    ptr.down = false; ptr.px = null; ptr.lastInput = performance.now();
+  };
   pane.addEventListener('pointerup', up); pane.addEventListener('pointercancel', up);
   pane.addEventListener('touchmove', e => { const t = e.touches[0]; if (t) { ptr.x = t.clientX; ptr.y = t.clientY; } }, { passive: true });
 
   resize();
   addEventListener('resize', () => { resize(); if (REDUCED) render(); });
-  if (REDUCED) {
-    // still frame; wiping still works on demand
-    pane.addEventListener('pointermove', () => {
-      if (!ptr.down) return;
-      const r = pane.getBoundingClientRect(), x = ptr.x - r.left, y = ptr.y - r.top;
-      if (ptr.px != null) wipeLine(ptr.px, ptr.py, x, y, 1);
-      ptr.px = x; ptr.py = y; render();
-    });
-    return;
-  }
+  if (REDUCED) return;   // still frame; wiping still works by hand
   Loop.add(job);
   new IntersectionObserver(es => { job.visible = es[0].isIntersecting; if (job.visible) Loop.wake(); }).observe(pane);
   Loop.wake();
 })();
 
+/* ---------- painted window frames (hero + work photo) ---------- */
+(function paintFrames(){
+  const F = { RAIL: 13, SILL: 18, OVER: 8, PAINT: '#f1eff9', MULLION: 10, MULLION_Y: .46 };   // MULLION_Y matches PANES in glass
+  const frames = [...document.querySelectorAll('.frame')];
+  function rail(c, pts, top, bottom){ const g = c.createLinearGradient(pts[0][0], pts[0][1], pts[2][0], pts[2][1]); g.addColorStop(0, top); g.addColorStop(1, bottom); c.fillStyle = g; c.beginPath(); pts.forEach((p, i) => i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])); c.closePath(); c.fill(); }
+  function paint(cv){
+    const r = cv.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
+    if (!w || (cv._w === w && cv._h === h)) return; cv._w = w; cv._h = h;
+    const dpr = Math.min(2, devicePixelRatio || 1), c = cv.getContext('2d');
+    cv.width = w*dpr; cv.height = h*dpr; c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, w, h);
+    const o = F.OVER, R = F.RAIL, x0 = o, x1 = w - o, y0 = 0, y1 = h - F.SILL;      // sash outer box
+    const gx0 = x0 + R, gx1 = x1 - R, gy0 = y0 + R, gy1 = y1 - R;                   // glass
+    // sash rails, lit from the upper left (the low sun in the scene)
+    rail(c, [[x0, y0], [x1, y0], [gx1, gy0], [gx0, gy0]], '#fdfcff', '#eceaf7');
+    rail(c, [[x0, y0], [gx0, gy0], [gx0, gy1], [x0, y1]], '#f6f4fd', '#e6e2f4');
+    rail(c, [[x1, y0], [x1, y1], [gx1, gy1], [gx1, gy0]], '#d9d4ee', '#e4e0f3');
+    rail(c, [[x0, y1], [gx0, gy1], [gx1, gy1], [x1, y1]], '#d4cfe9', '#cfc9e6');
+    // brush marks in the paint, along each rail
+    c.strokeStyle = 'rgba(110,98,170,.05)'; c.lineWidth = 1;
+    for (let i = 0; i < 26; i++) { const t = (i*37 % 100)/100, yy = y0 + 2 + (i % 5)*2.2; c.beginPath(); c.moveTo(x0 + t*(x1 - x0)*.8, yy); c.lineTo(x0 + t*(x1 - x0)*.8 + 40 + (i % 3)*20, yy + .4); c.stroke(); }
+    // rebate: the inner edge steps down to the glass
+    c.strokeStyle = 'rgba(70,60,130,.35)'; c.lineWidth = 1.5; c.strokeRect(gx0 - .75, gy0 - .75, gx1 - gx0 + 1.5, gy1 - gy0 + 1.5);
+    // shadow the top and left rails cast onto the glass
+    let g = c.createLinearGradient(0, gy0, 0, gy0 + 12); g.addColorStop(0, 'rgba(20,12,60,.32)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, gy0, gx1 - gx0, 12);
+    g = c.createLinearGradient(gx0, 0, gx0 + 8, 0); g.addColorStop(0, 'rgba(20,12,60,.22)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, gy0, 8, gy1 - gy0);
+    if (cv.dataset.mullions) {
+      const M = F.MULLION, mx = (gx0 + gx1)/2, my = gy0 + (gy1 - gy0)*F.MULLION_Y;
+      // cast shadows first (down and right), then the rounded bars on top
+      g = c.createLinearGradient(0, my + M/2, 0, my + M/2 + 9); g.addColorStop(0, 'rgba(20,12,60,.3)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, my + M/2, gx1 - gx0, 9);
+      g = c.createLinearGradient(mx + M/2, 0, mx + M/2 + 7, 0); g.addColorStop(0, 'rgba(20,12,60,.25)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(mx + M/2, gy0, 7, gy1 - gy0);
+      g = c.createLinearGradient(mx - M/2, 0, mx + M/2, 0); g.addColorStop(0, '#fbfaff'); g.addColorStop(.45, '#efedf9'); g.addColorStop(1, '#d3cde9'); c.fillStyle = g; c.fillRect(mx - M/2, gy0, M, gy1 - gy0);
+      g = c.createLinearGradient(0, my - M/2, 0, my + M/2); g.addColorStop(0, '#fefdff'); g.addColorStop(.45, '#f0eef9'); g.addColorStop(1, '#cfc9e6'); c.fillStyle = g; c.fillRect(gx0, my - M/2, gx1 - gx0, M);
+      c.fillStyle = 'rgba(70,60,130,.18)'; c.fillRect(mx - M/2, my + M/2 - 1, M, 1);   // joint where the bars meet
+    }
+    // sill: a ledge wider than the sash, lit top face, shaded front, soft shadow under
+    const sy = y1, sh = F.SILL - 4;
+    c.save(); c.shadowColor = 'rgba(0,0,0,.4)'; c.shadowBlur = 10; c.shadowOffsetY = 5;
+    c.fillStyle = '#e2def3'; c.beginPath(); c.roundRect ? c.roundRect(0, sy + 3, w, sh, [1, 1, 4, 4]) : c.rect(0, sy + 3, w, sh); c.fill(); c.restore();
+    g = c.createLinearGradient(0, sy, 0, sy + 5); g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#f1eff9'); c.fillStyle = g; c.fillRect(0, sy, w, 5);
+    g = c.createLinearGradient(0, sy + 5, 0, sy + 3 + sh); g.addColorStop(0, '#e9e6f6'); g.addColorStop(1, '#c6bfe2'); c.fillStyle = g; c.fillRect(0, sy + 5, w, sh - 2);
+  }
+  const all = () => frames.forEach(paint);
+  all(); addEventListener('resize', all); addEventListener('load', all);
+})();
+
 /* ---------- seams: water line between sections ---------- */
 (function seams(){
-  const S = { SPEED: 1.1, AMP: 9 };            // swell speed and height (viewBox units)
-  const list = [...document.querySelectorAll('.seam')].map((el, i) => ({ el, i, fill: el.querySelector('.fill'), a: el.querySelector('.line'), b: el.querySelector('.line2'), visible: true }));
+  const S = { SPEED: 0.7, AMP: 6 };            // swell speed and height (viewBox units)
+  const list = [...document.querySelectorAll('.seam')].map((el, i) => ({ el, i, fill: el.querySelector('.fill'), a: el.querySelector('.line'), visible: true }));
   function y(x, t, k, off){
     return 30 + off + S.AMP*(Math.sin(x/210 + t*S.SPEED + k) *.55 + Math.sin(x/97 - t*S.SPEED*1.7 + k*2)*.3 + Math.sin(x/43 + t*S.SPEED*2.6)*.15);
   }
@@ -692,13 +815,12 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function draw(s, t){
     const main = d(t, s.i*1.9, 0);
     s.a.setAttribute('d', main);
-    s.b.setAttribute('d', d(t*0.8, s.i*1.9 + 1.2, -8));
     s.fill.setAttribute('d', main + 'L1440 60L0 60Z');
   }
   list.forEach(s => draw(s, 0));
   if (REDUCED) return;
   const io = new IntersectionObserver(es => es.forEach(e => { const s = list.find(s => s.el === e.target); s.visible = e.isIntersecting; if (s.visible) Loop.wake(); }));
-  list.forEach(s => { io.observe(s.el); Loop.add({ get visible(){ return s.visible; }, step(t){ draw(s, t); } }); });
+  list.forEach(s => { io.observe(s.el); let n = 0; Loop.add({ get visible(){ return s.visible; }, step(t){ if (innerWidth >= 600 || n++ % 2 === 0) draw(s, t); } }); });
 })();
 </script>
 </body>
