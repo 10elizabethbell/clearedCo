@@ -20,6 +20,7 @@
 :root{
   --indigo:#2a2260;      /* page ground, from the logo's deep end */
   --indigo-2:#332a72;    /* second dark section */
+  --hero-end:#3b3184;    /* hero ramps from indigo toward the logo's violet */
   --indigo-ink:#1f1a46;  /* text on light grounds */
   --violet:#6f64b8;      /* the logo's light end */
   --lavender:#c9c2ff;    /* primary button fill */
@@ -46,7 +47,7 @@ p{margin:0}
 .icon{width:1em;height:1em;flex:none}
 
 /* ---------- header ---------- */
-.hd{position:relative;z-index:20}
+.hd{position:relative;z-index:20;background:var(--indigo)}
 .hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
 .brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -57,7 +58,7 @@ p{margin:0}
 .hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
 
 /* ---------- hero ---------- */
-.hero{padding:22px 0 8px;position:relative;background:radial-gradient(120% 60% at 50% 88%,#43398f 0%,rgba(67,57,143,0) 70%)}
+.hero{padding:22px 0 8px;position:relative;background:linear-gradient(180deg,var(--indigo) 0%,var(--indigo) 30%,var(--hero-end) 100%)}
 .hero h1{font-size:clamp(46px,14vw,96px);line-height:.92;letter-spacing:-.02em}
 .hero .promise{margin-top:16px;font-size:clamp(17px,4.6vw,20px);line-height:1.45;color:#e6e2ff;max-width:34ch}
 .actions{display:grid;gap:10px;margin-top:22px}
@@ -193,7 +194,6 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
   .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .hero .promise{max-width:30ch}
   .hero h1{font-size:clamp(64px,7.4vw,96px)}
-  .hero{background:radial-gradient(55% 80% at 76% 52%,#43398f 0%,rgba(67,57,143,0) 72%)}
   .window{margin-top:0}
   .pane{height:min(560px,64svh)}
   .seam{height:64px}
@@ -268,7 +268,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </section>
 
-  <div class="seam" style="--to:var(--mist)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
+  <div class="seam" style="--to:var(--mist);background:var(--hero-end)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 
   <section class="light block" id="services">
     <div class="wrap lightgrid">
