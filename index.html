@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ClearedCo Window Cleaning &amp; Pressure Washing · Canfield, Ohio</title>
+<meta name="description" content="Window cleaning and pressure washing in Boardman, Canfield and nearby. Free quotes from ClearedCo.">
+<meta name="theme-color" content="#2a2260">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ClearedCo Window Cleaning &amp; Pressure Washing">
+<meta property="og:description" content="Window cleaning and pressure washing in Boardman, Canfield and nearby. Free quotes.">
+<meta property="og:url" content="https://10elizabethbell.github.io/clearedCo/">
+<meta property="og:image" content="https://10elizabethbell.github.io/clearedCo/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f1a46'/%3E%3Cstop offset='1' stop-color='%236f64b8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='31' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='36' text-anchor='middle' fill='%23fff'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --indigo:#2a2260;      /* page ground, from the logo's deep end */
+  --indigo-2:#332a72;    /* second dark section */
+  --indigo-ink:#1f1a46;  /* text on light grounds */
+  --violet:#6f64b8;      /* the logo's light end */
+  --lavender:#c9c2ff;    /* primary button fill */
+  --lav-soft:#b4acdf;    /* secondary text on indigo */
+  --mist:#efedfa;        /* light section ground */
+  --mist-2:#e3e0f5;
+  --frame:#f6f5fc;       /* painted window frame */
+  --water:#3cc4dd;       /* form focus/hover accent (clear water) */
+  --muted:#4d4682;       /* secondary text on mist */
+  --r:14px;
+  --pad:20px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;font:400 17px/1.55 var(--font);color:#fff;background:var(--indigo);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--violet);color:#fff}
+:focus-visible{outline:3px solid var(--water);outline-offset:3px}
+h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:1;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.icon{width:1em;height:1em;flex:none}
+
+/* ---------- header ---------- */
+.hd{position:relative;z-index:20;background:var(--indigo)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.brand b{font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand small{display:block;font-size:11px;letter-spacing:.12em;color:var(--lav-soft);font-weight:700;margin-top:4px}
+.hd-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:16px;text-decoration:none;white-space:nowrap}
+.hd-contact .icon{width:20px;height:20px;color:var(--lavender)}
+.hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- hero ---------- */
+.hero{padding:22px 0 8px;position:relative}
+.hero h1{font-size:clamp(46px,14vw,104px);line-height:.92;letter-spacing:-.02em}
+.hero .promise{margin-top:16px;font-size:clamp(17px,4.6vw,20px);line-height:1.45;color:#e6e2ff;max-width:34ch}
+.actions{display:grid;gap:10px;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--lavender);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--lavender);color:var(--indigo-ink)}
+.btn-primary:hover{background:#fff;border-color:#fff}
+.btn-ghost{background:transparent;color:#fff}
+.btn-ghost:hover{background:rgba(201,194,255,.14)}
+
+/* the window: signature element */
+.window{position:relative;margin:26px -6px 0;border-radius:10px;background:var(--frame);padding:10px;box-shadow:0 18px 40px -14px rgba(0,0,0,.5),inset 0 -3px 0 rgba(31,26,70,.08)}
+.pane{position:relative;height:clamp(280px,46svh,380px);border-radius:3px;overflow:hidden;background:linear-gradient(#5a4ca6,#9a89cf 62%,#cfc2e8);touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+.pane:active{cursor:grabbing}
+.pane canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mullion-v,.mullion-h{position:absolute;background:var(--frame);pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.mullion-v{top:0;bottom:0;left:50%;width:9px;transform:translateX(-50%)}
+.mullion-h{left:0;right:0;top:46%;height:9px}
+.sill{position:absolute;left:-10px;right:-10px;bottom:-12px;height:14px;border-radius:4px;background:#fff;box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
+
+/* ---------- seams: moving water line between sections ---------- */
+.seam{display:block;height:44px;margin-top:-1px;position:relative}
+.seam svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.seam .fill{fill:var(--to)}
+.seam .line{fill:none;stroke:var(--line,rgba(255,255,255,.55));stroke-width:2;vector-effect:non-scaling-stroke}
+.seam .line2{fill:none;stroke:var(--line2,rgba(201,194,255,.35));stroke-width:1.5;vector-effect:non-scaling-stroke}
+
+/* ---------- light sections ---------- */
+.light{background:var(--mist);color:var(--indigo-ink)}
+.light h2{font-size:clamp(34px,9vw,56px)}
+section.block{padding:30px 0 52px}
+
+/* services: whole row is the link, only the arrow reacts */
+.services{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--mist-2)}
+.services li{border-bottom:1px solid var(--mist-2)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:8px 2px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.005em}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+.arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);color:var(--indigo-ink);flex:none;transition:background .2s,color .2s}
+.arrow .icon{width:18px;height:18px}
+.row:hover .arrow,.row:focus-visible .arrow{background:var(--violet);color:#fff}
+.row:focus-visible .arrow{outline:3px solid var(--violet);outline-offset:3px}
+
+.area{margin-top:44px}
+.area h2{font-size:clamp(28px,7vw,40px)}
+.area p{margin-top:12px;font-size:19px;font-weight:600}
+.area .base{font-size:16px;font-weight:500;color:var(--muted);margin-top:4px}
+
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:19px;background:var(--indigo);color:#fff}
+.steps b{display:block;font-size:20px;font-weight:800;line-height:1.25;margin-top:2px}
+.steps span{display:block;color:var(--muted);margin-top:3px}
+.how{margin-top:48px}
+.how h2{font-size:clamp(28px,7vw,40px)}
+
+/* ---------- proof ---------- */
+.proof{background:var(--indigo-2);padding:30px 0 56px}
+.proof h2{font-size:clamp(34px,9vw,56px)}
+.proofgrid{display:flex;flex-direction:column}
+.proofgrid .side{display:contents}
+.proofgrid h2{order:-1}
+.proof .window{margin:24px 0 12px}
+.proofgrid .fb{order:2}
+.photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
+.photo img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:18px;line-height:1.3;box-shadow:0 12px 28px -14px rgba(0,0,0,.55);transition:transform .15s}
+.fb .icon{width:30px;height:30px;color:#1877f2}
+.fb .go{margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
+.fb .go .icon{width:16px;height:16px;color:currentColor}
+.fb:hover .go{background:#1877f2;color:#fff}
+
+/* ---------- quote form ---------- */
+.quote h2{font-size:clamp(34px,9vw,56px)}
+form{margin-top:24px;display:grid;gap:22px;max-width:640px}
+label.f{display:grid;gap:8px;font-weight:800;font-size:17px}
+label.f > span{display:block}
+label.f em,.legend em{font-style:normal;font-weight:500;color:var(--muted);font-size:15px}
+input[type=text],input[type=tel],textarea{width:100%;font:500 17px/1.4 var(--font);color:var(--indigo-ink);background:#fff;border:2px solid var(--mist-2);border-radius:12px;padding:14px 14px;min-height:54px;transition:border-color .15s,box-shadow .15s}
+textarea{min-height:96px;resize:vertical}
+input:hover,textarea:hover{border-color:var(--water)}
+input:focus,textarea:focus{outline:none;border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.legend{font-weight:800;font-size:17px;padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip input{position:absolute;width:1px;height:1px;opacity:0}
+.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid var(--mist-2);font-weight:700;font-size:16px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.chip span::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid #a9a3d6;flex:none;transition:background .15s,border-color .15s}
+.chip:hover span{border-color:var(--water)}
+.chip input:focus-visible + span{border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
+.chip input:checked + span{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.chip input:checked + span::before{background:var(--lavender) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%231f1a46' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border-color:var(--lavender)}
+.chip input:checked:hover + span,.chip input:checked:focus-visible + span{border-color:var(--water)}
+.err{color:#b3243b;font-weight:700;font-size:15px;min-height:0}
+.err:empty{display:none}
+.send{margin-top:4px}
+.send .btn{width:100%;background:var(--indigo);border-color:var(--indigo);color:#fff}
+.send .btn:hover,.send .btn:focus-visible{border-color:var(--water);background:var(--indigo-2)}
+.send .btn:focus-visible{outline:3px solid var(--water);outline-offset:3px}
+.send p{margin-top:10px;font-size:15px;color:var(--muted);text-align:center}
+.done{margin-top:6px;padding:18px;border-radius:var(--r);background:#fff;border:2px solid var(--mist-2)}
+.done[hidden]{display:none}
+.done b{display:block;font-size:18px}
+.done p{margin-top:6px;color:var(--muted)}
+.done textarea{margin-top:12px;min-height:130px;font-size:16px;background:var(--mist)}
+.done .btns{display:grid;gap:10px;margin-top:12px}
+.done .btn-ghost{color:var(--indigo-ink);border-color:var(--indigo)}
+.done .btn-ghost:hover,.done .btn-ghost:focus-visible{border-color:var(--water);background:var(--mist)}
+
+/* ---------- footer ---------- */
+.ft{padding:30px 0 calc(40px + env(safe-area-inset-bottom))}
+.ft .brand img{width:56px;height:56px}
+.ft-name{margin-top:16px;font-weight:800;font-size:18px}
+.ft-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;color:var(--lav-soft)}
+.ft-list a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-weight:700;text-underline-offset:4px}
+.ft-list a .icon{width:20px;height:20px;color:var(--lavender)}
+.ft-small{margin-top:22px;font-size:14px;color:var(--lav-soft)}
+
+/* ---------- larger phones / tablets ---------- */
+@media (min-width:600px){
+  :root{--pad:32px}
+  .actions{grid-template-columns:auto auto;justify-content:start}
+  .window{margin-left:0;margin-right:0}
+  .done .btns{grid-template-columns:1fr 1fr}
+}
+/* ---------- desktop ---------- */
+@media (min-width:1024px){
+  body{font-size:18px}
+  .hd .wrap{height:76px}
+  .brand img{width:52px;height:52px}
+  .brand b{font-size:19px}
+  .hero{padding:40px 0 30px}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  .hero .promise{max-width:30ch}
+  .window{margin-top:0}
+  .pane{height:min(560px,64svh)}
+  .seam{height:64px}
+  section.block{padding:48px 0 84px}
+  .lightgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px}
+  .area,.how{margin-top:0}
+  .how{margin-top:56px}
+  .proof{padding:48px 0 90px}
+  .proofgrid{display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:64px;align-items:center}
+  .proofgrid .side{display:block}
+  .proofgrid .window{margin:0 0 12px}
+  .proof .side h2{font-size:clamp(44px,5vw,64px)}
+  .fb{margin-top:28px;max-width:440px}
+  .quotegrid{max-width:760px}
+  .quote form{margin-top:28px}
+  .ft .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.arrow,.fb{transition:none}}
+</style>
+</head>
+<body>
+<!--
+THESIS: A fogged dusk window you wipe clear with your finger, drops running down the glass. The page proves "Cleared" by letting the visitor do it; it refuses the stock pressure-washing hero (stock spray photo, badges, service grid).
+OWN-WORLD: Logo indigo (#2a2260) to violet (#6f64b8) ground; lavender-white painted window frames with mullions hold the scene and the work photo; condensation haze, beaded drops; moving water-line seams; heavy uppercase system type; clear-water cyan only on form focus.
+STORY: Homeowner sees a clean, local, careful company, wipes the glass, sees real work, sends a free-quote request in Messenger in under a minute.
+FIRST VIEWPORT: Phone: header (logo + name, Messenger link top-right), headline "See the difference.", one promise line, Free quote (filled) + See our work (outlined), then the framed fogged window filling the rest of the screen, wiping itself until touched.
+FORM: Candidate 5 of 7 (fogged window), seed c4f1c058.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2zm1 12.5l-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+</svg>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ClearedCo, back to top">
+      <img src="img/logo.webp" alt="" width="44" height="44">
+      <span><b>Cleared Co</b><small>Canfield, Ohio</small></span>
+    </a>
+    <a class="hd-contact" id="hdContact" href="https://m.me/61589631985029"><svg class="icon"><use href="#i-msg"/></svg><span>Message us</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>See the difference.</h1>
+        <p class="promise">Window cleaning and pressure washing, done like it's our own home. We don't pack up until you can see the difference.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#quote">Get a free quote</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+      </div>
+      <div class="window" aria-label="A fogged window. Drag your finger across it to wipe the glass clear.">
+        <div class="pane" id="pane">
+          <canvas id="glass" aria-hidden="true"></canvas>
+          <div class="mullion-v"></div><div class="mullion-h"></div>
+        </div>
+        <div class="sill"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" style="--to:var(--mist)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+
+  <section class="light block" id="services">
+    <div class="wrap lightgrid">
+      <div>
+        <h2>What we clean</h2>
+        <ul class="services">
+          <li><a class="row" href="#quote" data-service="Windows, inside">Windows, inside<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Windows, outside">Windows, outside<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="House washing">House washing<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Driveway">Driveways<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Deck">Decks<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Patio">Patios<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="row" href="#quote" data-service="Mold on wood">Mold &amp; buildup on wood<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="area">
+          <h2>Where we work</h2>
+          <p>Boardman, Canfield and nearby.</p>
+          <p class="base">Based in Canfield, Ohio.</p>
+        </div>
+        <div class="how">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><div><b>Message us</b><span>What needs cleaning, and where.</span></div></li>
+            <li><div><b>Free quote</b><span>We look it over and give you a price before any work starts.</span></div></li>
+            <li><div><b>We clean it</b><span>And we're not done until you can see the difference.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" style="--to:var(--indigo-2);background:var(--mist);--line:rgba(111,100,184,.55);--line2:rgba(111,100,184,.3)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+
+  <section class="proof" id="work">
+    <div class="wrap proofgrid">
+      <div class="window">
+        <div class="photo">
+          <img src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams, before cleaning, with a back lawn and trees beyond" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+          <span class="tag">Before</span>
+        </div>
+        <div class="sill"></div>
+      </div>
+      <div class="side">
+        <h2>Recent work</h2>
+        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see the after, and more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" style="--to:var(--mist);background:var(--indigo-2)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+
+  <section class="light block quote" id="quote">
+    <div class="wrap quotegrid">
+      <h2>Get your free quote</h2>
+      <form id="quoteForm" novalidate>
+        <label class="f"><span>Your name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <fieldset>
+          <legend class="legend">What needs cleaning?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="svc" value="Windows, inside"><span>Windows, inside</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="Windows, outside"><span>Windows, outside</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="House washing"><span>House washing</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="Driveway"><span>Driveway</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="Deck"><span>Deck</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="Patio"><span>Patio</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="Mold on wood"><span>Mold on wood</span></label>
+          </div>
+        </fieldset>
+        <label class="f"><span>Town or street <em>(optional)</em></span>
+          <input type="text" name="where" autocomplete="address-level2">
+        </label>
+        <label class="f"><span>Your phone <em>(optional)</em></span>
+          <input type="tel" name="phone" autocomplete="tel" inputmode="tel">
+        </label>
+        <label class="f"><span>Anything else? <em>(optional)</em></span>
+          <textarea name="notes" rows="3"></textarea>
+        </label>
+        <p class="err" id="formErr" role="alert"></p>
+        <div class="send">
+          <button class="btn" type="submit" id="sendBtn"><svg class="icon" style="width:22px;height:22px"><use href="#i-msg"/></svg><span id="sendLabel">Send in Messenger</span></button>
+          <p id="sendHint">Opens Messenger with your message filled in.</p>
+        </div>
+        <div class="done" id="done" hidden>
+          <b>Your message is ready.</b>
+          <p id="doneHint">If it isn't already in the chat, copy it and paste it in.</p>
+          <textarea id="doneMsg" readonly aria-label="Your quote message"></textarea>
+          <div class="btns">
+            <a class="btn btn-primary" id="doneOpen" href="https://m.me/61589631985029">Open Messenger</a>
+            <button class="btn btn-ghost" type="button" id="doneCopy">Copy message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="seam" style="--to:var(--indigo);background:var(--mist);--line:rgba(111,100,184,.55);--line2:rgba(111,100,184,.3)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line2"/><path class="line"/></svg></div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top" aria-label="ClearedCo, back to top"><img src="img/logo.webp" alt="ClearedCo logo" width="56" height="56" loading="lazy"></a>
+      <p class="ft-name">ClearedCo Window Cleaning &amp; Pressure Washing</p>
+      <ul class="ft-list">
+        <li>Cleared Co LLC · Canfield, Ohio</li>
+        <li id="ftPhone" hidden></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg>Facebook</a></li>
+      </ul>
+    </div>
+    <p class="ft-small">Free quotes in Boardman, Canfield and nearby.</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- business config: fill PHONE (10 digits) once the owner gives it ----------
+   With a phone: header shows the tap-to-call number, the form hands off by text message. */
+const CONFIG = {
+  PHONE: '',                       // e.g. '3305551234'
+  FB_ID: '61589631985029',
+  FB_URL: 'https://www.facebook.com/profile.php?id=61589631985029',
+  NAME: 'ClearedCo'
+};
+
+/* ---------- contact wiring ---------- */
+(function contact(){
+  const fmt = p => '(' + p.slice(0,3) + ') ' + p.slice(3,6) + '-' + p.slice(6);
+  if (CONFIG.PHONE) {
+    const hd = document.getElementById('hdContact');
+    hd.href = 'tel:+1' + CONFIG.PHONE;
+    hd.innerHTML = '<svg class="icon"><use href="#i-phone"/></svg><span>' + fmt(CONFIG.PHONE) + '</span>';
+    const ft = document.getElementById('ftPhone');
+    ft.hidden = false;
+    ft.innerHTML = '<a href="tel:+1' + CONFIG.PHONE + '"><svg class="icon"><use href="#i-phone"/></svg>' + fmt(CONFIG.PHONE) + '</a>';
+    document.getElementById('sendLabel').textContent = 'Text this to us';
+    document.getElementById('sendHint').textContent = 'Opens your texts with your message filled in.';
+  }
+})();
+
+/* ---------- service rows preselect the form ---------- */
+(function rows(){
+  document.querySelectorAll('.row[data-service]').forEach(a => a.addEventListener('click', () => {
+    const box = document.querySelector('.chip input[value="' + a.dataset.service + '"]');
+    if (box) box.checked = true;
+  }));
+})();
+
+/* ---------- quote form -> Messenger (or text once PHONE is set) ---------- */
+(function quote(){
+  const form = document.getElementById('quoteForm'), err = document.getElementById('formErr');
+  const done = document.getElementById('done'), msgBox = document.getElementById('doneMsg');
+  const open = document.getElementById('doneOpen'), copyBtn = document.getElementById('doneCopy');
+  function compose(){
+    const d = new FormData(form), svc = d.getAll('svc');
+    const lines = ['Hi ' + CONFIG.NAME + '! I\'d like a free quote.'];
+    if (svc.length) lines.push('For: ' + svc.join(', '));
+    if (d.get('where').trim()) lines.push('Where: ' + d.get('where').trim());
+    if (d.get('notes').trim()) lines.push(d.get('notes').trim());
+    lines.push('Name: ' + d.get('name').trim());
+    if (d.get('phone').trim()) lines.push('Phone: ' + d.get('phone').trim());
+    return lines.join('\n');
+  }
+  function copy(text){
+    try { if (navigator.clipboard) return navigator.clipboard.writeText(text).catch(() => {}); } catch (e) {}
+    return Promise.resolve();
+  }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = new FormData(form);
+    if (!d.get('name').trim()) { err.textContent = 'Please add your name so we know who to answer.'; form.name.focus(); return; }
+    if (!d.getAll('svc').length && !d.get('notes').trim()) { err.textContent = 'Pick what needs cleaning, or tell us in "Anything else?".'; return; }
+    err.textContent = '';
+    const text = compose(), enc = encodeURIComponent(text);
+    if (CONFIG.PHONE) { location.href = 'sms:+1' + CONFIG.PHONE + '?&body=' + enc; return; }
+    const link = 'https://m.me/' + CONFIG.FB_ID + '?text=' + enc;
+    msgBox.value = text; open.href = link; done.hidden = false;
+    copy(text).then(() => { location.href = link; });
+  });
+  copyBtn.addEventListener('click', () => {
+    msgBox.select();
+    copy(msgBox.value).then(() => { copyBtn.textContent = 'Copied'; setTimeout(() => copyBtn.textContent = 'Copy message', 1800); });
+    try { document.execCommand('copy'); } catch (e) {}
+  });
+})();
+
+/* ---------- shared animation loop ---------- */
+const Loop = (function(){
+  const jobs = new Set(); let raf = 0, last = 0;
+  function tick(t){
+    const dt = Math.min(0.05, (t - (last || t)) / 1000); last = t;
+    jobs.forEach(j => j.visible && j.step(t / 1000, dt));
+    raf = [...jobs].some(j => j.visible) ? requestAnimationFrame(tick) : 0;
+    if (!raf) last = 0;
+  }
+  return {
+    add(job){ jobs.add(job); },
+    wake(){ if (!raf) raf = requestAnimationFrame(tick); }
+  };
+})();
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- the fogged window ---------- */
+(function glass(){
+  const T = {
+    REGROW: 0.0032,      // fog returning per frame (higher = clean patch fogs over sooner)
+    BRUSH: 30,           // finger radius, css px
+    GHOST_IDLE: 4500,    // ms without touch before the window wipes itself again
+    GHOST_SPEED: 0.75,   // self-wipe speed
+    SPAWN: 0.9,          // running drops per second
+    MAX_RUNNERS: 9,
+    BEADS_DESKTOP: 90, BEADS_PHONE: 45,
+    DPR_CAP: 1.5
+  };
+  const pane = document.getElementById('pane'), cv = document.getElementById('glass');
+  const ctx = cv.getContext('2d');
+  const scene = document.createElement('canvas'), frost = document.createElement('canvas');
+  const mask = document.createElement('canvas'), comp = document.createElement('canvas');
+  const sx = scene.getContext('2d'), fx = frost.getContext('2d'), mx = mask.getContext('2d'), cx = comp.getContext('2d');
+  let W = 0, H = 0, dpr = 1, cssW = 0, cssH = 0, MS = 0.5;   // MS: fog mask resolution vs css px
+  let beads = [], runners = [], spawnAcc = 0;
+  const ptr = { down:false, x:0, y:0, px:null, py:null, cx:0, cy:0, vx:0, vy:0, lastInput:-1e9 };
+  const ghost = { x:null, y:null, t:0 };
+  let rnd = mulberry(7);
+
+  function mulberry(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+  // outside: a dusk yard in the logo's colors, drawn once per size
+  function drawScene(){
+    const w = W, h = H, s = dpr; rnd = mulberry(11);
+    const g = sx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, '#231c54'); g.addColorStop(.38, '#4a3e98'); g.addColorStop(.62, '#8f7cc8'); g.addColorStop(.74, '#e6a9a8'); g.addColorStop(.78, '#3a2f6e'); g.addColorStop(1, '#2a2258');
+    sx.fillStyle = g; sx.fillRect(0, 0, w, h);
+    // low sun glow
+    const sun = sx.createRadialGradient(w*.3, h*.74, 0, w*.3, h*.74, w*.5);
+    sun.addColorStop(0, 'rgba(255,206,170,.55)'); sun.addColorStop(1, 'rgba(255,206,170,0)');
+    sx.fillStyle = sun; sx.fillRect(0, 0, w, h);
+    // stars
+    for (let i = 0; i < 40; i++) { sx.fillStyle = 'rgba(255,255,255,' + (0.35 + rnd()*0.5) + ')'; sx.beginPath(); sx.arc(rnd()*w, rnd()*h*.35, (0.5 + rnd()*0.9)*s, 0, 7); sx.fill(); }
+    // tree line: organic, layered
+    const horizon = h*.75;
+    [['#3b3076', .02, 26], ['#2a2259', .0, 18]].forEach(([col, lift, amp], k) => {
+      sx.fillStyle = col; sx.beginPath(); sx.moveTo(0, h);
+      for (let x = 0; x <= w + 8*s; x += 4*s) {
+        const n = Math.sin(x/(23*s)+k*2)*.5 + Math.sin(x/(9*s)+k)*.3 + Math.sin(x/(4.3*s))*.2;
+        const crown = Math.max(0, Math.sin(x/(57*s)+k*1.7))*amp*1.6*s;
+        sx.lineTo(x, horizon - lift*h - (amp*s*(0.6+n*0.5)) - crown);
+      }
+      sx.lineTo(w, h); sx.closePath(); sx.fill();
+    });
+    // neighbour's house with lit windows
+    const hx = w*.62, hw = Math.min(w*.3, 190*s), hy = horizon - 8*s, hh = hw*.42;
+    sx.fillStyle = '#211a4d';
+    sx.beginPath(); sx.moveTo(hx - hw*.08, hy - hh); sx.lineTo(hx + hw*.5, hy - hh - hw*.3); sx.lineTo(hx + hw*1.08, hy - hh); sx.lineTo(hx + hw, hy - hh); sx.lineTo(hx + hw, h); sx.lineTo(hx, h); sx.lineTo(hx, hy - hh); sx.closePath(); sx.fill();
+    [[.14, .35], [.6, .35]].forEach(([fx0, fy0]) => {
+      const x = hx + hw*fx0, y = hy - hh + hh*fy0, ww = hw*.22, wh = hh*.42;
+      const glow = sx.createRadialGradient(x+ww/2, y+wh/2, 0, x+ww/2, y+wh/2, ww*1.6);
+      glow.addColorStop(0, 'rgba(255,196,110,.35)'); glow.addColorStop(1, 'rgba(255,196,110,0)');
+      sx.fillStyle = glow; sx.fillRect(x - ww, y - wh, ww*3, wh*3);
+      sx.fillStyle = '#ffcf85'; sx.fillRect(x, y, ww, wh);
+      sx.fillStyle = 'rgba(33,26,77,.8)'; sx.fillRect(x + ww/2 - s, y, 2*s, wh); sx.fillRect(x, y + wh/2 - s, ww, 2*s);
+    });
+    // lawn
+    const lawn = sx.createLinearGradient(0, horizon, 0, h);
+    lawn.addColorStop(0, '#2c2560'); lawn.addColorStop(1, '#1f1a46');
+    sx.fillStyle = lawn; sx.fillRect(0, hy + 2*s, w, h);
+  }
+  // inside of the fog: the scene softened + haze + condensation grain
+  function drawFrost(){
+    const tiny = document.createElement('canvas'); tiny.width = Math.max(8, W/14|0); tiny.height = Math.max(8, H/14|0);
+    const tx = tiny.getContext('2d'); tx.imageSmoothingQuality = 'high'; tx.drawImage(scene, 0, 0, tiny.width, tiny.height);
+    fx.imageSmoothingEnabled = true; fx.imageSmoothingQuality = 'high';
+    fx.drawImage(tiny, 0, 0, W, H);
+    fx.fillStyle = 'rgba(236,233,252,.66)'; fx.fillRect(0, 0, W, H);
+    const r2 = mulberry(5), n = (W*H)/(70*dpr*dpr);
+    for (let i = 0; i < n; i++) {
+      const x = r2()*W, y = r2()*H, r = (0.5 + r2()*r2()*1.9)*dpr;
+      fx.fillStyle = 'rgba(40,30,90,.10)'; fx.beginPath(); fx.arc(x + r*.35, y + r*.45, r, 0, 7); fx.fill();
+      fx.fillStyle = 'rgba(255,255,255,.30)'; fx.beginPath(); fx.arc(x, y, r*.8, 0, 7); fx.fill();
+    }
+  }
+  function makeBeads(){
+    beads = []; const n = cssW < 600 ? T.BEADS_PHONE : T.BEADS_DESKTOP;
+    for (let i = 0; i < n; i++) beads.push(bead(rnd()*cssW, rnd()*cssH));
+  }
+  function bead(x, y){ return { x, y, r: 1.6 + Math.random()*Math.random()*3.2 }; }
+
+  function resize(){
+    const r = pane.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
+    if (w === cssW && h === cssH) return;     // address bar slide: keep what was wiped
+    cssW = w; cssH = h; dpr = Math.min(T.DPR_CAP, window.devicePixelRatio || 1);
+    W = cv.width = scene.width = frost.width = comp.width = Math.round(w*dpr);
+    H = cv.height = scene.height = frost.height = comp.height = Math.round(h*dpr);
+    mask.width = Math.max(4, Math.round(w*MS)); mask.height = Math.max(4, Math.round(h*MS));
+    drawScene(); drawFrost();
+    mx.fillStyle = '#000'; mx.fillRect(0, 0, mask.width, mask.height);
+    makeBeads(); runners = [];
+    if (REDUCED) { wipeLine(cssW*.18, cssH*.5, cssW*.82, cssH*.42, 1); render(); }
+  }
+
+  // wipe the fog between two css-px points
+  function wipeLine(x0, y0, x1, y1, strength){
+    const rad = T.BRUSH*MS, dist = Math.hypot(x1-x0, y1-y0), steps = Math.max(1, Math.ceil(dist/(T.BRUSH*.35)));
+    mx.globalCompositeOperation = 'destination-out';
+    for (let i = 0; i <= steps; i++) {
+      const x = (x0 + (x1-x0)*i/steps)*MS, y = (y0 + (y1-y0)*i/steps)*MS;
+      const g = mx.createRadialGradient(x, y, 0, x, y, rad);
+      g.addColorStop(0, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(.6, 'rgba(0,0,0,' + strength*.85 + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      mx.fillStyle = g; mx.beginPath(); mx.arc(x, y, rad, 0, 7); mx.fill();
+    }
+    mx.globalCompositeOperation = 'source-over';
+    // water the finger pushes along: wipe up beads, sometimes drop a runner at the edge
+    for (let i = beads.length - 1; i >= 0; i--) { const b = beads[i]; if (Math.hypot(b.x - x1, b.y - y1) < T.BRUSH) beads.splice(i, 1); }
+    if (!REDUCED && dist > 2 && Math.random() < 0.05 && runners.length < T.MAX_RUNNERS) runners.push(runner(x1 + (Math.random()-.5)*T.BRUSH, y1 + T.BRUSH*.9, 3.2 + Math.random()*1.8));
+  }
+  function runner(x, y, r){ return { x, y, r, v: 0, hold: 0.2 + Math.random()*0.6, ph: Math.random()*6.28, lx: x, ly: y }; }
+
+  function stepDrops(t, dt){
+    spawnAcc += dt*T.SPAWN;
+    while (spawnAcc > 1) { spawnAcc -= 1; if (runners.length < T.MAX_RUNNERS) runners.push(runner(rnd()*cssW, rnd()*cssH*.45, 2.6 + rnd()*2.4)); }
+    // beads condense back slowly
+    const cap = cssW < 600 ? T.BEADS_PHONE : T.BEADS_DESKTOP;
+    if (beads.length < cap && Math.random() < dt*3) beads.push(bead(Math.random()*cssW, Math.random()*cssH));
+    mx.globalCompositeOperation = 'destination-out';
+    for (let i = runners.length - 1; i >= 0; i--) {
+      const d = runners[i];
+      if (d.hold > 0) { d.hold -= dt; d.v *= 0.8; }
+      else {
+        d.v = Math.min(d.v + dt*(40 + d.r*30), 30 + d.r*22);
+        if (Math.random() < dt*0.9) d.hold = 0.15 + Math.random()*0.7;   // stop-go, like real glass
+      }
+      d.y += d.v*dt;
+      d.x += Math.sin(t*2.3 + d.ph)*0.12 + Math.sin(t*0.7 + d.ph*2)*0.08;
+      // finger nudges drops it passes
+      const px = ptr.down ? ptr.cx : ghost.x, py = ptr.down ? ptr.cy : ghost.y;
+      if (px != null) { const dx = d.x - px, dy = d.y - py, dd = Math.hypot(dx, dy); if (dd < T.BRUSH*1.3 && dd > 0.1) { const f = (1 - dd/(T.BRUSH*1.3))*2.2; d.x += dx/dd*f + ptr.vx*0.02; d.y += dy/dd*f*0.5; } }
+      // absorb beads in the path, grow
+      for (let j = beads.length - 1; j >= 0; j--) { const b = beads[j]; if (Math.abs(b.x - d.x) < d.r + b.r && Math.abs(b.y - d.y) < d.r + b.r) { d.r = Math.min(7, Math.hypot(d.r, b.r*.6)); beads.splice(j, 1); } }
+      // the clear trail it leaves through the fog
+      const tr = d.r*0.75*MS;
+      mx.lineCap = 'round'; mx.lineWidth = tr*2; mx.strokeStyle = 'rgba(0,0,0,.55)';
+      mx.beginPath(); mx.moveTo(d.lx*MS, d.ly*MS); mx.lineTo(d.x*MS, d.y*MS); mx.stroke();
+      d.lx = d.x; d.ly = d.y;
+      if (d.y > cssH + 10) runners.splice(i, 1);
+    }
+    mx.globalCompositeOperation = 'source-over';
+  }
+
+  function drawDrop(x, y, r, stretch){
+    x *= dpr; y *= dpr; r *= dpr;
+    const ry = r*(1 + stretch);
+    const g = ctx.createRadialGradient(x - r*.25, y - ry*.3, r*.1, x, y, ry);
+    g.addColorStop(0, 'rgba(255,255,255,.22)'); g.addColorStop(.55, 'rgba(160,150,220,.10)'); g.addColorStop(.85, 'rgba(25,18,64,.38)'); g.addColorStop(1, 'rgba(25,18,64,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(x, y, r, ry, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.beginPath(); ctx.arc(x - r*.32, y - ry*.38, Math.max(.6*dpr, r*.24), 0, 7); ctx.fill();
+  }
+
+  function render(){
+    cx.globalCompositeOperation = 'source-over'; cx.clearRect(0, 0, W, H); cx.drawImage(frost, 0, 0);
+    cx.globalCompositeOperation = 'destination-in'; cx.imageSmoothingEnabled = true; cx.drawImage(mask, 0, 0, W, H);
+    ctx.drawImage(scene, 0, 0); ctx.drawImage(comp, 0, 0);
+    for (const b of beads) drawDrop(b.x, b.y, b.r, 0);
+    for (const d of runners) drawDrop(d.x, d.y, d.r, d.hold > 0 ? 0.05 : 0.35);
+  }
+
+  const job = { visible: true, step(t, dt){
+    // pointer: read the rect every frame so a scrolling page never misplaces the finger
+    const r = pane.getBoundingClientRect();
+    if (ptr.down) {
+      ptr.cx = ptr.x - r.left; ptr.cy = ptr.y - r.top;
+      if (ptr.px != null) { ptr.vx = (ptr.cx - ptr.px)/Math.max(dt, .001); ptr.vy = (ptr.cy - ptr.py)/Math.max(dt, .001); wipeLine(ptr.px, ptr.py, ptr.cx, ptr.cy, 1); }
+      ptr.px = ptr.cx; ptr.py = ptr.cy; ghost.x = null;
+    } else if (performance.now() - ptr.lastInput > T.GHOST_IDLE) {
+      // self-wipe: a hand making loose overlapping passes
+      ghost.t += dt*T.GHOST_SPEED;
+      const g = ghost.t, nx = cssW*(.5 + .36*Math.sin(g*1.3) + .06*Math.sin(g*3.1)), ny = cssH*(.48 + .3*Math.sin(g*2.1 + .8) + .05*Math.cos(g*4.3));
+      if (ghost.x != null) wipeLine(ghost.x, ghost.y, nx, ny, .9);
+      ghost.x = nx; ghost.y = ny;
+    } else ghost.x = null;
+    mx.fillStyle = 'rgba(0,0,0,' + T.REGROW + ')'; mx.fillRect(0, 0, mask.width, mask.height);
+    stepDrops(t, dt);
+    render();
+  }};
+
+  // input: pointer (mouse, pen, touch); touch-action:none on the pane so every direction wipes
+  pane.addEventListener('pointerdown', e => {
+    ptr.down = true; ptr.x = e.clientX; ptr.y = e.clientY; ptr.px = null; ptr.lastInput = performance.now();
+    try { pane.setPointerCapture(e.pointerId); } catch (_) {}
+    e.preventDefault(); Loop.wake();
+  });
+  pane.addEventListener('pointermove', e => {
+    ptr.x = e.clientX; ptr.y = e.clientY; ptr.lastInput = performance.now();
+    if (e.pointerType === 'mouse' && !ptr.down) { // desktop: hovering wipes too
+      const r = pane.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      if (ptr.hx != null) wipeLine(ptr.hx, ptr.hy, x, y, .9);
+      ptr.hx = x; ptr.hy = y; ptr.cx = x; ptr.cy = y; ghost.x = null;
+    }
+  });
+  pane.addEventListener('pointerleave', () => { ptr.hx = null; });
+  const up = () => { ptr.down = false; ptr.px = null; ptr.lastInput = performance.now(); };
+  pane.addEventListener('pointerup', up); pane.addEventListener('pointercancel', up);
+  pane.addEventListener('touchmove', e => { const t = e.touches[0]; if (t) { ptr.x = t.clientX; ptr.y = t.clientY; } }, { passive: true });
+
+  resize();
+  addEventListener('resize', () => { resize(); if (REDUCED) render(); });
+  if (REDUCED) {
+    // still frame; wiping still works on demand
+    pane.addEventListener('pointermove', () => {
+      if (!ptr.down) return;
+      const r = pane.getBoundingClientRect(), x = ptr.x - r.left, y = ptr.y - r.top;
+      if (ptr.px != null) wipeLine(ptr.px, ptr.py, x, y, 1);
+      ptr.px = x; ptr.py = y; render();
+    });
+    return;
+  }
+  Loop.add(job);
+  new IntersectionObserver(es => { job.visible = es[0].isIntersecting; if (job.visible) Loop.wake(); }).observe(pane);
+  Loop.wake();
+})();
+
+/* ---------- seams: water line between sections ---------- */
+(function seams(){
+  const S = { SPEED: 1.1, AMP: 9 };            // swell speed and height (viewBox units)
+  const list = [...document.querySelectorAll('.seam')].map((el, i) => ({ el, i, fill: el.querySelector('.fill'), a: el.querySelector('.line'), b: el.querySelector('.line2'), visible: true }));
+  function y(x, t, k, off){
+    return 30 + off + S.AMP*(Math.sin(x/210 + t*S.SPEED + k) *.55 + Math.sin(x/97 - t*S.SPEED*1.7 + k*2)*.3 + Math.sin(x/43 + t*S.SPEED*2.6)*.15);
+  }
+  function d(t, k, off){ let s = ''; for (let x = 0; x <= 1440; x += 20) s += (x ? 'L' : 'M') + x + ' ' + y(x, t, k, off).toFixed(1); return s; }
+  function draw(s, t){
+    const main = d(t, s.i*1.9, 0);
+    s.a.setAttribute('d', main);
+    s.b.setAttribute('d', d(t*0.8, s.i*1.9 + 1.2, -8));
+    s.fill.setAttribute('d', main + 'L1440 60L0 60Z');
+  }
+  list.forEach(s => draw(s, 0));
+  if (REDUCED) return;
+  const io = new IntersectionObserver(es => es.forEach(e => { const s = list.find(s => s.el === e.target); s.visible = e.isIntersecting; if (s.visible) Loop.wake(); }));
+  list.forEach(s => { io.observe(s.el); Loop.add({ get visible(){ return s.visible; }, step(t){ draw(s, t); } }); });
+})();
+</script>
+</body>
+</html>

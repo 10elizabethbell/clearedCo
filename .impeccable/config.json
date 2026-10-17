@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-17T23:44:45.816Z",
+        "reason": "builder: .pane and .photo intentionally clip their own canvas, mullions and tag; no popovers live inside"
+      }
+    ]
+  }
+}
