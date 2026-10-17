@@ -51,8 +51,8 @@ p{margin:0}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
 .brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .brand b{font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.brand small{display:block;font-size:11px;letter-spacing:.12em;color:var(--lav-soft);font-weight:700;margin-top:4px}
-.hd-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:16px;text-decoration:none;white-space:nowrap}
+.brand small{display:block;font-size:13px;letter-spacing:.06em;color:var(--lav-soft);font-weight:700;margin-top:4px}
+.hd-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:17px;text-decoration:none;white-space:nowrap}
 .hd-contact .icon{width:20px;height:20px;color:var(--lavender)}
 .hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
 
@@ -102,13 +102,13 @@ section.block{padding:30px 0 52px}
 
 .area{margin-top:44px}
 .area h2{font-size:clamp(28px,7vw,40px)}
-.area p{margin-top:12px;font-size:19px;font-weight:600}
-.area .base{font-size:16px;font-weight:500;color:var(--muted);margin-top:4px}
+.area p{margin-top:12px;font-size:20px;font-weight:600}
+.area .base{font-size:17px;font-weight:500;color:var(--muted);margin-top:4px}
 
 .steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:s}
-.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:19px;background:var(--indigo);color:#fff}
-.steps b{display:block;font-size:20px;font-weight:800;line-height:1.25;margin-top:2px}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;background:var(--indigo);color:#fff}
+.steps b{display:block;font-size:20px;font-weight:800;line-height:1.35;margin-top:2px}
 .steps span{display:block;color:var(--muted);margin-top:3px}
 .how{margin-top:48px}
 .how h2{font-size:clamp(28px,7vw,40px)}
@@ -124,7 +124,7 @@ section.block{padding:30px 0 52px}
 .photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
 .photo img{width:100%;height:100%;object-fit:cover}
 .tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:18px;line-height:1.3;box-shadow:0 12px 28px -14px rgba(0,0,0,.55);transition:transform .15s}
+.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:20px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55);transition:transform .15s}
 .fb .icon{width:30px;height:30px;color:#1877f2}
 .fb .go{margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
 .fb .go .icon{width:16px;height:16px;color:currentColor}
@@ -144,7 +144,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .legend{font-weight:800;font-size:17px;padding:0;margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip input{position:absolute;width:1px;height:1px;opacity:0}
-.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid var(--mist-2);font-weight:700;font-size:16px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid var(--mist-2);font-weight:700;font-size:17px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
 .chip span::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid #a9a3d6;flex:none;transition:background .15s,border-color .15s}
 .chip:hover span{border-color:var(--water)}
 .chip input:focus-visible + span{border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
@@ -160,9 +160,9 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .send p{margin-top:10px;font-size:15px;color:var(--muted);text-align:center}
 .done{margin-top:6px;padding:18px;border-radius:var(--r);background:#fff;border:2px solid var(--mist-2)}
 .done[hidden]{display:none}
-.done b{display:block;font-size:18px}
+.done b{display:block;font-size:20px}
 .done p{margin-top:6px;color:var(--muted)}
-.done textarea{margin-top:12px;min-height:130px;font-size:16px;background:var(--mist)}
+.done textarea{margin-top:12px;min-height:130px;font-size:17px;background:var(--mist)}
 .done .btns{display:grid;gap:10px;margin-top:12px}
 .done .btn-ghost{color:var(--indigo-ink);border-color:var(--indigo)}
 .done .btn-ghost:hover,.done .btn-ghost:focus-visible{border-color:var(--water);background:var(--mist)}
@@ -170,11 +170,11 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 /* ---------- footer ---------- */
 .ft{padding:30px 0 calc(40px + env(safe-area-inset-bottom))}
 .ft .brand img{width:56px;height:56px}
-.ft-name{margin-top:16px;font-weight:800;font-size:18px}
+.ft-name{margin-top:16px;font-weight:800;font-size:20px}
 .ft-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;color:var(--lav-soft)}
 .ft-list a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-weight:700;text-underline-offset:4px}
 .ft-list a .icon{width:20px;height:20px;color:var(--lavender)}
-.ft-small{margin-top:22px;font-size:14px;color:var(--lav-soft)}
+.ft-small{margin-top:22px;font-size:15px;color:var(--lav-soft)}
 
 /* ---------- larger phones / tablets ---------- */
 @media (min-width:600px){
@@ -185,10 +185,9 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 }
 /* ---------- desktop ---------- */
 @media (min-width:1024px){
-  body{font-size:18px}
   .hd .wrap{height:76px}
   .brand img{width:52px;height:52px}
-  .brand b{font-size:19px}
+  .brand b{font-size:20px}
   .hero{padding:40px 0 30px}
   .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .hero .promise{max-width:30ch}
