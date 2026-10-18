@@ -38,6 +38,69 @@
         ],
         "createdAt": "2026-10-17T23:50:45.737Z",
         "reason": "builder: body steps are 13/17/22px (~1.3x each); display headings are clamp() 34-104px, which the detector doesn't count"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(138, 122, 92)",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.526Z",
+        "reason": "builder: .photo loading placeholder under the work photo, never seen once loaded"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#9a89cf",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.619Z",
+        "reason": "builder: .pane pre-JS fallback gradient under the canvas"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.688Z",
+        "reason": "builder: brand subline and Before tag, recorded as exceptions in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "20px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.760Z",
+        "reason": "Ellie's house style (ellie-taste.md): one-line pitch under the headline capped at 20px"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "4px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.831Z",
+        "reason": "builder: checkbox square inside form chips"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "64px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.904Z",
+        "reason": "builder: desktop fluid endpoints of the documented display/headline clamps"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "44px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T00:07:06.978Z",
+        "reason": "builder: desktop fluid endpoint of the Recent work headline clamp"
       }
     ]
   }
