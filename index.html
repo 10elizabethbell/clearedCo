@@ -61,6 +61,8 @@ p{margin:0}
 .hero{padding:22px 0 8px;position:relative;isolation:isolate;background:linear-gradient(180deg,var(--violet) 0%,var(--indigo-2) 70%,var(--hero-end) 100%)}
 /* soap streaks on glass, painted once by the suds IIFE; fades out before the seam */
 .suds{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero h1,.hero .promise,.hero .btn-ghost{text-shadow:0 1px 4px rgba(0,0,0,.55)}
+.hero .btn-ghost{background:rgba(31,26,70,.55)}
 .hero h1{font-size:clamp(46px,14vw,96px);line-height:.92;letter-spacing:-.02em}
 .hero .promise{margin-top:16px;font-size:clamp(17px,4.6vw,20px);line-height:1.45;color:#fff;max-width:34ch}
 .actions{display:grid;gap:10px;margin-top:22px}
@@ -117,11 +119,8 @@ section.block{padding:30px 0 52px}
 /* ---------- proof ---------- */
 .proof{background:var(--indigo-2);padding:30px 0 56px}
 .proof h2{font-size:clamp(34px,9vw,56px)}
-.proofgrid{display:flex;flex-direction:column}
-.proofgrid .side{display:contents}
-.proofgrid h2{order:-1}
-.proof .window{margin:24px -4px 4px}
-.proofgrid .fb{order:2}
+.pairs{display:grid;gap:22px;margin-top:24px}
+.proof .window{margin:0 -4px}
 .photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
 .photo img{width:100%;height:100%;object-fit:cover}
 .tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
@@ -214,10 +213,11 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
   .area,.how{margin-top:0}
   .how{margin-top:56px}
   .proof{padding:48px 0 90px}
-  .proofgrid{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:72px;align-items:center}
-  .proofgrid .side{display:block}
-  .proofgrid .window{margin:0}
-  .proof .side h2{font-size:clamp(44px,5vw,64px)}
+  .proof h2{font-size:clamp(44px,5vw,64px)}
+  /* the tall garage pair beside the two square-ish ones; 1.4:1 makes the columns end level */
+  .pairs{grid-template-columns:1.4fr 1fr;gap:28px 40px;margin-top:36px;align-items:start}
+  .pairs .window:first-child{grid-row:span 2}
+  .proof .window{margin:0}
   .fb{margin-top:28px;max-width:460px;font-size:22px}
   .quote form{margin-top:28px}
   .ft .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
@@ -316,21 +316,41 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="seam" style="--to:var(--indigo-2);background:var(--mist);--line:rgba(111,100,184,.55)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
 
   <section class="proof" id="work">
-    <div class="wrap proofgrid">
-      <div class="window">
-        <div class="photo ba" id="ba" style="--x:50%">
-          <img src="img/after-porch-ceiling.webp" alt="The same porch ceiling after cleaning: bright, even wood with the mold gone" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-          <img class="ba-before" src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams before cleaning, grey and blotched with mold" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-          <span class="tag">Before</span><span class="tag tag-r">After</span>
-          <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
-          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after. Slide to compare.">
+    <div class="wrap">
+      <h2>Recent work</h2>
+      <div class="pairs">
+        <div class="window">
+          <div class="photo ba" style="--x:50%;aspect-ratio:586/960">
+            <img src="img/after-garage-drive.webp" alt="The same driveway after washing: even, pale concrete all the way to the garage" width="586" height="960" loading="lazy" decoding="async" draggable="false">
+            <img class="ba-before" src="img/before-garage-drive.webp" alt="A grey concrete driveway up to a garage, mid-wash, with a muddy rinse trail running down it" width="586" height="960" loading="lazy" decoding="async" draggable="false">
+            <span class="tag">Before</span><span class="tag tag-r">After</span>
+            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Driveway to a garage, before and after. Slide to compare.">
+          </div>
+          <canvas class="frame" aria-hidden="true"></canvas>
         </div>
-        <canvas class="frame" aria-hidden="true"></canvas>
+        <div class="window">
+          <div class="photo ba" style="--x:50%;aspect-ratio:695/760">
+            <img src="img/after-porch-ceiling.webp" alt="The same porch ceiling after cleaning: bright, even wood with the mold gone" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+            <img class="ba-before" src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams before cleaning, grey and blotched with mold" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+            <span class="tag">Before</span><span class="tag tag-r">After</span>
+            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Porch ceiling, before and after. Slide to compare.">
+          </div>
+          <canvas class="frame" aria-hidden="true"></canvas>
+        </div>
+        <div class="window">
+          <div class="photo ba" style="--x:50%;aspect-ratio:695/760">
+            <img src="img/after-driveway.webp" alt="The same driveway after washing: clean, light concrete with crisp joints" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+            <img class="ba-before" src="img/before-driveway.webp" alt="A concrete driveway before washing, grey and patchy with leaves on it" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+            <span class="tag">Before</span><span class="tag tag-r">After</span>
+            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Front driveway, before and after. Slide to compare.">
+          </div>
+          <canvas class="frame" aria-hidden="true"></canvas>
+        </div>
       </div>
-      <div class="side">
-        <h2>Recent work</h2>
-        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
-      </div>
+      <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
     </div>
   </section>
 
@@ -434,8 +454,7 @@ const CONFIG = {
 })();
 
 /* ---------- before/after slider: drag or tap anywhere on the photo; arrow keys via the hidden range ---------- */
-(function beforeAfter(){
-  const box = document.getElementById('ba'); if (!box) return;
+document.querySelectorAll('.ba').forEach(function beforeAfter(box){
   const range = box.querySelector('.ba-range');
   let x = 50, hinted = false, anim = 0;
   function set(v){ x = Math.max(0, Math.min(100, v)); box.style.setProperty('--x', x + '%'); range.value = Math.round(x); }
@@ -471,7 +490,7 @@ const CONFIG = {
     })(t0);
   }, { threshold: .6 });
   io.observe(box);
-})();
+});
 
 /* ---------- quote form -> Messenger (or text once PHONE is set) ---------- */
 (function quote(){
@@ -531,7 +550,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- soap streaks behind the hero: arcs of sponge-wiped suds, white on purple ---------- */
 (function suds(){
-  const U = { SWATH_MIN: 110, SWATH_MAX: 260, GAP: 2.4, BOW: 120, FOAM: .42, FADE: 90 };   // FOAM = brightest streak alpha, FADE = px fade at the bottom
+  const U = { SWATH_MIN: 110, SWATH_MAX: 260, GAP: 2.4, BOW: 120, FOAM: .78, FADE: 90 };   // FOAM = brightest streak alpha, FADE = px fade at the bottom
   const cv = document.querySelector('.suds'); if (!cv) return;
   const c = cv.getContext('2d');
   let lastW = 0;
@@ -552,7 +571,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const n = Math.floor(w / (U.GAP * (.6 + .4 * k0)));
       for (let k = 0; k < n; k++){
         const e = Math.abs(k / n - .5) * 2;                    // 0 middle of swath, 1 at its edges
-        const a = U.FOAM * (.14 + .86 * Math.pow(e, 3)) * (.35 + r() * .65);
+        const a = U.FOAM * (.24 + .76 * Math.pow(e, 2.4)) * (.35 + r() * .65);
         const f1 = .6 + r() * 2.2, f2 = 3 + r() * 7, p1 = r() * 6, p2 = r() * 6, th = -.15 - e * .5 + r() * .45;
         c.strokeStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
         c.lineWidth = 1 + r() * (e > .75 ? 2.4 : 1.6);

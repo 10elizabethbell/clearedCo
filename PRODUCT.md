@@ -10,7 +10,7 @@
 - Services: interior windows, exterior windows, driveways, decks, patios, house washing; mold and buildup removal from wood (group post 2026-10-17).
 - Offer: free quotes ("Contact ClearedCo ... for a free quote!").
 - Contact: Facebook only. No phone, email, address, hours, owner name, reviews or prices published anywhere Muse or the builder could find.
-- Proof: one before/after pair of a wood porch ceiling (frames of the video post; the after supplied by Ellie 2026-10-18).
+- Proof: three before/after pairs: wood porch ceiling, a driveway to a garage, a front driveway (supplied by Ellie 2026-10-18).
 - Tone on social: casual, plain-spoken: "What a difference! Removing mold and buildup from wood can make a huge difference."
 
 ## Users
@@ -35,7 +35,7 @@ A new, local, hands-on window and exterior cleaning company. The name is the pro
 
 ## Evidence on hand
 - Logo (Facebook profile image, 720px).
-- One before/after pair (video frames, porch ceiling).
+- Three before/after pairs (porch ceiling, two driveways).
 
 ## Principles
 - Only real facts; gaps go in HANDOFF.md.

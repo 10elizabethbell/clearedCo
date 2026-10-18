@@ -6,12 +6,12 @@
 - One page, phone first: header (logo + "Cleared Co / Canfield, Ohio", **Message us** top-right), hero, What we clean, Where we work, How it works, Recent work, free-quote form, footer.
 - World: the logo's indigo-to-violet as the ground, lavender-white painted window frames, heavy uppercase system type.
 - Signature: the hero is a **fogged dusk window** (canvas). It wipes itself in loose passes until touched; a finger or mouse wipes it clear in any direction (vertical drags wipe instead of scrolling); the fog creeps back; drops run down in stop-go jerks, leave clear trails, soak up beads, and get nudged by the finger. Tunables are in `T` at the top of the `glass` IIFE (`REGROW`, `BRUSH`, `GHOST_IDLE`, `SPAWN`...).
-- Hero background: **soap streaks on glass** (sponge-wiped suds, white on the brand purple), painted once on a canvas by the `suds` IIFE, tunables in `U`. Ellie asked for a watermarked Dreamstime stock photo; it can't be published unlicensed, so this is drawn in code instead. If Ellie licenses it, it can go in as a CSS background instead.
+- Hero background: **soap streaks on glass** (sponge-wiped suds, white streaks over a purple ground), painted once on a canvas by the `suds` IIFE, tunables in `U`. Ellie asked for a watermarked Dreamstime stock photo; it can't be published unlicensed, so this is drawn in code instead. If Ellie licenses it, it can go in as a CSS background instead.
 - Moving water-line seams between sections (`S.SPEED`, `S.AMP` in `seams`).
 - Contact: **no phone exists**, so everything goes to Messenger (`m.me/61589631985029`). The form builds a pre-written message, copies it, and opens Messenger with `?text=`; if that doesn't fill in, the message stays on the page with Copy / Open Messenger.
 - **One-line switch:** set `CONFIG.PHONE = '3305551234'` and the header becomes the tap-to-call number, the footer shows it, and the form sends by text (`sms:`) instead.
 - Service rows link to the form and tick that service.
-- Recent work is a **before/after slider** in a painted frame (porch ceiling). Drag or tap anywhere on the photo; arrow keys work via a hidden range input. On touch only a sideways drag or a tap moves it, so a scroll starting on the photo still scrolls. It sweeps once (50→74→30→50%) the first time it comes into view; no sweep with reduced motion.
+- Recent work is **three before/after sliders** in painted frames (driveway to a garage, porch ceiling, front driveway); phone stacks them, desktop puts the tall garage one beside the other two. Drag or tap anywhere on the photo; arrow keys work via a hidden range input. On touch only a sideways drag or a tap moves it, so a scroll starting on the photo still scrolls. It sweeps once (50→74→30→50%) the first time it comes into view; no sweep with reduced motion.
 
 ## Assumptions I made
 - **Area:** Boardman and Canfield, from the Facebook page meta ("Cleared Co LLC | Canfield OH", "Professional pressure washing services in Boardman, OH"). Muse missed these; the Essex County group is unrelated to the area. "and nearby" is my inference.
@@ -26,7 +26,7 @@
 ## Placeholders and gaps
 - **Phone: none published anywhere.** This is the biggest gap. Messenger stands in for now; `CONFIG.PHONE` is ready.
 - Email: none. The footer has no email line; add one there (and only there) once known.
-- **Only one before/after pair** (porch ceiling, from the video post; the after was supplied by Ellie 2026-10-18). The two frames were shot from slightly different angles, so the beams don't line up exactly at the divider; a matched pair from the owner would fix that. Original video: https://www.facebook.com/groups/1043573412799214/posts/2504644293358778/
+- **Three before/after pairs** (porch ceiling from the video post; the two driveways and the porch after supplied by Ellie 2026-10-18). Stickers cropped off; the front-driveway crop also cuts the parked pickup so no plate shows. The porch pair was shot from slightly different angles, so the beams don't line up exactly at the divider. Original video: https://www.facebook.com/groups/1043573412799214/posts/2504644293358778/
 - No reviews, prices, hours, owner name, insurance, years. None are on the page.
 - Page timeline is closed to fetches (403); no more photos without the owner.
 
