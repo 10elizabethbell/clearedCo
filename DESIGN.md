@@ -308,3 +308,6 @@ Change behavior through these, not by editing the drawing code, so the pieces st
 - **Don't** use black or neutral grey grounds or shadows inside the window world.
 - **Don't** use Facebook blue outside the Facebook link.
 - **Don't** add small uppercase tracked labels above headings; the 13px uppercase style belongs only to the tag on a photo.
+
+## Hero background (added 2026-10-18)
+The hero ground is a vertical ramp `--violet` → `--indigo-2` (70%) → `--hero-end`, with soap streaks painted over it on `canvas.suds` (z-index -1, static, repainted only on a real resize). Streaks are white, in overlapping swaths 110–260px wide (scaled down to 0.5x on phones), bowed like sponge wipes, brightest at the swath edges (`FOAM` .42), and drawn in arm's-length bands so a tall phone hero gets several rows of wipes. They fade out over the last 90px so the hero meets the seam on flat `--hero-end`. Hero promise text is pure white (needed for contrast on violet).
