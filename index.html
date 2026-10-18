@@ -139,14 +139,16 @@ section.block{padding:30px 0 52px}
 /* pane-by-pane clearing: a CSS grid of fogged panes over a photo or heading. Each pane drains in a
    diagonal wave (delay from its row + column), then the grid gap closes and the glazing bars vanish. */
 .panes{position:absolute;inset:0;z-index:4;display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:repeat(var(--rows),1fr);
-  gap:var(--bar);pointer-events:none;transition:gap .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+  gap:var(--bar);pointer-events:none;transition:gap .35s ease}
 /* each cell's outline fills half the gap on every side, so the gaps read as painted glazing bars */
-.panes i{position:relative;outline:calc(var(--bar) / 2) solid var(--bar-c);transition:outline-width .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+.panes i{position:relative;outline:calc(var(--bar) / 2) solid var(--bar-c);transition:outline-width .35s ease}
+/* fogging back over (scrolling up): bars return first, then panes grow up from the sill in the reverse wave */
 .panes i::before{content:"";position:absolute;inset:0;background:var(--pane);box-shadow:inset 0 -3px 0 rgba(255,255,255,.7);transform-origin:50% 100%;
-  transition:transform .55s cubic-bezier(.55,0,.8,.2) var(--d),opacity .3s ease calc(var(--d) + .3s)}
-.panes.clear{gap:0}
-.panes.clear i{outline-width:0}
-.panes.clear i::before{transform:scaleY(0);opacity:0}
+  transition:transform .45s cubic-bezier(.2,.8,.45,1) calc(var(--dr) + .2s),opacity .2s ease calc(var(--dr) + .2s)}
+/* clearing (scrolling down): panes drain in a diagonal wave, then the bars close up */
+.panes.clear{gap:0;transition:gap .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+.panes.clear i{outline-width:0;transition:outline-width .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+.panes.clear i::before{transform:scaleY(0);opacity:0;transition:transform .55s cubic-bezier(.55,0,.8,.2) var(--d),opacity .3s ease calc(var(--d) + .3s)}
 .proof .photo .panes i::before{background:linear-gradient(170deg,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),var(--pane)}
 h2.paned{position:relative}
 .fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:17px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)}
@@ -576,7 +578,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- pane-by-pane clearing on the work photos and section headings (CSS grid does the layout and the bars) ---------- */
 (function panes(){
-  const P = { PHOTO_CELL: 84, HEAD_CELL: 46, STEP: 55, DRAIN: 550, BAR_PHOTO: 6, BAR_HEAD: 0 };   // STEP = ms between diagonals
+  const P = { PHOTO_CELL: 84, HEAD_CELL: 46, STEP: 55, BACK: .5, DRAIN: 550, BAR_PHOTO: 6, BAR_HEAD: 0, LINE: 15 };   // STEP = ms between diagonals, BACK = speed of the fog-back wave relative to it, LINE = % up from the bottom of the screen where it clears/fogs
   if (REDUCED || !('IntersectionObserver' in window)) return;
   function bg(el){ for (; el; el = el.parentElement){ const c = getComputedStyle(el).backgroundColor; if (c && !/rgba\(.*, 0\)|transparent/.test(c)) return c; } return 'var(--mist)'; }
   function cover(host, cell, bar, barC, pane){
@@ -585,16 +587,24 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const g = document.createElement('div'); g.className = 'panes'; g.setAttribute('aria-hidden', 'true');
     const total = (cols + rows - 2) * P.STEP + P.DRAIN;
     g.style.cssText = `--cols:${cols};--rows:${rows};--bar:${bar}px;--bar-c:${barC};--pane:${pane};--settle:${total - 150}ms`;
-    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++){ const i = document.createElement('i'); i.style.setProperty('--d', (x + y) * P.STEP + 'ms'); g.append(i); }
+    const last = cols + rows - 2;
+    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++){ const i = document.createElement('i'); i.style.setProperty('--d', (x + y) * P.STEP + 'ms'); i.style.setProperty('--dr', (last - x - y) * P.STEP * P.BACK + 'ms'); g.append(i); }
     host.append(g); host.dataset.wait = total + 350;
-    const io = new IntersectionObserver(es => {
-      if (!es[0].isIntersecting) return;
-      io.disconnect();
-      requestAnimationFrame(() => g.classList.add('clear'));
-      setTimeout(() => g.remove(), total + 700);
-    }, { threshold: .35 });
-    io.observe(host);
+    // clear once its top rises past the line; fog back over when it sinks below it again (scrolling up).
+    // Anything above the screen counts as clear, so a fling or an anchor jump past it doesn't leave it fogged.
+    new IntersectionObserver(es => {
+      const e = es[0];
+      if (e.isIntersecting || e.boundingClientRect.bottom < 0) requestAnimationFrame(() => g.classList.add('clear'));
+      else g.classList.remove('clear');
+    }, { rootMargin: `0px 0px -${P.LINE}% 0px` }).observe(host);
+    all.push(g);
   }
+  // the observer never fires for a jump from below the screen straight to above it, so check those on scroll
+  const all = []; let tick = 0;
+  addEventListener('scroll', () => { if (tick) return; tick = requestAnimationFrame(() => {
+    tick = 0;
+    all.forEach(g => { if (!g.classList.contains('clear') && g.parentElement.getBoundingClientRect().bottom < 0) g.classList.add('clear'); });
+  }); }, { passive: true });
   document.querySelectorAll('.proof .photo').forEach(h => cover(h, P.PHOTO_CELL, P.BAR_PHOTO, 'var(--frame)', 'var(--lav-soft)'));
   document.querySelectorAll('main h2').forEach(h => { h.classList.add('paned'); const c = bg(h); cover(h, P.HEAD_CELL, P.BAR_HEAD, 'var(--lav-soft)', c); });
 })();
