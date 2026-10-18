@@ -10,6 +10,7 @@
 - Contact: **no phone exists**, so everything goes to Messenger (`m.me/61589631985029`). The form builds a pre-written message, copies it, and opens Messenger with `?text=`; if that doesn't fill in, the message stays on the page with Copy / Open Messenger.
 - **One-line switch:** set `CONFIG.PHONE = '3305551234'` and the header becomes the tap-to-call number, the footer shows it, and the form sends by text (`sms:`) instead.
 - Service rows link to the form and tick that service.
+- Recent work is a **before/after slider** in a painted frame (porch ceiling). Drag or tap anywhere on the photo; arrow keys work via a hidden range input. On touch only a sideways drag or a tap moves it, so a scroll starting on the photo still scrolls. It sweeps once (50→74→30→50%) the first time it comes into view; no sweep with reduced motion.
 
 ## Assumptions I made
 - **Area:** Boardman and Canfield, from the Facebook page meta ("Cleared Co LLC | Canfield OH", "Professional pressure washing services in Boardman, OH"). Muse missed these; the Essex County group is unrelated to the area. "and nearby" is my inference.
@@ -24,14 +25,14 @@
 ## Placeholders and gaps
 - **Phone: none published anywhere.** This is the biggest gap. Messenger stands in for now; `CONFIG.PHONE` is ready.
 - Email: none. The footer has no email line; add one there (and only there) once known.
-- **Only one photo, and it's a BEFORE frame** (video thumbnail from the group post; the after is in the video, which can't be downloaded). It's labelled "Before" so nobody mistakes it for the result, and the Facebook link says "Click to see the after, and more of our work." Original video: https://www.facebook.com/groups/1043573412799214/posts/2504644293358778/
+- **Only one before/after pair** (porch ceiling, from the video post; the after was supplied by Ellie 2026-10-18). The two frames were shot from slightly different angles, so the beams don't line up exactly at the divider; a matched pair from the owner would fix that. Original video: https://www.facebook.com/groups/1043573412799214/posts/2504644293358778/
 - No reviews, prices, hours, owner name, insurance, years. None are on the page.
 - Page timeline is closed to fetches (403); no more photos without the owner.
 
 ## Questions for the owner
 - Phone number, and do you take texts?
 - Email for the footer?
-- The "after" from the porch-ceiling video (and any before/after pairs). These would turn Recent work into before/after sliders.
+- More before/after pairs, ideally shot from the same spot (each becomes another slider).
 - Towns you'll drive to beyond Boardman and Canfield (Poland, Austintown, Youngstown…)?
 - Owner name and one line about why you started. The finishing rules want the owner's own voice.
 - One person or a crew ("I" vs "we")?
@@ -39,7 +40,6 @@
 
 ## Ideas not built (yours to pick)
 - **Runner-up world:** a squeegee pass on a wet window: one blade pulls a clean band across soapy glass, with a water line along its edge. More "window cleaner", less "dusk".
-- Before/after slider in a window frame once a pair exists (plain solid divider, per the finishing rules).
 - A small second window under the services rows on desktop, fogging back over a photo of each service.
 - A rain-on-glass ambient effect in the proof frame's top edge (skipped: it risks a film over the photo, which Ellie bans).
 - `book.html` booking page in the same world, if the owner wants more than Messenger.

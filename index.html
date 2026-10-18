@@ -123,7 +123,17 @@ section.block{padding:30px 0 52px}
 .photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
 .photo img{width:100%;height:100%;object-fit:cover}
 .tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.ba{touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.ba img{position:absolute;inset:0;pointer-events:none}
+.ba .ba-before{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.tag-r{left:auto;right:10px}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.ba-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.55)}
+.ba-knob svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
+.ba-range:focus-visible ~ .ba-line .ba-knob,.ba:has(.ba-range:focus-visible) .ba-knob{outline:3px solid var(--water);outline-offset:3px}
 .fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:17px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)}
+.fb>span:not(.go){text-wrap:balance}
 .fb .icon{width:30px;height:30px;color:#1877f2}
 .fb .go{flex:none;margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
 .fb .go .icon{width:16px;height:16px;color:currentColor}
@@ -305,15 +315,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="proof" id="work">
     <div class="wrap proofgrid">
       <div class="window">
-        <div class="photo">
-          <img src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams, before cleaning, with a back lawn and trees beyond" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-          <span class="tag">Before</span>
+        <div class="photo ba" id="ba" style="--x:50%">
+          <img src="img/after-porch-ceiling.webp" alt="The same porch ceiling after cleaning: bright, even wood with the mold gone" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+          <img class="ba-before" src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams before cleaning, grey and blotched with mold" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+          <span class="tag">Before</span><span class="tag tag-r">After</span>
+          <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after. Slide to compare.">
         </div>
         <canvas class="frame" aria-hidden="true"></canvas>
       </div>
       <div class="side">
         <h2>Recent work</h2>
-        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see the after photo and more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
       </div>
     </div>
   </section>
@@ -415,6 +428,46 @@ const CONFIG = {
     const box = document.querySelector('.chip input[value="' + a.dataset.service + '"]');
     if (box) box.checked = true;
   }));
+})();
+
+/* ---------- before/after slider: drag or tap anywhere on the photo; arrow keys via the hidden range ---------- */
+(function beforeAfter(){
+  const box = document.getElementById('ba'); if (!box) return;
+  const range = box.querySelector('.ba-range');
+  let x = 50, hinted = false, anim = 0;
+  function set(v){ x = Math.max(0, Math.min(100, v)); box.style.setProperty('--x', x + '%'); range.value = Math.round(x); }
+  function at(e){ const r = box.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; }
+  function stop(){ hinted = true; cancelAnimationFrame(anim); }
+  // touch: only a sideways drag or a tap moves it, so a scroll that starts on the photo doesn't
+  let p = null;
+  box.addEventListener('pointerdown', e => {
+    stop(); p = { id: e.pointerId, x: e.clientX, y: e.clientY, drag: e.pointerType === 'mouse' };
+    if (p.drag){ box.setPointerCapture(e.pointerId); set(at(e)); }
+  });
+  box.addEventListener('pointermove', e => {
+    if (!p || p.id !== e.pointerId) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y;
+    if (!p.drag && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)){ p.drag = true; box.setPointerCapture(e.pointerId); }
+    if (p.drag) set(at(e));
+  });
+  box.addEventListener('pointerup', e => { if (p && !p.drag && Math.hypot(e.clientX - p.x, e.clientY - p.y) < 10) set(at(e)); p = null; });
+  box.addEventListener('pointercancel', () => { p = null; });
+  range.addEventListener('input', () => { stop(); set(+range.value); });
+  // one slow sweep the first time it scrolls into view, so it reads as something to drag
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => {
+    if (!es[0].isIntersecting || hinted) return;
+    io.disconnect(); hinted = true;
+    const keys = [50, 74, 30, 50], seg = 700, t0 = performance.now();
+    (function step(t){
+      const k = (t - t0) / seg, i = Math.floor(k);
+      if (i >= keys.length - 1) return set(50);
+      const f = k - i, ease = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
+      set(keys[i] + (keys[i + 1] - keys[i]) * ease);
+      anim = requestAnimationFrame(step);
+    })(t0);
+  }, { threshold: .6 });
+  io.observe(box);
 })();
 
 /* ---------- quote form -> Messenger (or text once PHONE is set) ---------- */

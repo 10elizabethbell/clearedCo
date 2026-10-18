@@ -273,7 +273,7 @@ The whole row is a link to the quote form (and preselects the matching chip); on
 ### The Fogged Window (signature)
 A painted sash (canvas `.frame`, `data-mullions` for the hero's four-pane version) around a pane holding three layers: a drawn dusk yard (sky gradient, stars, two tree lines, a neighbour's house with two lit windows, lawn) set as the pane's CSS background; a frost layer (the scene downsampled, a fog veil per pane row, light blooms, condensation grain) revealed through a wipe mask; and drops drawn on top. Fog regrows slowly; beads swell into runners that stop and go down the glass leaving trails; a finger or mouse soaks up water and pushes a runner off the lower edge of the stroke. After 4.5s idle a ghost hand wipes one pane in side-to-side passes, rests, then moves to another pane. Reduced motion: a still frame with one pane pre-wiped; hand wiping still works.
 
-The work photo uses the same sash without mullions, with an uppercase "Before" tag top-left on the image.
+The work photo uses the same sash without mullions and holds a before/after slider: the before image is clipped by `--x` over the after, a plain solid 3px white divider with a 44px white knob (indigo chevrons), uppercase "Before" tag top-left and "After" top-right. It sweeps 50→74→30→50% once on first view (700ms per leg, ease-in-out), not at all under reduced motion.
 
 ### Water-Line Seams
 SVG seams between sections: a filled path in the next section's color topped by a 2px non-scaling stroke (white at 55% on dark-to-light, violet at 55% on light-to-dark), animated as a sum of three sine swells. Phones redraw every other frame.
