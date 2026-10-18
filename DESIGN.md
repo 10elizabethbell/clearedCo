@@ -317,3 +317,6 @@ A `.panes` CSS grid overlays each work photo (cells about 84px, 6px glazing bars
 
 ## Recent work (updated 2026-10-18)
 Three before/after sliders, each in its own painted sash (`.pairs`). Phone: stacked, 22px apart. Desktop: a 1.4fr/1fr grid, the tall garage pair (586x960) spanning both rows on the left, the two 695x760 pairs stacked on the right, so the columns end roughly level. Each slider sweeps once when it first comes into view.
+
+## First screen (added 2026-10-18)
+Header plus hero fill exactly one screen: `.hero{min-height:calc(100svh - var(--hd-h))}` with the content centred, where `--hd-h` (header height) and `--txt-h` (hero text block height) are measured by the `heroFill` script on load and resize. On phones the fogged window takes whatever height is left under the text (`100svh - --hd-h - --txt-h - 100px`, never under 220px, so very short phones like 360x640 scroll a little). Sideways phones get a tighter hero: smaller h1, 17px promise, the two buttons side by side, and the window sized to the screen.
