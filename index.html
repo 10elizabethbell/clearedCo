@@ -58,9 +58,9 @@ p{margin:0}
 .hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
 
 /* ---------- hero ---------- */
-.hero{padding:22px 0 8px;position:relative;isolation:isolate;background:linear-gradient(180deg,var(--violet) 0%,var(--indigo-2) 70%,var(--hero-end) 100%)}
-/* soap streaks on glass, painted once by the suds IIFE; fades out before the seam */
-.suds{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero{padding:22px 0 8px;position:relative;isolation:isolate;background:var(--hero-end) url(img/hero-soap-tall.webp) center top/cover no-repeat}
+/* Ellie's soapy-glass artwork; the last 90px fade into the seam colour */
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,var(--hero-end));z-index:-1}
 .hero h1,.hero .promise,.hero .btn-ghost{text-shadow:0 1px 4px rgba(0,0,0,.55)}
 .hero .btn-ghost{background:rgba(31,26,70,.55)}
 .hero h1{font-size:clamp(46px,14vw,96px);line-height:.92;letter-spacing:-.02em}
@@ -133,6 +133,19 @@ section.block{padding:30px 0 52px}
 .ba-knob svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
 .ba-range:focus-visible ~ .ba-line .ba-knob,.ba:has(.ba-range:focus-visible) .ba-knob{outline:3px solid var(--water);outline-offset:3px}
+/* pane-by-pane clearing: a CSS grid of fogged panes over a photo or heading. Each pane drains in a
+   diagonal wave (delay from its row + column), then the grid gap closes and the glazing bars vanish. */
+.panes{position:absolute;inset:0;z-index:4;display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:repeat(var(--rows),1fr);
+  gap:var(--bar);pointer-events:none;transition:gap .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+/* each cell's outline fills half the gap on every side, so the gaps read as painted glazing bars */
+.panes i{position:relative;outline:calc(var(--bar) / 2) solid var(--bar-c);transition:outline-width .5s cubic-bezier(.6,0,.2,1) var(--settle)}
+.panes i::before{content:"";position:absolute;inset:0;background:var(--pane);box-shadow:inset 0 -3px 0 rgba(255,255,255,.7);transform-origin:50% 100%;
+  transition:transform .55s cubic-bezier(.55,0,.8,.2) var(--d),opacity .3s ease calc(var(--d) + .3s)}
+.panes.clear{gap:0}
+.panes.clear i{outline-width:0}
+.panes.clear i::before{transform:scaleY(0);opacity:0}
+.proof .photo .panes i::before{background:linear-gradient(170deg,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),var(--pane)}
+h2.paned{position:relative}
 .fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:17px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)}
 .fb>span:not(.go){text-wrap:balance}
 .fb .icon{width:30px;height:30px;color:#1877f2}
@@ -201,7 +214,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
   .hd .wrap{height:76px}
   .brand img{width:52px;height:52px}
   .brand b{font-size:22px}
-  .hero{padding:40px 0 30px}
+  .hero{padding:40px 0 30px;background-image:url(img/hero-soap-wide.webp)}
   .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .hero .promise{max-width:30ch}
   .hero h1{font-size:clamp(64px,7.4vw,96px)}
@@ -261,7 +274,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 <main id="top">
   <section class="hero">
-    <canvas class="suds" aria-hidden="true"></canvas>
     <div class="wrap">
       <div>
         <h1>See the difference.</h1>
@@ -480,9 +492,10 @@ document.querySelectorAll('.ba').forEach(function beforeAfter(box){
   const io = new IntersectionObserver(es => {
     if (!es[0].isIntersecting || hinted) return;
     io.disconnect(); hinted = true;
-    const keys = [50, 74, 30, 50], seg = 700, t0 = performance.now();
+    const keys = [50, 74, 30, 50], seg = 700, t0 = performance.now() + (+box.dataset.wait || 0);   // wait for the panes to clear
     (function step(t){
       const k = (t - t0) / seg, i = Math.floor(k);
+      if (k < 0){ anim = requestAnimationFrame(step); return; }
       if (i >= keys.length - 1) return set(50);
       const f = k - i, ease = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
       set(keys[i] + (keys[i + 1] - keys[i]) * ease);
@@ -548,57 +561,29 @@ const Loop = (function(){
 })();
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------- soap streaks behind the hero: arcs of sponge-wiped suds, white on purple ---------- */
-(function suds(){
-  const U = { SWATH_MIN: 110, SWATH_MAX: 260, GAP: 2.4, BOW: 120, FOAM: .78, FADE: 90 };   // FOAM = brightest streak alpha, FADE = px fade at the bottom
-  const cv = document.querySelector('.suds'); if (!cv) return;
-  const c = cv.getContext('2d');
-  let lastW = 0;
-  function rnd(seed){ return () => (seed = (seed * 16807) % 2147483647) / 2147483647; }
-  function paint(){
-    const W = cv.clientWidth, H = cv.clientHeight; if (!W || !H) return;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, W, H);
-    const r = rnd(7919), k0 = Math.max(.5, Math.min(1, W / 1100));   // smaller wipes on a phone-sized pane
-    c.lineCap = 'round';
-    // one arm's-length band of wipes at a time; a tall phone hero gets several, overlapping
-    const BAND = Math.min(H, Math.max(460, W * 1.15)), bands = H <= BAND ? 1 : Math.ceil((H - BAND) / (BAND * .75)) + 1;
-    for (let bi = 0; bi < bands; bi++){
-    const y0 = bands === 1 ? 0 : bi * (H - BAND) / (bands - 1), last = bi === bands - 1, first = bi === 0;
-    for (let x0 = -60 + (bi % 2) * 40 * k0; x0 < W + 40; ){
-      const w = (U.SWATH_MIN + r() * (U.SWATH_MAX - U.SWATH_MIN)) * k0, bow = (.4 + r()) * U.BOW * k0, lean = (r() - .3) * 80 * k0;
-      const n = Math.floor(w / (U.GAP * (.6 + .4 * k0)));
-      for (let k = 0; k < n; k++){
-        const e = Math.abs(k / n - .5) * 2;                    // 0 middle of swath, 1 at its edges
-        const a = U.FOAM * (.24 + .76 * Math.pow(e, 2.4)) * (.35 + r() * .65);
-        const f1 = .6 + r() * 2.2, f2 = 3 + r() * 7, p1 = r() * 6, p2 = r() * 6, th = -.15 - e * .5 + r() * .45;
-        c.strokeStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
-        c.lineWidth = 1 + r() * (e > .75 ? 2.4 : 1.6);
-        c.beginPath();
-        let on = false;
-        for (let y = y0 - 10; y < y0 + BAND + 10; y += 4){
-          const t = (y - y0) / BAND, x = x0 + k * w / n + bow * Math.sin(Math.PI * t) + lean * t;
-          const v = Math.sin(t * f1 * 6 + p1) * .6 + Math.sin(t * f2 * 6 + p2) * .4;
-          const end = (first ? 0 : Math.max(0, .25 - t)) + (last ? 0 : Math.max(0, t - .75));   // break up into foam where bands overlap
-          if (v > th + end * 6){ on ? c.lineTo(x, y) : c.moveTo(x, y); on = true; } else on = false;
-        }
-        c.stroke();
-      }
-      x0 += w * (.7 + r() * .25);                               // swaths overlap like real wipes
-    }
-    }
-    // fade to nothing before the seam so the hero meets it on a flat colour
-    c.globalCompositeOperation = 'destination-out';
-    const g = c.createLinearGradient(0, H - U.FADE, 0, H);
-    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,1)');
-    c.fillStyle = g; c.fillRect(0, H - U.FADE, W, U.FADE);
-    c.globalCompositeOperation = 'source-over';
-    lastW = W;
+/* ---------- pane-by-pane clearing on the work photos and section headings (CSS grid does the layout and the bars) ---------- */
+(function panes(){
+  const P = { PHOTO_CELL: 84, HEAD_CELL: 46, STEP: 55, DRAIN: 550, BAR_PHOTO: 6, BAR_HEAD: 0 };   // STEP = ms between diagonals
+  if (REDUCED || !('IntersectionObserver' in window)) return;
+  function bg(el){ for (; el; el = el.parentElement){ const c = getComputedStyle(el).backgroundColor; if (c && !/rgba\(.*, 0\)|transparent/.test(c)) return c; } return 'var(--mist)'; }
+  function cover(host, cell, bar, barC, pane){
+    const r = host.getBoundingClientRect(); if (!r.width) return;
+    const cols = Math.max(2, Math.round(r.width / cell)), rows = Math.max(1, Math.round(r.height / cell));
+    const g = document.createElement('div'); g.className = 'panes'; g.setAttribute('aria-hidden', 'true');
+    const total = (cols + rows - 2) * P.STEP + P.DRAIN;
+    g.style.cssText = `--cols:${cols};--rows:${rows};--bar:${bar}px;--bar-c:${barC};--pane:${pane};--settle:${total - 150}ms`;
+    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++){ const i = document.createElement('i'); i.style.setProperty('--d', (x + y) * P.STEP + 'ms'); g.append(i); }
+    host.append(g); host.dataset.wait = total + 350;
+    const io = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      requestAnimationFrame(() => g.classList.add('clear'));
+      setTimeout(() => g.remove(), total + 700);
+    }, { threshold: .35 });
+    io.observe(host);
   }
-  paint();
-  let to = 0;
-  addEventListener('resize', () => { clearTimeout(to); to = setTimeout(() => { if (cv.clientWidth !== lastW || Math.abs(cv.height / Math.min(devicePixelRatio || 1, 2) - cv.clientHeight) > 40) paint(); }, 150); });
+  document.querySelectorAll('.proof .photo').forEach(h => cover(h, P.PHOTO_CELL, P.BAR_PHOTO, 'var(--frame)', 'var(--lav-soft)'));
+  document.querySelectorAll('main h2').forEach(h => { h.classList.add('paned'); const c = bg(h); cover(h, P.HEAD_CELL, P.BAR_HEAD, 'var(--lav-soft)', c); });
 })();
 
 /* ---------- the fogged window ---------- */

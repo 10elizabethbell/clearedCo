@@ -309,8 +309,11 @@ Change behavior through these, not by editing the drawing code, so the pieces st
 - **Don't** use Facebook blue outside the Facebook link.
 - **Don't** add small uppercase tracked labels above headings; the 13px uppercase style belongs only to the tag on a photo.
 
-## Hero background (added 2026-10-18)
-The hero ground is a vertical ramp `--violet` → `--indigo-2` (70%) → `--hero-end`, with soap streaks painted over it on `canvas.suds` (z-index -1, static, repainted only on a real resize). Streaks are white, in overlapping swaths 110–260px wide (scaled down to 0.5x on phones), bowed like sponge wipes, brightest at the swath edges (`FOAM` .78), and drawn in arm's-length bands so a tall phone hero gets several rows of wipes. They fade out over the last 90px so the hero meets the seam on flat `--hero-end`. Hero promise text is pure white (needed for contrast on violet). Hero h1, promise and the outlined button carry a neutral `0 1px 4px rgba(0,0,0,.55)` text shadow, and the outlined button gets a translucent `--indigo-ink` fill, so they stay legible where white streaks cross them.
+## Hero background (updated 2026-10-18)
+The hero ground is Ellie's soapy-glass artwork (wide purple sponge-wipe swirls with white foam and bubbles): `hero-soap-tall.webp` on phones, `hero-soap-wide.webp` from the desktop breakpoint, `cover`, anchored top centre, over `--hero-end`. A `::after` fades the bottom 90px to `--hero-end` so the hero meets the seam on flat colour. Hero h1, promise and the outlined button carry a neutral `0 1px 4px rgba(0,0,0,.55)` text shadow, and the outlined button has a translucent `--indigo-ink` fill, so they read over the white foam.
+
+## Pane-by-pane clearing (added 2026-10-18)
+A `.panes` CSS grid overlays each work photo (cells about 84px, 6px glazing bars painted with `--frame` via each cell's outline) and each `main h2` (cells about 46px, no bars, panes in the section's own background). On first view the panes drain downward (`scaleY` to 0, 550ms, 55ms between diagonals), then the gap and outlines close to 0 and the overlay is removed. Not created under reduced motion or without IntersectionObserver, so content is never hidden without JS.
 
 ## Recent work (updated 2026-10-18)
 Three before/after sliders, each in its own painted sash (`.pairs`). Phone: stacked, 22px apart. Desktop: a 1.4fr/1fr grid, the tall garage pair (586x960) spanning both rows on the left, the two 695x760 pairs stacked on the right, so the columns end roughly level. Each slider sweeps once when it first comes into view.
