@@ -15,10 +15,10 @@
 - **Area:** Boardman and Canfield, from the Facebook page meta ("Cleared Co LLC | Canfield OH", "Professional pressure washing services in Boardman, OH"). Muse missed these; the Essex County group is unrelated to the area. "and nearby" is my inference.
 - **Services:** taken from the page description ("Interior/Exterior windows, driveways, decks, patios & house washing") plus "mold & buildup on wood" from the post. The description is truncated after "Free..."; there may be more.
 - **Voice:** "we", because it's an LLC with no named owner. Switch to "I" if it's one person.
-- **Promise copy is mine:** "done like it's our own home. We don't pack up until you can see the difference." and step 3, "we're not done until you can see the difference." They echo the owner's "What a difference!", but the owner hasn't said them. Confirm or rewrite.
-- **"Free quote… a price before any work starts"**: follows from "free quote" but is worded by me.
+- **Copy I wrote:** the hero promise ("We take care of your home like it's our own, inside and out.") and the How it works lines ("We look it over and give you a price.", "When it suits you, at the price we quoted."). Nothing in them is a claim the owner made; confirm or rewrite in their words. I cut a "we don't pack up until you see the difference" guarantee because the owner never offered it.
 - Headline "See the difference." (alternative: their own phrase, "What a difference.").
 - Colors are from the logo. The cyan focus color on form fields is mine (it needed to stand out from the indigo button).
+- Frames are drawn on canvas as painted wood (`paintFrames`, constants in `F`). The mullion position `MULLION_Y` must match `PANES` in `glass`.
 - Favicon: a white "C" on the logo's gradient (the wordmark can't be read at 16px). The iPhone icon is the full logo.
 
 ## Placeholders and gaps
@@ -43,6 +43,11 @@
 - A small second window under the services rows on desktop, fogging back over a photo of each service.
 - A rain-on-glass ambient effect in the proof frame's top edge (skipped: it risks a film over the photo, which Ellie bans).
 - `book.html` booking page in the same world, if the owner wants more than Messenger.
+
+## Review status
+- Impeccable: ran every mode except `live` (critique, audit, harden, optimize, adapt, typeset, layout, colorize, polish, clarify, distill, quieter, animate, delight, bolder, overdrive, extract as an assessment, document). `onboard` doesn't apply (no first-run flow), and `shape`/`init` were covered by the build. The detector is clean, with three scoped suppressions in `.impeccable/config.json`: Roboto (the system stack, your rule), cramped padding on the services list, and the flat type hierarchy (body steps are 13/17/22).
+- Finish reviewer: two fix rounds, which is the unattended limit. In the last verdict, 6 of 8 fixes were resolved and 2 partial (frame paint texture and butt joints, and the Facebook line wrapping); 3 new issues were raised (dark drops, rail notches, a repeated phrase). I fixed all five afterwards, but no reviewer has scored that last batch.
+- Desktop: the quote form leaves the right half of its section empty. Ideas: put How it works beside it, or a small fogged pane.
 
 ## Not verified
 - Real-device touch (tested with simulated touch in Chromium and WebKit via Playwright).
