@@ -19,7 +19,8 @@
 <link rel="preload" as="image" href="img/hero-driveway.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap"></noscript>
 <style>
 /* ---------- Tokens ---------- */
 :root{
@@ -212,11 +213,11 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
   .actions{grid-auto-flow:column;justify-content:start;width:auto}
   .actions .btn{min-width:220px}
   .services{grid-template-columns:1fr 1fr;column-gap:16px}
+  .pairs{grid-template-columns:4fr 3fr;align-items:stretch}
+  .pairs .ba:first-child{grid-row:1/3;aspect-ratio:auto!important}   /* fills the height of the two beside it */
   .done .btns{grid-template-columns:1fr 1fr}
 }
 @media (min-width:1024px){
-  .pairs{grid-template-columns:4fr 3fr;align-items:stretch}
-  .pairs .ba:first-child{grid-row:1/3;aspect-ratio:auto!important}   /* fills the height of the two beside it */
   .ask .wrap{grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
   .ask .head{position:sticky;top:40px}
   .close .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
@@ -387,6 +388,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-msg"/></svg><span id="sendLabel">Send in Messenger</span></button>
         <p class="after" id="sendHint" style="margin-top:10px">Opens Messenger with your message written out.</p>
       </div>
+      <noscript><p class="after">This form needs JavaScript. You can also <a href="https://m.me/61589631985029">message us on Facebook</a>.</p></noscript>
       <div class="done" id="done" role="status" hidden>
         <b>Your message is ready.</b>
         <p>If it isn't already in the chat, copy it and paste it in.</p>
