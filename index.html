@@ -3,974 +3,574 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ClearedCo Window Cleaning &amp; Pressure Washing · Canfield, Ohio</title>
-<meta name="description" content="Window cleaning and pressure washing in Boardman, Canfield and nearby. Free quotes from ClearedCo.">
-<meta name="theme-color" content="#2a2260">
+<title>ClearedCo Window Cleaning &amp; Pressure Washing · Canfield &amp; Boardman, Ohio</title>
+<meta name="description" content="Window cleaning and pressure washing in Canfield, Boardman and nearby. Free quotes from ClearedCo.">
+<meta name="theme-color" content="#f5f4fb">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ClearedCo Window Cleaning &amp; Pressure Washing">
-<meta property="og:description" content="Window cleaning and pressure washing in Boardman, Canfield and nearby. Free quotes.">
+<meta property="og:title" content="ClearedCo · See the difference in Canfield &amp; Boardman">
+<meta property="og:description" content="Window cleaning and pressure washing in Canfield, Boardman and nearby. Free quotes.">
 <meta property="og:url" content="https://10elizabethbell.github.io/clearedCo/">
 <meta property="og:image" content="https://10elizabethbell.github.io/clearedCo/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f1a46'/%3E%3Cstop offset='1' stop-color='%236f64b8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='31' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='36' text-anchor='middle' fill='%23fff'%3EC%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" as="image" href="img/hero-driveway.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap">
 <style>
-/* ---------- tokens ---------- */
+/* ---------- Tokens ---------- */
 :root{
-  --indigo:#2a2260;      /* page ground, from the logo's deep end */
-  --indigo-2:#332a72;    /* second dark section */
-  --hero-end:#3b3184;    /* hero ramps from indigo toward the logo's violet */
-  --indigo-ink:#1f1a46;  /* text on light grounds */
+  /* paper, the logo's two indigos, one warm gold (the logo has no warm colour; see HANDOFF) */
+  --paper:#f5f4fb;       /* page ground */
+  --card:#ffffff;
+  --field:#e8e6f4;       /* inputs and chips on the white form card */
+  --ink:#1f1a46;         /* headings, text on gold (the logo's deep end) */
+  --body:#2e2a52;        /* running text on light */
+  --soft:#55507a;        /* secondary text on light */
+  --navy:#2e2768;        /* indigo band: services, close */
+  --deep:#1c1840;        /* how it works, footer (line texture) */
   --violet:#6f64b8;      /* the logo's light end */
-  --lavender:#c9c2ff;    /* primary button fill */
-  --lav-soft:#b4acdf;    /* secondary text on indigo */
-  --mist:#efedfa;        /* light section ground */
-  --mist-2:#e3e0f5;
-  --frame:#f6f5fc;       /* painted window frame */
-  --water:#3cc4dd;       /* form focus/hover accent (clear water) */
-  --muted:#4d4682;       /* secondary text on mist */
-  --r:14px;
-  --pad:20px;
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --on-dark:#f5f4fb;
+  --on-dark-soft:#cfcaf0;
+  --gold:#f5c451;        /* fills only; text on it is --ink */
+  --gold-2:#f8d47c;
+  --gold-ink:#7a5500;    /* gold as text on light */
+  --line:rgba(31,26,70,.12);
+  --focus:#5a4fc0;       /* form hover/focus outline, distinct from the gold fill */
+  --error:#b3261e;
+  --texture:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.035) 22px 23px);
+  --display:"Cal Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --r-card:24px;--r-field:10px;--pill:999px;
+  --gutter:20px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth;scroll-padding-top:12px}
-body{margin:0;font:400 17px/1.55 var(--font);color:#fff;background:var(--indigo);overflow-x:hidden}
-img{max-width:100%;display:block}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;font:16px/1.7 var(--text);color:var(--body);background:var(--paper)}
+::selection{background:var(--gold);color:var(--ink)}
+img,svg{display:block}
 a{color:inherit}
-::selection{background:var(--violet);color:#fff}
-:focus-visible{outline:3px solid var(--water);outline-offset:3px}
-h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:1;text-wrap:balance}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.on-navy :focus-visible,.on-deep :focus-visible,.hero :focus-visible,footer :focus-visible{outline-color:var(--gold)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
+h2{font-size:clamp(30px,7.6vw,48px)}
 p{margin:0}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
-.icon{width:1em;height:1em;flex:none}
 
-/* ---------- header ---------- */
-.hd{position:relative;z-index:20;background:var(--indigo)}
-.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
-.brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.brand b{font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.brand small{display:block;font-size:13px;letter-spacing:.02em;color:var(--lav-soft);font-weight:700;margin-top:4px}
-.hd-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:17px;text-decoration:none;white-space:nowrap}
-.hd-contact .icon{width:20px;height:20px;color:var(--lavender)}
-.hd-contact:hover span{text-decoration:underline;text-underline-offset:4px}
+/* ---------- Bands ---------- */
+section{padding:64px 0}
+.on-paper{background:var(--paper)}
+.on-navy{background:var(--navy);color:var(--on-dark-soft)}
+.on-deep{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft)}
+.on-navy h2,.on-deep h2,.on-navy h3,.on-deep h3{color:var(--on-dark)}
+.accent{color:var(--gold-ink)}
+.on-navy .accent,.on-deep .accent,.hero .accent{color:var(--gold)}
+.head{display:grid;gap:16px;justify-items:start;max-width:640px}
+.lede{font-size:clamp(17px,4.6vw,19px);color:var(--soft);max-width:38ch}
+.on-navy .lede,.on-deep .lede{color:var(--on-dark-soft)}
 
-/* ---------- hero ---------- */
-.hero{padding:22px 0 8px;position:relative;isolation:isolate;background:var(--hero-end) url(img/hero-soap-tall.webp) center top/cover no-repeat;
-  min-height:calc(100svh - var(--hd-h,64px));display:grid;align-content:center}   /* header + hero fill the first screen; --hd-h is measured in JS */
-.hero > .wrap{width:100%}
-/* Ellie's soapy-glass artwork; the last 90px fade into the seam colour */
-.hero::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,var(--hero-end));z-index:-1}
-.hero h1,.hero .promise,.hero .btn-ghost{text-shadow:0 1px 4px rgba(0,0,0,.55)}
-.hero .btn-ghost{background:rgba(31,26,70,.55)}
-.hero h1{font-size:clamp(46px,14vw,96px);line-height:.92;letter-spacing:-.02em}
-.hero .promise{margin-top:16px;font-size:clamp(17px,4.6vw,20px);line-height:1.45;color:#fff;max-width:34ch}
-.actions{display:grid;gap:10px;margin-top:22px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--lavender);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+/* Eyebrow: a few key headings only. A label, not a button. */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 14px/1.2 var(--text);letter-spacing:.02em;color:var(--ink);background:rgba(31,26,70,.06);padding:9px 14px;border-radius:var(--pill)}
+.eyebrow::before{content:"";width:7px;height:7px;flex:none;border-radius:50%;background:var(--gold)}
+.hero .eyebrow,.on-navy .eyebrow,.on-deep .eyebrow{color:var(--on-dark);background:rgba(255,255,255,.12)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:var(--pill);font:400 18px/1 var(--display);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background-color .2s,color .2s,border-color .2s,transform .12s}
 .btn:active{transform:scale(.98)}
-.btn-primary{background:var(--lavender);color:var(--indigo-ink)}
-.btn-primary:hover{background:#fff;border-color:#fff}
-.btn-ghost{background:transparent;color:#fff}
-.btn-ghost:hover{background:rgba(201,194,255,.14)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(245,244,251,.7)}
 
-/* the window: signature element */
-/* the frame is painted wood drawn on .frame (see paintFrames); padding = rail width + sill */
-.window{position:relative;margin:26px -4px 0;padding:13px 13px 31px}
-.window::before{content:"";position:absolute;inset:0 0 18px;border-radius:6px;box-shadow:0 22px 40px -18px rgba(0,0,0,.55)}
-.frame{position:absolute;left:-8px;right:-8px;top:0;bottom:0;width:calc(100% + 16px);height:100%;pointer-events:none;z-index:2}
-/* phone: the window takes what's left of the first screen under the text (100px = hero padding 30 + window margin 26 + frame 44) */
-.pane{position:relative;height:max(220px,calc(100svh - var(--hd-h,64px) - var(--txt-h,420px) - 100px));border-radius:3px;overflow:hidden;background:linear-gradient(#5a4ca6,#9a89cf 62%,#cfc2e8);touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
-.pane:active{cursor:grabbing}
-.pane canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+/* ---------- Header ---------- */
+.top{background:var(--paper);color:var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding-top:max(8px,env(safe-area-inset-top))}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;line-height:1}
+.brand img{width:40px;height:40px;border-radius:50%;flex:none}
+.brand b{display:block;font:400 21px/1 var(--display);letter-spacing:.01em}
+.brand small{display:block;font:600 11px/1 var(--text);letter-spacing:.08em;white-space:nowrap;text-transform:uppercase;color:var(--soft);margin-top:5px}
+.tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 2px;font:400 17px/1 var(--display);text-decoration:none;white-space:nowrap}
+.tel svg{width:20px;height:20px;flex:none;color:var(--violet)}
 
-/* ---------- seams: moving water line between sections ---------- */
-.seam{display:block;height:44px;margin-top:-1px;position:relative}
-.seam svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.seam .fill{fill:var(--to)}
-.seam .line{fill:none;stroke:var(--line,rgba(255,255,255,.55));stroke-width:2;vector-effect:non-scaling-stroke}
+/* ---------- Hero: their own clean driveway under the indigo ---------- */
+.hero{padding:0;position:relative;background:var(--deep);color:var(--on-dark);overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(28,24,64,.80) 0%,rgba(28,24,64,.78) 50%,rgba(28,24,64,.90) 100%)}
+.hero-copy{position:relative;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:72px}
+.hero h1{color:#fff;font-size:clamp(42px,12vw,80px);line-height:1.02;max-width:12ch}
+/* H1 bounce-in (after lpmr.co.uk): each letter slides in from 50px right with a slight overshoot, 20ms apart */
+.hero h1 .w{display:inline-block;white-space:nowrap}
+.hero h1 .c{display:inline-block;opacity:0;transform:translateX(50px);animation:letter-in 1s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--i) * 20ms)}
+@keyframes letter-in{to{opacity:1;transform:none}}
+.promise{font-size:clamp(17px,4.7vw,20px);line-height:1.5;color:var(--on-dark-soft);max-width:30ch}
+.actions{display:grid;gap:12px;width:100%;margin-top:4px}
 
-/* ---------- light sections ---------- */
-.light{background:var(--mist);color:var(--indigo-ink);--water:#0f8aa0}
-.light h2{font-size:clamp(34px,9vw,56px)}
-section.block{padding:30px 0 52px}
+/* ---------- Service rows on indigo: only the arrow changes on hover ---------- */
+.services{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:10px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:10px 12px 10px 22px;background:rgba(255,255,255,.06);border-radius:18px;color:var(--on-dark);text-decoration:none;font:400 20px/1.2 var(--display)}
+.row:hover,.row:focus-visible{outline:none;background:rgba(255,255,255,.06);box-shadow:none}
+.arrow{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);color:var(--on-dark);transition:background-color .2s,color .2s}
+.arrow svg{width:18px;height:18px}
+.row:focus-visible .arrow{background:var(--gold);color:var(--ink);outline:3px solid var(--gold);outline-offset:3px}
 
-/* services: whole row is the link, only the arrow reacts */
-.services{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--mist-2)}
-.services li{border-bottom:1px solid var(--mist-2)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:8px 2px;text-decoration:none;font-weight:700;font-size:22px;letter-spacing:-.005em}
-.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
-.arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);color:var(--indigo-ink);flex:none;transition:background .2s,color .2s}
-.arrow .icon{width:18px;height:18px}
-.row:hover .arrow,.row:focus-visible .arrow{background:var(--violet);color:#fff}
-.row:focus-visible .arrow{outline:3px solid var(--violet);outline-offset:3px}
-
-.area{margin-top:44px}
-.area h2{font-size:clamp(28px,7vw,40px)}
-.area p{margin-top:12px;font-size:22px;font-weight:600}
-.area .base{font-size:17px;font-weight:500;color:var(--muted);margin-top:4px}
-
-.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
-.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:s}
-.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:22px;background:var(--indigo);color:#fff}
-.steps b{display:block;font-size:22px;font-weight:800;line-height:1.35;margin-top:2px}
-.steps span{display:block;color:var(--muted);margin-top:3px}
-.how{margin-top:48px}
-.how h2{font-size:clamp(28px,7vw,40px)}
-
-/* ---------- proof ---------- */
-.proof{background:var(--indigo-2);padding:30px 0 56px}
-.proof h2{font-size:clamp(34px,9vw,56px)}
-.pairs{display:grid;gap:22px;margin-top:24px}
-.proof .window{margin:0 -4px}
-.photo{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:695/760;background:#8a7a5c}
-.photo img{width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:6px;background:rgba(31,26,70,.82);color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.ba{touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
-.ba img{position:absolute;inset:0;pointer-events:none}
+/* ---------- Recent work: three before/after sliders ---------- */
+.pairs{display:grid;gap:16px;margin-top:32px}
+.ba{position:relative;overflow:hidden;border-radius:var(--r-card);background:var(--field);touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
 .ba .ba-before{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
-.tag-r{left:auto;right:10px}
-.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
-.ba-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.55)}
+.tag{position:absolute;top:14px;left:14px;font:500 13px/1 var(--text);letter-spacing:.04em;color:#fff;background:rgba(28,24,64,.6);padding:7px 10px;border-radius:8px;pointer-events:none}
+.tag-r{left:auto;right:14px}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:var(--gold);pointer-events:none}
+.ba-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
 .ba-knob svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
-.ba-range:focus-visible ~ .ba-line .ba-knob,.ba:has(.ba-range:focus-visible) .ba-knob{outline:3px solid var(--water);outline-offset:3px}
-/* pane-by-pane clearing: a CSS grid of fogged panes over a photo or heading. Each pane drains in a
-   diagonal wave (delay from its row + column), then the grid gap closes and the glazing bars vanish. */
-.panes{position:absolute;inset:0;z-index:4;display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:repeat(var(--rows),1fr);
-  gap:var(--bar);pointer-events:none;transition:gap .35s ease}
-/* each cell's outline fills half the gap on every side, so the gaps read as painted glazing bars */
-.panes i{position:relative;outline:calc(var(--bar) / 2) solid var(--bar-c);transition:outline-width .35s ease}
-/* fogging back over (scrolling up): bars return first, then panes grow up from the sill in the reverse wave */
-.panes i::before{content:"";position:absolute;inset:0;background:var(--pane);box-shadow:inset 0 -3px 0 rgba(255,255,255,.7);transform-origin:50% 100%;
-  transition:transform .45s cubic-bezier(.2,.8,.45,1) calc(var(--dr) + .2s),opacity .2s ease calc(var(--dr) + .2s)}
-/* clearing (scrolling down): panes drain in a diagonal wave, then the bars close up */
-.panes.clear{gap:0;transition:gap .5s cubic-bezier(.6,0,.2,1) var(--settle)}
-.panes.clear i{outline-width:0;transition:outline-width .5s cubic-bezier(.6,0,.2,1) var(--settle)}
-.panes.clear i::before{transform:scaleY(0);opacity:0;transition:transform .55s cubic-bezier(.55,0,.8,.2) var(--d),opacity .3s ease calc(var(--d) + .3s)}
-.proof .photo .panes i::before{background:linear-gradient(170deg,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),var(--pane)}
-h2.paned{position:relative}
-.fb{display:flex;align-items:center;gap:14px;margin-top:34px;padding:16px 18px;min-height:64px;border-radius:var(--r);background:#fff;color:var(--indigo-ink);text-decoration:none;font-weight:800;font-size:17px;line-height:1.35;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)}
-.fb>span:not(.go){text-wrap:balance}
-.fb .icon{width:30px;height:30px;color:#1877f2}
-.fb .go{flex:none;margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist-2);transition:background .2s,color .2s}
-.fb .go .icon{width:16px;height:16px;color:currentColor}
-.fb:hover .go{background:#1877f2;color:#fff}
+.ba:has(.ba-range:focus-visible) .ba-knob{outline:3px solid var(--focus);outline-offset:3px}
+.drag{margin-top:16px;font-size:15px;color:var(--soft)}
+.fb{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:14px 16px 14px 22px;border-radius:20px;background:var(--navy);color:var(--on-dark);text-decoration:none;font:400 clamp(19px,5.2vw,22px)/1.2 var(--display);max-width:520px}
+.fb:hover,.fb:focus-visible{outline:none;background:var(--navy);box-shadow:none}
+.fb .lbl{display:flex;align-items:center;gap:14px;text-wrap:balance}
+.fb .lbl svg{width:30px;height:30px;flex:none;color:var(--on-dark)}
+.fb .arrow{background:rgba(255,255,255,.12)}
+.fb:focus-visible .arrow{background:var(--gold);color:var(--ink);outline:3px solid var(--focus);outline-offset:3px}
 
-/* ---------- quote form ---------- */
-.quote h2{font-size:clamp(34px,9vw,56px)}
-form{margin-top:24px;display:grid;gap:22px;max-width:640px}
-label.f{display:grid;gap:8px;font-weight:800;font-size:17px}
-label.f > span{display:block}
-label.f em,.legend em{font-style:normal;font-weight:500;color:var(--muted);font-size:17px}
-input[type=text],input[type=tel],textarea{width:100%;font:500 17px/1.4 var(--font);color:var(--indigo-ink);background:#fff;border:2px solid #857cc2;border-radius:12px;padding:14px 14px;min-height:54px;transition:border-color .15s,box-shadow .15s}
-textarea{min-height:96px;resize:vertical}
-input,textarea{caret-color:var(--indigo)}
-input:hover,textarea:hover{border-color:var(--water)}
-input:focus,textarea:focus{outline:none;border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
+/* ---------- How it works ---------- */
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font:400 20px/1 var(--display)}
+.steps b{display:block;font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
+.steps span{display:block;margin-top:4px}
+
+/* ---------- Form ---------- */
+.ask .wrap{display:grid;gap:28px}
+form{background:var(--card);border-radius:var(--r-card);padding:clamp(20px,5vw,32px);display:grid;gap:20px;max-width:600px}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field legend{font:400 17px/1.2 var(--display);color:var(--ink);padding:0}
+.field small{font:400 14px/1 var(--text);color:var(--soft);margin-left:4px}
 fieldset{border:0;margin:0;padding:0;min-width:0}
-.legend{font-weight:800;font-size:17px;padding:0;margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip input{position:absolute;width:1px;height:1px;opacity:0}
-.chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid #857cc2;font-weight:700;font-size:17px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
-.chip span::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid #857cc2;flex:none;transition:background .15s,border-color .15s}
-.chip:hover span{border-color:var(--water)}
-.chip input:focus-visible + span{border-color:var(--water);box-shadow:0 0 0 3px rgba(60,196,221,.25)}
-.chip input:checked + span{background:var(--indigo);border-color:var(--indigo);color:#fff}
-.chip input:checked + span::before{background:var(--lavender) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%231f1a46' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border-color:var(--lavender)}
-.chip input:checked:hover + span,.chip input:checked:focus-visible + span{border-color:var(--water)}
-.err{color:#b3243b;font-weight:700;font-size:17px;min-height:0}
-.err:empty{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-.send[hidden]{display:none}
-.send{margin-top:4px}
-.send .btn{width:100%;background:var(--indigo);border-color:var(--indigo);color:#fff}
-.send .btn:hover,.send .btn:focus-visible{border-color:var(--water);background:var(--indigo-2)}
-.send .btn:focus-visible{outline:3px solid var(--water);outline-offset:3px}
-.send p{margin-top:10px;font-size:17px;color:var(--muted);text-align:center}
-.done{margin-top:6px;padding:18px;border-radius:var(--r);background:#fff;border:2px solid var(--mist-2)}
-.done[hidden]{display:none}
-.done b{display:block;font-size:22px}
-.done p{margin-top:6px;color:var(--muted)}
-.done textarea{margin-top:12px;min-height:130px;font-size:17px;background:var(--mist)}
-.done .btns{display:grid;gap:10px;margin-top:12px}
-.done .btn-ghost{color:var(--indigo-ink);border-color:var(--indigo)}
-.done .btn-ghost:hover,.done .btn-ghost:focus-visible{border-color:var(--water);background:var(--mist)}
+fieldset.field legend{margin-bottom:8px}
+input[type=text],input[type=tel],textarea{width:100%;font:16px/1.4 var(--text);color:var(--ink);background:var(--field);border:2px solid transparent;border-radius:var(--r-field);padding:13px 14px;min-height:52px;caret-color:var(--navy);transition:border-color .15s}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--soft)}
+input[type=text]:focus,input[type=tel]:focus,textarea:focus{outline:none;border-color:var(--focus)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.chips label{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border-radius:var(--pill);background:var(--field);border:2px solid transparent;font:16px/1 var(--text);color:var(--ink);cursor:pointer;margin:0;transition:border-color .15s,background-color .15s,color .15s}
+.chips input:focus-visible+label{border-color:var(--focus);outline:none}
+.chips input:checked+label{background:var(--ink);color:#fff}
+.chips input:checked:focus-visible+label{outline:3px solid var(--focus);outline-offset:2px}
+.err{display:none;font-size:15px;color:var(--error)}
+.field.bad .err{display:block}
+.field.bad input[type=text],.field.bad textarea{border-color:var(--error)}
+form .btn-primary{width:100%}
+form .btn-primary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.after{font-size:15px;color:var(--soft)}
+.done{display:grid;gap:12px;padding:18px;border-radius:16px;background:var(--paper)}
+.done b{font:400 21px/1.2 var(--display);color:var(--ink)}
+.done p{color:var(--soft)}
+.done textarea{background:var(--card);min-height:140px}
+.done .btns{display:grid;gap:10px}
+.done .btn-ghost{color:var(--ink);border-color:var(--ink)}
+@media (max-width:380px){.chips label{padding:0 14px}}
 
-/* ---------- footer ---------- */
-.ft{padding:30px 0 calc(40px + env(safe-area-inset-bottom))}
-.ft .brand img{width:56px;height:56px}
-.ft-name{margin-top:16px;font-weight:800;font-size:22px}
-.ft-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;color:var(--lav-soft)}
-.ft-list a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-weight:700;text-underline-offset:4px}
-.ft-list a .icon{width:20px;height:20px;color:var(--lavender)}
-.ft-small{margin-top:22px;font-size:17px;color:var(--lav-soft)}
+/* ---------- Close ---------- */
+.close .who{margin-top:14px;font-size:clamp(18px,5vw,20px);color:var(--on-dark-soft)}
+.bigtel{display:inline-flex;align-items:center;gap:14px;margin-top:28px;font:400 clamp(30px,9vw,52px)/1 var(--display);text-decoration:none;color:var(--on-dark);min-height:56px;white-space:nowrap}
+.bigtel svg{width:.8em;height:.8em;flex:none;color:var(--gold)}
+.area{margin-top:22px;max-width:40ch}
 
-/* ---------- larger phones / tablets ---------- */
-@media (min-width:600px){
-  :root{--pad:32px}
-  .fb{font-size:22px}
-  .actions{grid-template-columns:auto auto;justify-content:start}
-  .window{margin-left:0;margin-right:0}
+/* ---------- Footer ---------- */
+footer{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft);padding:48px 0 calc(96px + env(safe-area-inset-bottom));font-size:16px}
+footer .wrap{display:grid;gap:14px}
+.nw{white-space:nowrap}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-dark);text-decoration:none}
+
+/* ---------- Floating contact circle (one circle, never a bottom bar) ---------- */
+.float{position:fixed;z-index:15;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);box-shadow:0 10px 28px rgba(20,16,48,.32);transform:translateY(120px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.float.on{transform:none}
+.float svg{width:28px;height:28px}
+.float:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:50%}
+
+/* ---------- Motion: one fade-up, only for things below the first screen ---------- */
+.js .rise{transition:opacity .4s ease-out,transform .4s ease-out}
+.js .rise.below{opacity:0;transform:translateY(12px)}
+
+/* ---------- Desktop ---------- */
+@media (min-width:760px){
+  :root{--gutter:40px}
+  .top .wrap{min-height:76px}
+  .brand img{width:46px;height:46px}
+  .brand b{font-size:24px}
+  .tel{font-size:20px}
+  section{padding:96px 0}
+  .hero-copy{padding-top:96px;padding-bottom:112px}
+  .hero-photo{object-position:50% 20%}
+  .hero::after{background:linear-gradient(90deg,rgba(28,24,64,.90) 0%,rgba(28,24,64,.80) 55%,rgba(28,24,64,.62) 100%)}
+  .promise{max-width:none}
+  .actions{grid-auto-flow:column;justify-content:start;width:auto}
+  .actions .btn{min-width:220px}
+  .services{grid-template-columns:1fr 1fr;column-gap:16px}
   .done .btns{grid-template-columns:1fr 1fr}
 }
-/* ---------- desktop ---------- */
 @media (min-width:1024px){
-  .hd .wrap{height:76px}
-  .brand img{width:52px;height:52px}
-  .brand b{font-size:22px}
-  .hero{padding:40px 0 30px;background-image:url(img/hero-soap-wide.webp)}
-  .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
-  .hero .promise{max-width:30ch}
-  .hero h1{font-size:clamp(64px,7.4vw,96px)}
-  .window{margin-top:0}
-  .pane{height:min(560px,64svh)}
-  .seam{height:64px}
-  section.block{padding:48px 0 84px}
-  .lightgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px}
-  .area,.how{margin-top:0}
-  .how{margin-top:56px}
-  .proof{padding:48px 0 90px}
-  .proof h2{font-size:clamp(44px,5vw,64px)}
-  /* the tall garage pair beside the two square-ish ones; 1.4:1 makes the columns end level */
-  .pairs{grid-template-columns:1.4fr 1fr;gap:28px 40px;margin-top:36px;align-items:start}
-  .pairs .window:first-child{grid-row:span 2}
-  .proof .window{margin:0}
-  .fb{margin-top:28px;max-width:460px;font-size:22px}
-  .quote form{margin-top:28px}
-  .ft .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+  .pairs{grid-template-columns:4fr 3fr;align-items:stretch}
+  .pairs .ba:first-child{grid-row:1/3;aspect-ratio:auto!important}   /* fills the height of the two beside it */
+  .ask .wrap{grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+  .ask .head{position:sticky;top:40px}
+  .close .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+  .bigtel{margin-top:0}
+  .how .steps{grid-template-columns:repeat(3,1fr);gap:40px}
+  .steps b{font-size:22px}
 }
-/* ---------- phone held sideways ---------- */
-@media (orientation:landscape) and (max-height:500px){
-  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-  .hero{padding:12px 0}
-  .hero h1{font-size:clamp(34px,10vh,56px)}
-  .hero .promise{margin-top:10px;font-size:17px}
-  .actions{grid-template-columns:auto auto;justify-content:start;margin-top:14px}
-  .window{margin:0}
-  .pane{height:calc(100svh - var(--hd-h,64px) - 68px)}
+/* hover styles only where there is a real pointer, so taps don't leave them stuck on */
+@media (hover:hover){
+.tel:hover{color:var(--focus)}
+.btn-primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.row:hover .arrow,.fb:hover .arrow{background:var(--gold);color:var(--ink)}
+input[type=text]:hover,input[type=tel]:hover,textarea:hover{border-color:var(--focus)}
+.chips label:hover{border-color:var(--focus)}
+form .btn:hover{outline:2px solid var(--focus);outline-offset:2px}
+.done .btn-ghost:hover{background:var(--card)}
+.bigtel:hover{color:var(--gold)}
+footer a:hover{color:var(--gold)}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.arrow,.fb{transition:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise,.float,.btn,.arrow{transition:none}
+  .js .rise.below{opacity:1;transform:none}
+  .hero h1 .c{animation:none;opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 <!--
-THESIS: A fogged dusk window you wipe clear with your finger, drops running down the glass. The page proves "Cleared" by letting the visitor do it; it refuses the stock pressure-washing hero (stock spray photo, badges, service grid).
-OWN-WORLD: Logo indigo (#2a2260) to violet (#6f64b8) ground; lavender-white painted window frames with mullions hold the scene and the work photo; condensation haze, beaded drops; moving water-line seams; heavy uppercase system type; clear-water cyan only on form focus.
-STORY: Homeowner sees a clean, local, careful company, wipes the glass, sees real work, sends a free-quote request in Messenger in under a minute.
-FIRST VIEWPORT: Phone: header (logo + name, Messenger link top-right), headline "See the difference.", one promise line, Free quote (filled) + See our work (outlined), then the framed fogged window filling the rest of the screen, wiping itself until touched.
-FORM: Candidate 5 of 7 (fogged window), seed c4f1c058.
+THESIS: A new local window and exterior cleaning company that earns trust through calm order (after lpmr.co.uk): their own clean driveway behind one claim (see the difference in Canfield & Boardman), the services as plain rows, three real before/afters you drag, and a free quote sent in Messenger.
+OWN-WORLD: Off-white paper, the logo's indigo (#2e2768) and deep indigo (#1c1840, faint diagonal lines) bands, one warm gold (#f5c451) as the accent (fills only; #7a5500 when it has to be text on light), the logo's violet for focus. Cal Sans display, system body at 16/1.7.
+STORY: The visitor sees who cleans homes in Canfield and Boardman, drags three real before/afters, and asks for a free quote in Messenger (or by text once a number exists).
+FIRST VIEWPORT: Paper header with the round logo and wordmark left, "Message us" top right. Hero over the client's washed driveway under an indigo overlay: eyebrow, "See the difference in Canfield & Boardman.", one promise line, two pill buttons (Get a free quote, See our work).
+FORM: calm-photo band system with a real client photo hero; the earlier fogged-window world is in git history (fdba680).
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-msg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2zm1 12.5l-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8z"/></symbol>
-  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
 </svg>
-
-<header class="hd">
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="ClearedCo, back to top">
-      <img src="img/logo.webp" alt="" width="44" height="44">
-      <span><b>Cleared Co</b><small>Canfield, Ohio</small></span>
-    </a>
-    <a class="hd-contact" id="hdContact" href="https://m.me/61589631985029"><svg class="icon"><use href="#i-msg"/></svg><span>Message us</span></a>
+    <a class="brand" href="#" aria-label="ClearedCo, back to top"><img src="img/logo.webp" alt="" width="40" height="40"><span><b>Cleared Co</b><small>Canfield, Ohio</small></span></a>
+    <a class="tel" id="hdContact" href="https://m.me/61589631985029"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>See the difference.</h1>
-        <p class="promise">Window cleaning and pressure washing. We take care of your home like it's our own, inside and out.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#quote">Get a free quote</a>
-          <a class="btn btn-ghost" href="#work">See our work</a>
-        </div>
+<section class="hero" id="hero" aria-labelledby="h1">
+  <img class="hero-photo" src="img/hero-driveway.webp" alt="" width="1170" height="990" fetchpriority="high" decoding="async">
+  <div class="wrap hero-copy">
+    <span class="eyebrow">Window cleaning &amp; pressure washing</span>
+    <h1 id="h1">See the difference in <span class="accent">Canfield &amp; Boardman.</span></h1>
+    <p class="promise">We take care of your home like it's our own, inside and out.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#ask">Get a free quote</a>
+      <a class="btn btn-ghost" href="#work">See our work</a>
+    </div>
+  </div>
+</section>
+
+<section class="on-navy" id="services" aria-labelledby="h-svc">
+  <div class="wrap">
+    <h2 id="h-svc" class="rise">What we <span class="accent">clean.</span></h2>
+    <ul class="services">
+      <li class="rise"><a class="row" href="#ask" data-service="Windows, inside">Windows, inside<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Windows, outside">Windows, outside<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="House washing">House washing<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Driveway">Driveways<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Deck">Decks<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Patio">Patios<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Mold on wood">Mold on wood<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="on-paper" id="work" aria-labelledby="h-work">
+  <div class="wrap">
+    <div class="head rise">
+      <span class="eyebrow">Before and after</span>
+      <h2 id="h-work">Recent work</h2>
+    </div>
+    <div class="pairs">
+      <div class="ba rise" style="--x:50%;aspect-ratio:586/960">
+        <img src="img/after-garage-drive.webp" alt="The same driveway after washing: even, pale concrete all the way to the garage" width="586" height="960" loading="lazy" decoding="async" draggable="false">
+        <img class="ba-before" src="img/before-garage-drive.webp" alt="A grey concrete driveway up to a garage, mid-wash, with a muddy rinse trail running down it" width="586" height="960" loading="lazy" decoding="async" draggable="false">
+        <span class="tag">Before</span><span class="tag tag-r">After</span>
+        <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Driveway to a garage, before and after. Slide to compare.">
       </div>
-      <div class="window" role="img" aria-label="A fogged window. Drag your finger across it to wipe the glass clear.">
-        <div class="pane" id="pane">
-          <canvas id="glass" aria-hidden="true"></canvas>
-        </div>
-        <canvas class="frame" data-mullions="1" aria-hidden="true"></canvas>
+      <div class="ba rise" style="--x:50%;aspect-ratio:695/760">
+        <img src="img/after-porch-ceiling.webp" alt="The same porch ceiling after cleaning: bright, even wood with the mold gone" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+        <img class="ba-before" src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams before cleaning, grey and blotched with mold" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+        <span class="tag">Before</span><span class="tag tag-r">After</span>
+        <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Porch ceiling, before and after. Slide to compare.">
+      </div>
+      <div class="ba rise" style="--x:50%;aspect-ratio:695/760">
+        <img src="img/after-driveway.webp" alt="The same driveway after washing: clean, light concrete with crisp joints" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+        <img class="ba-before" src="img/before-driveway.webp" alt="A concrete driveway before washing, grey and patchy with leaves on it" width="695" height="760" loading="lazy" decoding="async" draggable="false">
+        <span class="tag">Before</span><span class="tag tag-r">After</span>
+        <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Front driveway, before and after. Slide to compare.">
       </div>
     </div>
-  </section>
+    <p class="drag">Drag across a photo to compare.</p>
+    <a class="fb rise" href="https://www.facebook.com/profile.php?id=61589631985029" rel="noopener">
+      <span class="lbl"><svg aria-hidden="true"><use href="#i-fb"/></svg>Click to see more of our work.</span>
+      <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
 
-  <div class="seam" style="--to:var(--mist);background:var(--hero-end)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
+<section class="on-deep how" aria-labelledby="h-how">
+  <div class="wrap">
+    <h2 id="h-how" class="rise">How it <span class="accent">works.</span></h2>
+    <ol class="steps">
+      <li class="rise"><div><b id="step1">Message us.</b><span>Tell us what needs cleaning, and where.</span></div></li>
+      <li class="rise"><div><b>Get your free quote.</b><span>We look it over and give you a price.</span></div></li>
+      <li class="rise"><div><b>We clean it.</b><span>When it suits you, at the price we quoted.</span></div></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="light block" id="services">
-    <div class="wrap lightgrid">
-      <div>
-        <h2>What we clean</h2>
-        <ul class="services">
-          <li><a class="row" href="#quote" data-service="Windows, inside">Windows, inside<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Windows, outside">Windows, outside<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="House washing">House washing<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Driveway">Driveways<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Deck">Decks<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Patio">Patios<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="row" href="#quote" data-service="Mold on wood">Mold on wood<span class="arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="area">
-          <h2>Where we work</h2>
-          <p>Boardman, Canfield and nearby.</p>
-        </div>
-        <div class="how">
-          <h2>How it works</h2>
-          <ol class="steps">
-            <li><div><b>Message us</b><span>What needs cleaning, and where.</span></div></li>
-            <li><div><b>Free quote</b><span>We look it over and give you a price.</span></div></li>
-            <li><div><b>We clean it</b><span>When it suits you, at the price we quoted.</span></div></li>
-          </ol>
-        </div>
-      </div>
+<section class="on-paper ask" id="ask" aria-labelledby="h-ask">
+  <div class="wrap">
+    <div class="head rise">
+      <span class="eyebrow">Free quote</span>
+      <h2 id="h-ask">Get your free quote</h2>
+      <p class="lede">Not sure it's something we clean? Ask anyway.</p>
     </div>
-  </section>
-
-  <div class="seam" style="--to:var(--indigo-2);background:var(--mist);--line:rgba(111,100,184,.55)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
-
-  <section class="proof" id="work">
-    <div class="wrap">
-      <h2>Recent work</h2>
-      <div class="pairs">
-        <div class="window">
-          <div class="photo ba" style="--x:50%;aspect-ratio:586/960">
-            <img src="img/after-garage-drive.webp" alt="The same driveway after washing: even, pale concrete all the way to the garage" width="586" height="960" loading="lazy" decoding="async" draggable="false">
-            <img class="ba-before" src="img/before-garage-drive.webp" alt="A grey concrete driveway up to a garage, mid-wash, with a muddy rinse trail running down it" width="586" height="960" loading="lazy" decoding="async" draggable="false">
-            <span class="tag">Before</span><span class="tag tag-r">After</span>
-            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Driveway to a garage, before and after. Slide to compare.">
-          </div>
-          <canvas class="frame" aria-hidden="true"></canvas>
+    <form id="quoteForm" class="rise" novalidate>
+      <div class="field" id="f-name">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="60" placeholder="First name is fine" aria-describedby="e-name">
+        <p class="err" id="e-name">Add your name so we know who to answer.</p>
+      </div>
+      <fieldset class="field" id="f-svc" aria-describedby="e-svc">
+        <legend>What needs cleaning?</legend>
+        <div class="chips">
+          <input type="checkbox" name="svc" id="s1" value="Windows, inside"><label for="s1">Windows, inside</label>
+          <input type="checkbox" name="svc" id="s2" value="Windows, outside"><label for="s2">Windows, outside</label>
+          <input type="checkbox" name="svc" id="s3" value="House washing"><label for="s3">House washing</label>
+          <input type="checkbox" name="svc" id="s4" value="Driveway"><label for="s4">Driveway</label>
+          <input type="checkbox" name="svc" id="s5" value="Deck"><label for="s5">Deck</label>
+          <input type="checkbox" name="svc" id="s6" value="Patio"><label for="s6">Patio</label>
+          <input type="checkbox" name="svc" id="s7" value="Mold on wood"><label for="s7">Mold on wood</label>
         </div>
-        <div class="window">
-          <div class="photo ba" style="--x:50%;aspect-ratio:695/760">
-            <img src="img/after-porch-ceiling.webp" alt="The same porch ceiling after cleaning: bright, even wood with the mold gone" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-            <img class="ba-before" src="img/before-porch-ceiling.webp" alt="A wood porch ceiling and beams before cleaning, grey and blotched with mold" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-            <span class="tag">Before</span><span class="tag tag-r">After</span>
-            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Porch ceiling, before and after. Slide to compare.">
-          </div>
-          <canvas class="frame" aria-hidden="true"></canvas>
-        </div>
-        <div class="window">
-          <div class="photo ba" style="--x:50%;aspect-ratio:695/760">
-            <img src="img/after-driveway.webp" alt="The same driveway after washing: clean, light concrete with crisp joints" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-            <img class="ba-before" src="img/before-driveway.webp" alt="A concrete driveway before washing, grey and patchy with leaves on it" width="695" height="760" loading="lazy" decoding="async" draggable="false">
-            <span class="tag">Before</span><span class="tag tag-r">After</span>
-            <span class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Front driveway, before and after. Slide to compare.">
-          </div>
-          <canvas class="frame" aria-hidden="true"></canvas>
+        <p class="err" id="e-svc">Pick what needs cleaning, or describe it below.</p>
+      </fieldset>
+      <div class="field">
+        <label for="where">Your town or street <small>(optional)</small></label>
+        <input type="text" id="where" name="where" autocomplete="address-level2" maxlength="60" placeholder="e.g. Boardman">
+      </div>
+      <div class="field">
+        <label for="phone">Your phone <small>(optional)</small></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20">
+      </div>
+      <div class="field">
+        <label for="notes">Anything else? <small>(optional)</small></label>
+        <textarea id="notes" name="notes" maxlength="600" placeholder="Two-story house, the back deck too…"></textarea>
+      </div>
+      <div class="send" id="send">
+        <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-msg"/></svg><span id="sendLabel">Send in Messenger</span></button>
+        <p class="after" id="sendHint" style="margin-top:10px">Opens Messenger with your message written out.</p>
+      </div>
+      <div class="done" id="done" role="status" hidden>
+        <b>Your message is ready.</b>
+        <p>If it isn't already in the chat, copy it and paste it in.</p>
+        <textarea id="doneMsg" readonly aria-label="Your quote message"></textarea>
+        <div class="btns">
+          <a class="btn btn-primary" id="doneOpen" href="https://m.me/61589631985029">Open Messenger</a>
+          <button class="btn btn-ghost" type="button" id="doneCopy">Copy message</button>
         </div>
       </div>
-      <a class="fb" href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg><span>Click to see more of our work.</span><span class="go"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+    </form>
+  </div>
+</section>
+
+<section class="on-navy close" id="close" aria-labelledby="h-close">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="h-close">ClearedCo</h2>
+      <p class="who">Window cleaning &amp; pressure washing.</p>
+      <p class="area">Based in Canfield, Ohio. We work in Boardman, Canfield and nearby. Not sure we cover your street? Ask us.</p>
     </div>
-  </section>
-
-  <div class="seam" style="--to:var(--mist);background:var(--indigo-2)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
-
-  <section class="light block quote" id="quote">
-    <div class="wrap quotegrid">
-      <h2>Get your free quote</h2>
-      <form id="quoteForm" novalidate>
-        <label class="f"><span>Your name</span>
-          <input type="text" name="name" autocomplete="name" required aria-describedby="formErr">
-        </label>
-        <fieldset>
-          <legend class="legend">What needs cleaning?</legend>
-          <div class="chips">
-            <label class="chip"><input type="checkbox" name="svc" value="Windows, inside"><span>Windows, inside</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="Windows, outside"><span>Windows, outside</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="House washing"><span>House washing</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="Driveway"><span>Driveway</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="Deck"><span>Deck</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="Patio"><span>Patio</span></label>
-            <label class="chip"><input type="checkbox" name="svc" value="Mold on wood"><span>Mold on wood</span></label>
-          </div>
-        </fieldset>
-        <label class="f"><span>Town or street <em>(optional)</em></span>
-          <input type="text" name="where" autocomplete="address-level2">
-        </label>
-        <label class="f"><span>Your phone <em>(optional)</em></span>
-          <input type="tel" name="phone" autocomplete="tel" inputmode="tel">
-        </label>
-        <label class="f"><span>Anything else? <em>(optional)</em></span>
-          <textarea name="notes" rows="3"></textarea>
-        </label>
-        <p class="err" id="formErr" role="alert"></p>
-        <div class="send">
-          <button class="btn" type="submit" id="sendBtn"><svg class="icon" style="width:22px;height:22px"><use href="#i-msg"/></svg><span id="sendLabel">Send in Messenger</span></button>
-          <p id="sendHint">Opens Messenger with your message filled in.</p>
-        </div>
-        <div class="done" id="done" hidden>
-          <b>Your message is ready.</b>
-          <p id="doneHint">If it isn't already in the chat, copy it and paste it in.</p>
-          <textarea id="doneMsg" readonly aria-label="Your quote message"></textarea>
-          <div class="btns">
-            <a class="btn btn-primary" id="doneOpen" href="https://m.me/61589631985029">Open Messenger</a>
-            <button class="btn btn-ghost" type="button" id="doneCopy">Copy message</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <div class="seam" style="--to:var(--indigo);background:var(--mist);--line:rgba(111,100,184,.55)" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path class="fill"/><path class="line"/></svg></div>
+    <a class="bigtel rise" id="bigContact" href="https://m.me/61589631985029"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
+  </div>
+</section>
 </main>
 
-<footer class="ft">
+<footer>
   <div class="wrap">
-    <div>
-      <a class="brand" href="#top" aria-label="ClearedCo, back to top"><img src="img/logo.webp" alt="ClearedCo logo" width="56" height="56" loading="lazy"></a>
-      <p class="ft-name">ClearedCo Window Cleaning &amp; Pressure Washing</p>
-      <ul class="ft-list">
-        <li>Cleared Co LLC · Canfield, Ohio</li>
-        <li id="ftPhone" hidden></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61589631985029"><svg class="icon"><use href="#i-fb"/></svg>Facebook</a></li>
-      </ul>
-    </div>
+    <span>ClearedCo Window Cleaning &amp; Pressure Washing · Cleared Co LLC · Canfield, Ohio<span id="ftPhone" hidden></span></span>
+    <nav aria-label="Contact">
+      <a href="https://www.facebook.com/profile.php?id=61589631985029" rel="noopener">Facebook</a>
+    </nav>
   </div>
 </footer>
 
+<a class="float" id="float" href="https://m.me/61589631985029" aria-label="Message ClearedCo"><svg aria-hidden="true"><use href="#i-msg"/></svg></a>
+
 <script>
-/* ---------- business config: fill PHONE (10 digits) once the owner gives it ----------
-   With a phone: header shows the tap-to-call number, the form hands off by text message. */
-const CONFIG = {
-  PHONE: '',                       // e.g. '3305551234' or '(330) 555-1234'
+/* ===== Config: fill PHONE (10 digits) once the owner gives it =====
+   With a phone: the header and closing band show the tap-to-call number, the footer lists it,
+   and the form and floating circle hand off by text message instead of Messenger. */
+var CONFIG = {
+  PHONE: '',                  // e.g. '3305551234' or '(330) 555-1234'
   FB_ID: '61589631985029',
-  FB_URL: 'https://www.facebook.com/profile.php?id=61589631985029',
-  NAME: 'ClearedCo'
+  NAME: 'ClearedCo',
+  FLOAT: true                 // the floating contact circle; false removes it
 };
+document.documentElement.classList.add('js');
 
-/* ---------- contact wiring ---------- */
-(function contact(){
-  CONFIG.PHONE = CONFIG.PHONE.replace(/\D/g, '').slice(-10);
-  const fmt = p => '(' + p.slice(0,3) + ') ' + p.slice(3,6) + '-' + p.slice(6);
-  if (CONFIG.PHONE) {
-    const hd = document.getElementById('hdContact');
-    hd.href = 'tel:+1' + CONFIG.PHONE;
-    hd.innerHTML = '<svg class="icon"><use href="#i-phone"/></svg><span>' + fmt(CONFIG.PHONE) + '</span>';
-    const ft = document.getElementById('ftPhone');
-    ft.hidden = false;
-    ft.innerHTML = '<a href="tel:+1' + CONFIG.PHONE + '"><svg class="icon"><use href="#i-phone"/></svg>' + fmt(CONFIG.PHONE) + '</a>';
-    document.getElementById('sendLabel').textContent = 'Text this to us';
-    document.getElementById('sendHint').textContent = 'Opens your texts with your message filled in.';
+/* ===== Contact wiring: Messenger until a phone number exists ===== */
+(function(){
+  var p=CONFIG.PHONE.replace(/\D/g,'').slice(-10);CONFIG.PHONE=p;
+  if(!p)return;
+  var fmt='('+p.slice(0,3)+') '+p.slice(3,6)+'-'+p.slice(6),tel='tel:+1'+p;
+  var sms='sms:+1'+p+'?&body='+encodeURIComponent('Hi '+CONFIG.NAME+', I found your website. I\'d like a free quote for: ');
+  var hd=document.getElementById('hdContact');hd.href=tel;hd.innerHTML='<svg aria-hidden="true"><use href="#i-phone"/></svg><span>'+fmt+'</span>';
+  var big=document.getElementById('bigContact');big.href=tel;big.innerHTML='<svg aria-hidden="true"><use href="#i-phone"/></svg><span>'+fmt+'</span>';
+  var ft=document.getElementById('ftPhone');ft.hidden=false;ft.innerHTML=' · <a class="nw" href="'+tel+'">'+fmt+'</a>';
+  var fl=document.getElementById('float');fl.href=sms;fl.setAttribute('aria-label','Text '+CONFIG.NAME);fl.innerHTML='<svg aria-hidden="true"><use href="#i-chat"/></svg>';
+  document.getElementById('step1').textContent='Text or call us.';
+  document.getElementById('sendLabel').textContent='Text this to us';
+  document.getElementById('sendHint').textContent='Opens your messages with this written out.';
+})();
+
+/* ===== Hero H1 bounce-in: split into letters (JS only, so no-JS and reduced motion keep the plain heading) ===== */
+(function(){
+  var h=document.getElementById('h1');
+  if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var plain=h.innerHTML,i=0,last=null;
+  h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());
+  function split(node,into){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if(!part)return;
+          if(/^\s+$/.test(part)){into.appendChild(document.createTextNode(' '));return}
+          var w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+          for(var k=0;k<part.length;k++){var c=document.createElement('span');c.className='c';c.style.setProperty('--i',i++);c.textContent=part[k];w.appendChild(c);last=c}
+          into.appendChild(w);
+        });
+      }else if(n.nodeType===1){var copy=n.cloneNode(false);split(n,copy);into.appendChild(copy)}
+    });
   }
+  var frag=document.createDocumentFragment();split(h,frag);h.textContent='';h.appendChild(frag);
+  // once the last letter lands, put the plain heading back so kerning and text selection return
+  if(last)last.addEventListener('animationend',function(){h.innerHTML=plain;h.removeAttribute('aria-label')});
 })();
 
-/* ---------- service rows preselect the form ---------- */
-(function rows(){
-  document.querySelectorAll('.row[data-service]').forEach(a => a.addEventListener('click', () => {
-    const box = document.querySelector('.chip input[value="' + a.dataset.service + '"]');
-    if (box) box.checked = true;
-  }));
+/* ===== Service rows tick the matching chip in the form ===== */
+(function(){
+  [].forEach.call(document.querySelectorAll('.row[data-service]'),function(a){
+    a.addEventListener('click',function(){var b=document.querySelector('.chips input[value="'+a.dataset.service+'"]');if(b)b.checked=true});
+  });
 })();
 
-/* ---------- before/after slider: drag or tap anywhere on the photo; arrow keys via the hidden range ---------- */
-document.querySelectorAll('.ba').forEach(function beforeAfter(box){
-  const range = box.querySelector('.ba-range');
-  let x = 50, hinted = false, anim = 0;
-  function set(v){ x = Math.max(0, Math.min(100, v)); box.style.setProperty('--x', x + '%'); range.value = Math.round(x); }
-  function at(e){ const r = box.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; }
-  function stop(){ hinted = true; cancelAnimationFrame(anim); }
-  // touch: only a sideways drag or a tap moves it, so a scroll that starts on the photo doesn't
-  let p = null;
-  box.addEventListener('pointerdown', e => {
-    stop(); p = { id: e.pointerId, x: e.clientX, y: e.clientY, drag: e.pointerType === 'mouse' };
-    if (p.drag){ box.setPointerCapture(e.pointerId); set(at(e)); }
+/* ===== Before/after sliders: drag or tap anywhere on the photo; arrow keys via the hidden range ===== */
+[].forEach.call(document.querySelectorAll('.ba'),function(box){
+  var S={SWEEP:[50,74,30,50],SEG:700};   // one hint sweep the first time it scrolls into view
+  var range=box.querySelector('.ba-range'),hinted=false,anim=0,p=null;
+  function set(v){v=Math.max(0,Math.min(100,v));box.style.setProperty('--x',v+'%');range.value=Math.round(v)}
+  function at(e){var r=box.getBoundingClientRect();return (e.clientX-r.left)/r.width*100}
+  function stop(){hinted=true;cancelAnimationFrame(anim)}
+  // touch: only a sideways drag or a tap moves it, so a scroll that starts on the photo still scrolls
+  box.addEventListener('pointerdown',function(e){
+    stop();p={id:e.pointerId,x:e.clientX,y:e.clientY,drag:e.pointerType==='mouse'};
+    if(p.drag){e.preventDefault();box.setPointerCapture(e.pointerId);set(at(e))}
   });
-  box.addEventListener('pointermove', e => {
-    if (!p || p.id !== e.pointerId) return;
-    const dx = e.clientX - p.x, dy = e.clientY - p.y;
-    if (!p.drag && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)){ p.drag = true; box.setPointerCapture(e.pointerId); }
-    if (p.drag) set(at(e));
+  box.addEventListener('pointermove',function(e){
+    if(!p||p.id!==e.pointerId)return;
+    var dx=e.clientX-p.x,dy=e.clientY-p.y;
+    if(!p.drag&&Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)){p.drag=true;box.setPointerCapture(e.pointerId)}
+    if(p.drag)set(at(e));
   });
-  box.addEventListener('pointerup', e => { if (p && !p.drag && Math.hypot(e.clientX - p.x, e.clientY - p.y) < 10) set(at(e)); p = null; });
-  box.addEventListener('pointercancel', () => { p = null; });
-  range.addEventListener('input', () => { stop(); set(+range.value); });
-  // one slow sweep the first time it scrolls into view, so it reads as something to drag
-  if (matchMedia('(prefers-reduced-motion:reduce)').matches || !('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver(es => {
-    if (!es[0].isIntersecting || hinted) return;
-    io.disconnect(); hinted = true;
-    const keys = [50, 74, 30, 50], seg = 700, t0 = performance.now() + (+box.dataset.wait || 0);   // wait for the panes to clear
+  box.addEventListener('pointerup',function(e){if(p&&!p.drag&&Math.hypot(e.clientX-p.x,e.clientY-p.y)<10)set(at(e));p=null});
+  box.addEventListener('pointercancel',function(){p=null});
+  range.addEventListener('input',function(){stop();set(+range.value)});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){
+    if(!es[0].isIntersecting||hinted)return;
+    io.disconnect();hinted=true;
+    var keys=S.SWEEP,t0=performance.now()+450;   // wait for the fade-up to land
     (function step(t){
-      const k = (t - t0) / seg, i = Math.floor(k);
-      if (k < 0){ anim = requestAnimationFrame(step); return; }
-      if (i >= keys.length - 1) return set(50);
-      const f = k - i, ease = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
-      set(keys[i] + (keys[i + 1] - keys[i]) * ease);
-      anim = requestAnimationFrame(step);
+      var k=(t-t0)/S.SEG,i=Math.floor(k);
+      if(k<0){anim=requestAnimationFrame(step);return}
+      if(i>=keys.length-1)return set(50);
+      var f=k-i,ease=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
+      set(keys[i]+(keys[i+1]-keys[i])*ease);
+      anim=requestAnimationFrame(step);
     })(t0);
-  }, { threshold: .6 });
+  },{threshold:.6});
   io.observe(box);
 });
 
-/* ---------- quote form -> Messenger (or text once PHONE is set) ---------- */
-(function quote(){
-  const form = document.getElementById('quoteForm'), err = document.getElementById('formErr');
-  const done = document.getElementById('done'), msgBox = document.getElementById('doneMsg');
-  const open = document.getElementById('doneOpen'), copyBtn = document.getElementById('doneCopy');
-  function compose(){
-    const d = new FormData(form), svc = d.getAll('svc');
-    const lines = ['Hi ' + CONFIG.NAME + '! I\'d like a free quote.'];
-    if (svc.length) lines.push('For: ' + svc.join(', '));
-    if (d.get('where').trim()) lines.push('Where: ' + d.get('where').trim());
-    if (d.get('notes').trim()) lines.push(d.get('notes').trim());
-    lines.push('Name: ' + d.get('name').trim());
-    if (d.get('phone').trim()) lines.push('Phone: ' + d.get('phone').trim());
-    return lines.join('\n');
-  }
-  function copy(text){
-    try { if (navigator.clipboard) return navigator.clipboard.writeText(text).catch(() => {}); } catch (e) {}
-    return Promise.resolve();
-  }
-  form.addEventListener('submit', e => {
+/* ===== Quote form: composes a message to Messenger (or a text once PHONE is set) ===== */
+(function(){
+  var form=document.getElementById('quoteForm');if(!form)return;
+  var done=document.getElementById('done'),box=document.getElementById('doneMsg'),open=document.getElementById('doneOpen'),copyBtn=document.getElementById('doneCopy');
+  function val(id){return document.getElementById(id).value.trim()}
+  function copy(t){try{if(navigator.clipboard)return navigator.clipboard.writeText(t).catch(function(){})}catch(e){}return Promise.resolve()}
+  form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('bad'))f.classList.remove('bad');if(e.target.id==='notes'||e.target.name==='svc')document.getElementById('f-svc').classList.remove('bad')});
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    const d = new FormData(form);
-    if (!d.get('name').trim()) { err.textContent = 'Please add your name so we know who to answer.'; form.name.setAttribute('aria-invalid', 'true'); form.name.focus(); return; }
-    form.name.removeAttribute('aria-invalid');
-    if (!d.getAll('svc').length && !d.get('notes').trim()) { err.textContent = 'Pick what needs cleaning, or describe it under Anything else.'; form.querySelector('.chip input').focus(); return; }
-    err.textContent = '';
-    const text = compose(), enc = encodeURIComponent(text);
-    if (CONFIG.PHONE) { location.href = 'sms:+1' + CONFIG.PHONE + '?&body=' + enc; return; }
-    const link = 'https://m.me/' + CONFIG.FB_ID + '?text=' + enc;
-    msgBox.value = text; open.href = link; done.hidden = false; form.querySelector('.send').hidden = true;
+    var name=val('name'),svc=[].map.call(form.querySelectorAll('input[name=svc]:checked'),function(b){return b.value}),notes=val('notes');
+    var badName=!name,badSvc=!svc.length&&!notes;
+    document.getElementById('f-name').classList.toggle('bad',badName);document.getElementById('name').setAttribute('aria-invalid',badName?'true':'false');
+    document.getElementById('f-svc').classList.toggle('bad',badSvc);
+    if(badName){document.getElementById('name').focus();return}
+    if(badSvc){document.getElementById('s1').focus();return}
+    var lines=['Hi '+CONFIG.NAME+'! I\'d like a free quote.'];
+    if(svc.length)lines.push('For: '+svc.join(', '));
+    if(val('where'))lines.push('Where: '+val('where'));
+    if(notes)lines.push(notes);
+    lines.push('Name: '+name);
+    if(val('phone'))lines.push('Phone: '+val('phone'));
+    var text=lines.join('\n'),enc=encodeURIComponent(text);
+    if(CONFIG.PHONE){location.href='sms:+1'+CONFIG.PHONE+'?&body='+enc;return}
+    var link='https://m.me/'+CONFIG.FB_ID+'?text='+enc;
+    box.value=text;open.href=link;done.hidden=false;document.getElementById('send').hidden=true;
     // the in-app browser may never settle the clipboard promise: go after 400ms regardless
-    Promise.race([copy(text), new Promise(r => setTimeout(r, 400))]).then(() => { location.href = link; });
+    Promise.race([copy(text),new Promise(function(r){setTimeout(r,400)})]).then(function(){location.href=link});
   });
-  copyBtn.addEventListener('click', () => {
-    msgBox.select();
-    copy(msgBox.value).then(() => { copyBtn.textContent = 'Copied'; setTimeout(() => copyBtn.textContent = 'Copy message', 1800); });
-    try { document.execCommand('copy'); } catch (e) {}
+  copyBtn.addEventListener('click',function(){
+    box.select();try{document.execCommand('copy')}catch(e){}
+    copy(box.value).then(function(){copyBtn.textContent='Copied';setTimeout(function(){copyBtn.textContent='Copy message'},1800)});
   });
 })();
 
-/* ---------- shared animation loop ---------- */
-const Loop = (function(){
-  const jobs = new Set(); let raf = 0, last = 0;
-  function tick(t){
-    const dt = Math.min(0.05, (t - (last || t)) / 1000); last = t;
-    jobs.forEach(j => j.visible && j.step(t / 1000, dt));
-    raf = [...jobs].some(j => j.visible) ? requestAnimationFrame(tick) : 0;
-    if (!raf) last = 0;
-  }
-  return {
-    add(job){ jobs.add(job); },
-    wake(){ if (!raf) raf = requestAnimationFrame(tick); }
-  };
-})();
-const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* header and hero-text heights, so the hero (and the phone window) fill exactly the first screen */
-(function heroFill(){
-  const hd = document.querySelector('.hd'); if (!hd) return;
-  const txt = document.querySelector('.hero .wrap > div');
-  const set = () => { const r = document.documentElement.style; r.setProperty('--hd-h', hd.offsetHeight + 'px'); if (txt) r.setProperty('--txt-h', txt.offsetHeight + 'px'); };
-  set(); addEventListener('resize', set);
+/* ===== Floating contact circle: shows after the hero, hides while the form or the closing band is on screen ===== */
+(function(){
+  var fl=document.getElementById('float');if(!fl)return;
+  if(!CONFIG.FLOAT||!('IntersectionObserver' in window)){fl.remove();return}
+  var pastHero=false,near={};
+  function sync(){var on=pastHero&&!near.quoteForm&&!near.close;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
+  new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('hero'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){near[e.target.id]=e.isIntersecting});sync()},{rootMargin:'-15% 0px -15% 0px'});
+  io.observe(document.getElementById('quoteForm'));io.observe(document.getElementById('close'));
+  sync();
 })();
 
-/* ---------- pane-by-pane clearing on the work photos and section headings (CSS grid does the layout and the bars) ---------- */
-(function panes(){
-  const P = { PHOTO_CELL: 84, HEAD_CELL: 46, STEP: 55, BACK: .5, DRAIN: 550, BAR_PHOTO: 6, BAR_HEAD: 0, LINE: 15 };   // STEP = ms between diagonals, BACK = speed of the fog-back wave relative to it, LINE = % up from the bottom of the screen where it clears/fogs
-  if (REDUCED || !('IntersectionObserver' in window)) return;
-  function bg(el){ for (; el; el = el.parentElement){ const c = getComputedStyle(el).backgroundColor; if (c && !/rgba\(.*, 0\)|transparent/.test(c)) return c; } return 'var(--mist)'; }
-  function cover(host, cell, bar, barC, pane){
-    const r = host.getBoundingClientRect(); if (!r.width) return;
-    const cols = Math.max(2, Math.round(r.width / cell)), rows = Math.max(1, Math.round(r.height / cell));
-    const g = document.createElement('div'); g.className = 'panes'; g.setAttribute('aria-hidden', 'true');
-    const total = (cols + rows - 2) * P.STEP + P.DRAIN;
-    g.style.cssText = `--cols:${cols};--rows:${rows};--bar:${bar}px;--bar-c:${barC};--pane:${pane};--settle:${total - 150}ms`;
-    const last = cols + rows - 2;
-    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++){ const i = document.createElement('i'); i.style.setProperty('--d', (x + y) * P.STEP + 'ms'); i.style.setProperty('--dr', (last - x - y) * P.STEP * P.BACK + 'ms'); g.append(i); }
-    host.append(g); host.dataset.wait = total + 350;
-    // clear once its top rises past the line; fog back over when it sinks below it again (scrolling up).
-    // Anything above the screen counts as clear, so a fling or an anchor jump past it doesn't leave it fogged.
-    new IntersectionObserver(es => {
-      const e = es[0];
-      if (e.isIntersecting || e.boundingClientRect.bottom < 0) requestAnimationFrame(() => g.classList.add('clear'));
-      else g.classList.remove('clear');
-    }, { rootMargin: `0px 0px -${P.LINE}% 0px` }).observe(host);
-    all.push(g);
-  }
-  // the observer never fires for a jump from below the screen straight to above it, so check those on scroll
-  const all = []; let tick = 0;
-  addEventListener('scroll', () => { if (tick) return; tick = requestAnimationFrame(() => {
-    tick = 0;
-    all.forEach(g => { if (!g.classList.contains('clear') && g.parentElement.getBoundingClientRect().bottom < 0) g.classList.add('clear'); });
-  }); }, { passive: true });
-  document.querySelectorAll('.proof .photo').forEach(h => cover(h, P.PHOTO_CELL, P.BAR_PHOTO, 'var(--frame)', 'var(--lav-soft)'));
-  document.querySelectorAll('main h2').forEach(h => { h.classList.add('paned'); const c = bg(h); cover(h, P.HEAD_CELL, P.BAR_HEAD, 'var(--lav-soft)', c); });
-})();
-
-/* ---------- the fogged window ---------- */
-(function glass(){
-  const T = {
-    REGROW: 0.0032,      // fog returning per frame (higher = clean patch fogs over sooner)
-    BRUSH: 30,           // finger radius, css px
-    GHOST_IDLE: 4500,    // ms without touch before the window wipes itself again
-    GHOST_PASSES: 1.4,   // self-wipe: side-to-side passes per second
-    GHOST_PAUSE: 1.5,    // s the hand rests before moving to another pane
-    SWELL: 0.7,          // beads that start swelling into runners, per second
-    RUN_AT: 3.2,         // bead radius (css px) at which it lets go and runs
-    MAX_RUNNERS_PHONE: 4, MAX_RUNNERS_DESKTOP: 9,
-    BEADS_PHONE: 45, BEADS_DESKTOP: 90,
-    DPR_CAP: 1.5
-  };
-  const PALETTE = {
-    sky: ['#3a2f7e', '#5e50ae', '#a592d8', '#f0b5a6'],
-    trees: ['#463a86', '#30276a'], lawn: ['#342c6c', '#251f52'],
-    house: '#271f58', lit: '#ffd08a', glow: '255,200,130',
-    fog: '238,235,252', fogTop: .56, fogBottom: .74,
-    rim: '25,18,64'
-  };
-  const PANES = [[0, 0, .5, .46], [.5, 0, 1, .46], [0, .46, .5, 1], [.5, .46, 1, 1]];  // match the mullions
-  const pane = document.getElementById('pane'), cv = document.getElementById('glass');
-  const ctx = cv.getContext('2d');
-  const scene = document.createElement('canvas'), frost = document.createElement('canvas');
-  const mask = document.createElement('canvas'), comp = document.createElement('canvas');
-  const sx = scene.getContext('2d'), fx = frost.getContext('2d'), mx = mask.getContext('2d', { willReadFrequently: true }), cx = comp.getContext('2d');
-  let W = 0, H = 0, dpr = 1, cssW = 0, cssH = 0, MS = 0.5, phone = true;
-  let beads = [], runners = [], swellAcc = 0, maskData = null, maskAge = 9, lights = [];
-  const ptr = { down:false, x:0, y:0, px:null, py:null, hx:null, hy:null, moved:0, lastInput:-1e9 };
-  const ghost = { pane: 3, pass: 0, passes: 4, p: 0, dir: 1, pause: 0, x: null, y: null };
-
-  function mulberry(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-  const maxRunners = () => phone ? T.MAX_RUNNERS_PHONE : T.MAX_RUNNERS_DESKTOP;
-  const maxBeads = () => phone ? T.BEADS_PHONE : T.BEADS_DESKTOP;
-
-  // outside: a dusk yard in the logo's colors, drawn once per size
-  function drawScene(){
-    const w = W, h = H, s = dpr, rnd = mulberry(11); lights = [];
-    const g = sx.createLinearGradient(0, 0, 0, h*.76);
-    PALETTE.sky.forEach((c, i) => g.addColorStop(i/3, c));
-    sx.fillStyle = g; sx.fillRect(0, 0, w, h);
-    const sunX = w*.28, sunY = h*.74;
-    const sun = sx.createRadialGradient(sunX, sunY, 0, sunX, sunY, w*.5);
-    sun.addColorStop(0, 'rgba(255,214,180,.6)'); sun.addColorStop(1, 'rgba(255,214,180,0)');
-    sx.fillStyle = sun; sx.fillRect(0, 0, w, h);
-    lights.push([sunX, sunY, w*.35, '255,214,180', .28]);
-    for (let i = 0; i < 40; i++) { sx.fillStyle = 'rgba(255,255,255,' + (0.35 + rnd()*0.5) + ')'; sx.beginPath(); sx.arc(rnd()*w, rnd()*h*.32, (0.5 + rnd()*0.9)*s, 0, 7); sx.fill(); }
-    const horizon = h*.75;
-    PALETTE.trees.forEach((col, k) => {
-      const amp = k ? 18 : 26, lift = k ? 0 : .02;
-      sx.fillStyle = col; sx.beginPath(); sx.moveTo(0, h);
-      for (let x = 0; x <= w + 8*s; x += 4*s) {
-        const n = Math.sin(x/(23*s)+k*2)*.5 + Math.sin(x/(9*s)+k)*.3 + Math.sin(x/(4.3*s))*.2;
-        const crown = Math.max(0, Math.sin(x/(57*s)+k*1.7))*amp*1.6*s;
-        sx.lineTo(x, horizon - lift*h - (amp*s*(0.6+n*0.5)) - crown);
-      }
-      sx.lineTo(w, h); sx.closePath(); sx.fill();
-    });
-    // neighbour's house with lit windows
-    const hx = w*.62, hw = Math.min(w*.3, 190*s), hy = horizon - 8*s, hh = hw*.42;
-    sx.fillStyle = PALETTE.house;
-    sx.beginPath(); sx.moveTo(hx - hw*.08, hy - hh); sx.lineTo(hx + hw*.5, hy - hh - hw*.3); sx.lineTo(hx + hw*1.08, hy - hh); sx.lineTo(hx + hw, hy - hh); sx.lineTo(hx + hw, h); sx.lineTo(hx, h); sx.lineTo(hx, hy - hh); sx.closePath(); sx.fill();
-    [[.14, .35], [.6, .35]].forEach(([fx0, fy0]) => {
-      const x = hx + hw*fx0, y = hy - hh + hh*fy0, ww = hw*.22, wh = hh*.42;
-      const glow = sx.createRadialGradient(x+ww/2, y+wh/2, 0, x+ww/2, y+wh/2, ww*1.6);
-      glow.addColorStop(0, 'rgba(' + PALETTE.glow + ',.35)'); glow.addColorStop(1, 'rgba(' + PALETTE.glow + ',0)');
-      sx.fillStyle = glow; sx.fillRect(x - ww, y - wh, ww*3, wh*3);
-      sx.fillStyle = PALETTE.lit; sx.fillRect(x, y, ww, wh);
-      sx.fillStyle = 'rgba(33,26,77,.8)'; sx.fillRect(x + ww/2 - s, y, 2*s, wh); sx.fillRect(x, y + wh/2 - s, ww, 2*s);
-      lights.push([x + ww/2, y + wh/2, ww*2.4, PALETTE.glow, .45]);
-    });
-    const lawn = sx.createLinearGradient(0, horizon, 0, h);
-    lawn.addColorStop(0, PALETTE.lawn[0]); lawn.addColorStop(1, PALETTE.lawn[1]);
-    sx.fillStyle = lawn; sx.fillRect(0, hy + 2*s, w, h);
-  }
-  // inside the fog: scene softened, a veil that thickens toward the bottom of each pane,
-  // lights blooming through it, and condensation grain
-  function drawFrost(){
-    const tiny = document.createElement('canvas'); tiny.width = Math.max(8, W/14|0); tiny.height = Math.max(8, H/14|0);
-    const tx = tiny.getContext('2d'); tx.imageSmoothingQuality = 'high'; tx.drawImage(scene, 0, 0, tiny.width, tiny.height);
-    fx.imageSmoothingEnabled = true; fx.imageSmoothingQuality = 'high';
-    fx.drawImage(tiny, 0, 0, W, H);
-    [[0, .46], [.46, 1]].forEach(([a, b]) => {
-      const g = fx.createLinearGradient(0, a*H, 0, b*H);
-      g.addColorStop(0, 'rgba(' + PALETTE.fog + ',' + PALETTE.fogTop + ')'); g.addColorStop(1, 'rgba(' + PALETTE.fog + ',' + PALETTE.fogBottom + ')');
-      fx.fillStyle = g; fx.fillRect(0, a*H, W, (b - a)*H);
-    });
-    lights.forEach(([x, y, r, c, a]) => {
-      const g = fx.createRadialGradient(x, y, 0, x, y, r);
-      g.addColorStop(0, 'rgba(' + c + ',' + a + ')'); g.addColorStop(1, 'rgba(' + c + ',0)');
-      fx.fillStyle = g; fx.fillRect(x - r, y - r, r*2, r*2);
-    });
-    const r2 = mulberry(5), n = (W*H)/(70*dpr*dpr);
-    for (let i = 0; i < n; i++) {
-      const x = r2()*W, y = r2()*H, r = (0.5 + r2()*r2()*1.9)*dpr;
-      fx.fillStyle = 'rgba(40,30,90,.10)'; fx.beginPath(); fx.arc(x + r*.35, y + r*.45, r, 0, 7); fx.fill();
-      fx.fillStyle = 'rgba(255,255,255,.30)'; fx.beginPath(); fx.arc(x, y, r*.8, 0, 7); fx.fill();
-    }
-  }
-  const bead = (x, y, r, a) => ({ x, y, r: r || 1.4 + Math.random()*Math.random()*2.6, a: a == null ? 1 : a, grow: false });
-  function makeBeads(){ beads = []; for (let i = 0; i < maxBeads(); i++) beads.push(bead(Math.random()*cssW, Math.random()*cssH)); }
-  const fogAt = (x, y) => { if (!maskData) return 1; const i = ((y*MS|0)*mask.width + (x*MS|0))*4 + 3; return (maskData[i] || 0)/255; };
-
-  function resize(){
-    const r = pane.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
-    if (w === cssW && h === cssH) return;     // address bar slide: keep what was wiped
-    cssW = w; cssH = h; phone = w < 600; MS = phone ? 1 : 0.5;
-    dpr = Math.min(phone ? 1 : T.DPR_CAP, window.devicePixelRatio || 1);   // fog is soft: phones lose nothing at 1x
-    W = cv.width = scene.width = frost.width = comp.width = Math.round(w*dpr);
-    H = cv.height = scene.height = frost.height = comp.height = Math.round(h*dpr);
-    mask.width = Math.max(4, Math.round(w*MS)); mask.height = Math.max(4, Math.round(h*MS));
-    drawScene(); drawFrost();
-    pane.style.backgroundImage = 'url(' + scene.toDataURL('image/jpeg', .9) + ')'; pane.style.backgroundSize = '100% 100%';
-    mx.fillStyle = '#000'; mx.fillRect(0, 0, mask.width, mask.height); maskData = null;
-    makeBeads(); runners = [];
-    if (REDUCED) { stillWipe(); render(); }
-  }
-
-  // wipe the fog between two css-px points; the finger soaks up any water it passes
-  function wipeLine(x0, y0, x1, y1, strength){
-    const rad = T.BRUSH*MS, dist = Math.hypot(x1-x0, y1-y0), steps = Math.max(1, Math.ceil(dist/(T.BRUSH*.3)));
-    mx.globalCompositeOperation = 'destination-out';
-    for (let i = 0; i <= steps; i++) {
-      const x = (x0 + (x1-x0)*i/steps)*MS, y = (y0 + (y1-y0)*i/steps)*MS;
-      const g = mx.createRadialGradient(x, y, 0, x, y, rad);
-      g.addColorStop(0, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(.4, 'rgba(0,0,0,' + strength + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
-      mx.fillStyle = g; mx.beginPath(); mx.arc(x, y, rad, 0, 7); mx.fill();
-    }
-    mx.globalCompositeOperation = 'source-over';
-    const soak = d => Math.hypot(d.x - x1, d.y - y1) < T.BRUSH*.9;
-    beads = beads.filter(b => !soak(b)); runners = runners.filter(d => !soak(d));
-  }
-  // the water a stroke pushes ahead of it gathers at its lower edge and runs
-  function pushedWater(x, y){
-    if (REDUCED || runners.length >= maxRunners()) return;
-    runners.push(runner(x + (Math.random() - .5)*T.BRUSH*.5, y + T.BRUSH*.95, 3.4 + Math.random()*1.4));
-  }
-  const runner = (x, y, r) => ({ x, y, r, tx: x, ph: Math.random()*6.28, v: 0, hold: 0.15 + Math.random()*0.4, lx: x, ly: y, trail: 0 });
-
-  function stepDrops(t, dt){
-    // a bead swells, then lets go
-    swellAcc += dt*T.SWELL;
-    if (swellAcc > 1) {
-      swellAcc = 0;
-      if (runners.length + beads.filter(b => b.grow).length < maxRunners()) {
-        const c = beads.filter(b => !b.grow && b.y < cssH*.7 && b.a > .9);
-        if (c.length) c[Math.random()*c.length|0].grow = true;
-      }
-    }
-    for (let i = beads.length - 1; i >= 0; i--) {
-      const b = beads[i];
-      if (b.a < 1) b.a = Math.min(1, b.a + dt*.8);
-      if (b.grow) { b.r += dt*2.6; if (b.r >= T.RUN_AT) { beads.splice(i, 1); runners.push(runner(b.x, b.y, b.r)); } }
-    }
-    // condensation returns only where the fog has come back
-    if ((maskAge += dt) > .5) { maskAge = 0; maskData = mx.getImageData(0, 0, mask.width, mask.height).data; }
-    if (beads.length < maxBeads() && Math.random() < dt*4) { const x = Math.random()*cssW, y = Math.random()*cssH; if (fogAt(x, y) > .8) beads.push(bead(x, y, null, 0)); }
-
-    mx.globalCompositeOperation = 'destination-out'; mx.lineCap = 'round'; mx.strokeStyle = 'rgba(0,0,0,.38)';
-    for (let i = runners.length - 1; i >= 0; i--) {
-      const d = runners[i];
-      if (d.hold > 0) { d.hold -= dt; d.v *= 0.7; }
-      else {
-        d.v = Math.min(d.v + dt*(40 + d.r*30), 20 + d.r*16);
-        if (Math.random() < dt*0.6) d.hold = 0.12 + Math.random()*0.6;   // stop-go, like real glass
-      }
-      const dy = d.v*dt; d.y += dy;
-      // runs straight down; leans only toward a bead just below it
-      for (const b of beads) if (!b.grow && b.y > d.y && b.y - d.y < d.r*2.5 && Math.abs(b.x - d.x) < d.r*2) { d.tx = b.x; break; }
-      d.x += (d.tx + Math.sin(d.y*.06 + d.ph)*1.4 - d.x)*Math.min(1, dt*12);
-      for (let j = beads.length - 1; j >= 0; j--) { const b = beads[j]; if (Math.hypot(b.x - d.x, b.y - d.y) < d.r + b.r) { d.r = Math.min(6, Math.hypot(d.r, b.r*.6)); beads.splice(j, 1); } }
-      mx.lineWidth = d.r*(.55 + .2*Math.sin(d.y*.21 + d.ph))*MS;
-      mx.beginPath(); mx.moveTo(d.lx*MS, d.ly*MS); mx.lineTo(d.x*MS, d.y*MS); mx.stroke();
-      d.lx = d.x; d.ly = d.y;
-      // a trail dotted with the little drops it leaves behind
-      if ((d.trail += dy) > 12 + Math.random()*8) {
-        d.trail = 0; const br = 0.7 + Math.random()*0.6;
-        beads.push(bead(d.x + (Math.random() - .5)*d.r*.4, d.y - d.r*1.6, br));
-        d.r -= 0.12;
-      }
-      if (d.r < 2) { runners.splice(i, 1); beads.push(bead(d.x, d.y, d.r)); }
-      else if (d.y > cssH + 10) runners.splice(i, 1);
-    }
-    mx.globalCompositeOperation = 'source-over';
-  }
-
-  // a drop is a tiny lens: the scene upside down inside it, a darker rim at the bottom
-  function drawDrop(x, y, r, stretch, a){
-    const px = x*dpr, py = y*dpr, rx = r*dpr, ry = rx*(1 + stretch);
-    ctx.globalAlpha = a;
-    if (r > 2.4) {
-      ctx.save(); ctx.beginPath(); ctx.ellipse(px, py, rx, ry, 0, 0, 7); ctx.clip();
-      ctx.translate(px, py); ctx.scale(-0.28, -0.28); ctx.drawImage(scene, -px, -py); ctx.restore();
-    }
-    ctx.beginPath(); ctx.ellipse(px, py, rx, ry, 0, 0, 7);
-    // water gathers light: lighter than the fog, a bright crescent low inside, a soft rim on the shadow side
-    let g = ctx.createRadialGradient(px, py + ry*.35, rx*.1, px, py, ry);
-    g.addColorStop(0, 'rgba(255,255,255,.55)'); g.addColorStop(.55, 'rgba(' + PALETTE.fog + ',.38)'); g.addColorStop(.85, 'rgba(' + PALETTE.fog + ',.2)'); g.addColorStop(1, 'rgba(' + PALETTE.rim + ',.28)');
-    ctx.fillStyle = g; ctx.fill();
-    g = ctx.createLinearGradient(0, py - ry, 0, py);
-    g.addColorStop(0, 'rgba(' + PALETTE.rim + ',.22)'); g.addColorStop(1, 'rgba(' + PALETTE.rim + ',0)');
-    ctx.fillStyle = g; ctx.fill();
-    ctx.globalAlpha = 1;
-  }
-
-  function render(){
-    cx.globalCompositeOperation = 'source-over'; cx.clearRect(0, 0, W, H); cx.drawImage(frost, 0, 0);
-    cx.globalCompositeOperation = 'destination-in'; cx.imageSmoothingEnabled = true; cx.drawImage(mask, 0, 0, W, H);
-    ctx.clearRect(0, 0, W, H); ctx.drawImage(comp, 0, 0);   // the scene itself is the pane's css background
-    for (const b of beads) drawDrop(b.x, b.y, b.r, 0, b.a);
-    for (const d of runners) drawDrop(d.x, d.y, d.r, d.hold > 0 ? 0.08 : 0.3, 1);
-  }
-
-  // self-wipe: a hand doing side-to-side passes inside one pane, drifting down, then resting
-  function planPane(k){
-    const [a, b, c, e] = PANES[k], m = T.BRUSH*.3;   // small margin: the passes reach the rails
-    ghost.pane = k; ghost.pass = 0; ghost.p = 0; ghost.dir = Math.random() < .5 ? 1 : -1;
-    ghost.box = [a*cssW + m, b*cssH + m, c*cssW - m, e*cssH - m];
-    ghost.passes = Math.max(2, Math.min(6, Math.floor((ghost.box[3] - ghost.box[1])/(T.BRUSH*1.2)) + 1));
-  }
-  function stepGhost(dt){
-    if (ghost.pause > 0) { ghost.pause -= dt; ghost.x = null; return; }
-    if (!ghost.box) planPane(ghost.pane);
-    ghost.p += dt*T.GHOST_PASSES;
-    if (ghost.p >= 1) {
-      ghost.p = 0; ghost.pass++; ghost.dir *= -1;
-      if (ghost.pass >= ghost.passes) {
-        pushedWater(ghost.x, ghost.y); ghost.pause = T.GHOST_PAUSE; ghost.x = null;
-        let k; do { k = Math.random()*4|0; } while (k === ghost.pane); planPane(k); return;
-      }
-    }
-    const [x0, y0, x1, y1] = ghost.box, e = .5 - .5*Math.cos(Math.PI*ghost.p);
-    const step = (y1 - y0)/Math.max(1, ghost.passes - 1);
-    const nx = ghost.dir > 0 ? x0 + (x1 - x0)*e : x1 - (x1 - x0)*e;
-    const ny = y0 + step*ghost.pass + Math.sin(Math.PI*ghost.p)*5;
-    if (ghost.x != null) wipeLine(ghost.x, ghost.y, nx, ny, .9);
-    ghost.x = nx; ghost.y = ny;
-  }
-  function stillWipe(){ planPane(0); for (let i = 0; i < 400 && ghost.pass < ghost.passes; i++) stepGhost(1/60); }
-
-  const job = { visible: true, step(t, dt){
-    // pointer: read the rect every frame so a scrolling page never misplaces the finger
-    const r = pane.getBoundingClientRect();
-    if (ptr.down) {
-      const x = ptr.x - r.left, y = ptr.y - r.top;
-      if (ptr.px != null) { ptr.moved += Math.hypot(x - ptr.px, y - ptr.py); wipeLine(ptr.px, ptr.py, x, y, 1); }
-      ptr.px = x; ptr.py = y; ghost.x = null;
-    } else if (performance.now() - ptr.lastInput > T.GHOST_IDLE) stepGhost(dt);
-    else ghost.x = null;
-    mx.fillStyle = 'rgba(0,0,0,' + T.REGROW + ')'; mx.fillRect(0, 0, mask.width, mask.height);
-    stepDrops(t, dt);
-    render();
-  }};
-
-  // input: pointer (mouse, pen, touch); touch-action:none on the pane so every direction wipes
-  pane.addEventListener('pointerdown', e => {
-    ptr.down = true; ptr.x = e.clientX; ptr.y = e.clientY; ptr.px = null; ptr.moved = 0; ptr.lastInput = performance.now();
-    try { pane.setPointerCapture(e.pointerId); } catch (_) {}
-    e.preventDefault(); Loop.wake();
-  });
-  pane.addEventListener('pointermove', e => {
-    ptr.x = e.clientX; ptr.y = e.clientY; ptr.lastInput = performance.now();
-    if (e.pointerType === 'mouse' && !ptr.down) { // desktop: hovering wipes too
-      const r = pane.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-      if (ptr.hx != null) { wipeLine(ptr.hx, ptr.hy, x, y, .9); ptr.moved += Math.hypot(x - ptr.hx, y - ptr.hy); }
-      ptr.hx = x; ptr.hy = y; ghost.x = null;
-      if (REDUCED) render();
-    } else if (REDUCED && ptr.down) {
-      const r = pane.getBoundingClientRect(), x = ptr.x - r.left, y = ptr.y - r.top;
-      if (ptr.px != null) wipeLine(ptr.px, ptr.py, x, y, 1);
-      ptr.px = x; ptr.py = y; render();
-    }
-  });
-  pane.addEventListener('pointerleave', () => { if (ptr.hx != null && ptr.moved > 60) pushedWater(ptr.hx, ptr.hy); ptr.hx = null; ptr.moved = 0; });
-  const up = () => {
-    if (ptr.down && ptr.moved > 40 && ptr.px != null) pushedWater(ptr.px, ptr.py);
-    ptr.down = false; ptr.px = null; ptr.lastInput = performance.now();
-  };
-  pane.addEventListener('pointerup', up); pane.addEventListener('pointercancel', up);
-  pane.addEventListener('touchmove', e => { const t = e.touches[0]; if (t) { ptr.x = t.clientX; ptr.y = t.clientY; } }, { passive: true });
-
-  resize();
-  addEventListener('resize', () => { resize(); if (REDUCED) render(); });
-  if (REDUCED) return;   // still frame; wiping still works by hand
-  Loop.add(job);
-  new IntersectionObserver(es => { job.visible = es[0].isIntersecting; if (job.visible) Loop.wake(); }).observe(pane);
-  Loop.wake();
-})();
-
-/* ---------- painted window frames (hero + work photo) ---------- */
-(function paintFrames(){
-  const F = { RAIL: 13, SILL: 18, OVER: 8, PAINT: '#f1eff9', MULLION: 10, MULLION_Y: .46 };   // MULLION_Y matches PANES in glass
-  const frames = [...document.querySelectorAll('.frame')];
-  function rail(c, pts, top, bottom){ const g = c.createLinearGradient(pts[0][0], pts[0][1], pts[2][0], pts[2][1]); g.addColorStop(0, top); g.addColorStop(1, bottom); c.fillStyle = g; c.beginPath(); pts.forEach((p, i) => i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])); c.closePath(); c.fill(); }
-  function paint(cv){
-    const r = cv.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
-    if (!w || (cv._w === w && cv._h === h)) return; cv._w = w; cv._h = h;
-    const dpr = Math.min(2, devicePixelRatio || 1), c = cv.getContext('2d');
-    cv.width = w*dpr; cv.height = h*dpr; c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, w, h);
-    const o = F.OVER, R = F.RAIL, x0 = o, x1 = w - o, y0 = 0, y1 = h - F.SILL;      // sash outer box
-    const gx0 = x0 + R, gx1 = x1 - R, gy0 = y0 + R, gy1 = y1 - R;                   // glass
-    // sash rails, lit from the upper left (the low sun in the scene)
-    // a sash is butt-jointed: stiles run between the rails, the rails run the full width
-    rail(c, [[x0, gy0], [gx0, gy0], [gx0, gy1], [x0, gy1]], '#f7f5fd', '#e2def2');
-    rail(c, [[gx1, gy0], [x1, gy0], [x1, gy1], [gx1, gy1]], '#e6e2f4', '#d3cdea');
-    rail(c, [[x0, y0], [x1, y0], [x1, gy0], [x0, gy0]], '#fdfcff', '#e9e6f6');
-    rail(c, [[x0, gy1], [x1, gy1], [x1, y1], [x0, y1]], '#dcd7ee', '#cdc7e5');
-    // brush marks in the paint, following each piece's grain
-    const rnd = (n => () => (n = (n*9301 + 49297) % 233280)/233280)(7);
-    c.lineWidth = .8;
-    for (let i = 0; i < 70; i++) {
-      c.strokeStyle = rnd() < .5 ? 'rgba(96,84,160,.13)' : 'rgba(255,255,255,.55)';
-      const k = i % 4, L = 20 + rnd()*50; c.beginPath();
-      if (k < 2) { const yy = (k ? gy1 : y0) + 1.5 + rnd()*(R - 3), xx = x0 + rnd()*(x1 - x0 - L); c.moveTo(xx, yy); c.lineTo(xx + L, yy + (rnd() - .5)*.8); }
-      else { const xx = (k === 2 ? x0 : gx1) + 1.5 + rnd()*(R - 3), yy = gy0 + rnd()*Math.max(1, gy1 - gy0 - L); c.moveTo(xx, yy); c.lineTo(xx + (rnd() - .5)*.8, yy + L); }
-      c.stroke();
-    }
-    // the joints where the stiles meet the rails
-    c.fillStyle = 'rgba(70,60,130,.28)'; c.fillRect(x0, gy0, R, 1); c.fillRect(gx1, gy0, R, 1); c.fillRect(x0, gy1 - 1, R, 1); c.fillRect(gx1, gy1 - 1, R, 1);
-    // rebate: the inner edge steps down to the glass
-    c.strokeStyle = 'rgba(70,60,130,.35)'; c.lineWidth = 1.5; c.strokeRect(gx0 - .75, gy0 - .75, gx1 - gx0 + 1.5, gy1 - gy0 + 1.5);
-    // shadow the top and left rails cast onto the glass
-    let g = c.createLinearGradient(0, gy0, 0, gy0 + 12); g.addColorStop(0, 'rgba(20,12,60,.32)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, gy0, gx1 - gx0, 12);
-    g = c.createLinearGradient(gx0, 0, gx0 + 8, 0); g.addColorStop(0, 'rgba(20,12,60,.22)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, gy0, 8, gy1 - gy0);
-    if (cv.dataset.mullions) {
-      const M = F.MULLION, mx = (gx0 + gx1)/2, my = gy0 + (gy1 - gy0)*F.MULLION_Y;
-      // cast shadows first (down and right), then the rounded bars on top
-      g = c.createLinearGradient(0, my + M/2, 0, my + M/2 + 9); g.addColorStop(0, 'rgba(20,12,60,.3)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(gx0, my + M/2, gx1 - gx0, 9);
-      g = c.createLinearGradient(mx + M/2, 0, mx + M/2 + 7, 0); g.addColorStop(0, 'rgba(20,12,60,.25)'); g.addColorStop(1, 'rgba(20,12,60,0)'); c.fillStyle = g; c.fillRect(mx + M/2, gy0, 7, gy1 - gy0);
-      g = c.createLinearGradient(mx - M/2, 0, mx + M/2, 0); g.addColorStop(0, '#fbfaff'); g.addColorStop(.45, '#efedf9'); g.addColorStop(1, '#d3cde9'); c.fillStyle = g; c.fillRect(mx - M/2, gy0, M, gy1 - gy0);
-      g = c.createLinearGradient(0, my - M/2, 0, my + M/2); g.addColorStop(0, '#fefdff'); g.addColorStop(.45, '#f0eef9'); g.addColorStop(1, '#cfc9e6'); c.fillStyle = g; c.fillRect(gx0, my - M/2, gx1 - gx0, M);
-      c.fillStyle = 'rgba(70,60,130,.18)'; c.fillRect(mx - M/2, my + M/2 - 1, M, 1);   // joint where the bars meet
-    }
-    // sill: a ledge wider than the sash, lit top face, shaded front, soft shadow under
-    const sy = y1, sh = F.SILL - 4;
-    c.save(); c.shadowColor = 'rgba(0,0,0,.4)'; c.shadowBlur = 10; c.shadowOffsetY = 5;
-    c.fillStyle = '#e2def3'; c.beginPath(); c.roundRect ? c.roundRect(0, sy + 3, w, sh, [1, 1, 4, 4]) : c.rect(0, sy + 3, w, sh); c.fill(); c.restore();
-    g = c.createLinearGradient(0, sy, 0, sy + 5); g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#f1eff9'); c.fillStyle = g; c.fillRect(0, sy, w, 5);
-    g = c.createLinearGradient(0, sy + 5, 0, sy + 3 + sh); g.addColorStop(0, '#e9e6f6'); g.addColorStop(1, '#c6bfe2'); c.fillStyle = g; c.fillRect(0, sy + 5, w, sh - 2);
-  }
-  const all = () => frames.forEach(paint);
-  all(); addEventListener('resize', all); addEventListener('load', all);
-})();
-
-/* ---------- seams: water line between sections ---------- */
-(function seams(){
-  const S = { SPEED: 0.7, AMP: 6 };            // swell speed and height (viewBox units)
-  const list = [...document.querySelectorAll('.seam')].map((el, i) => ({ el, i, fill: el.querySelector('.fill'), a: el.querySelector('.line'), visible: true }));
-  function y(x, t, k, off){
-    return 30 + off + S.AMP*(Math.sin(x/210 + t*S.SPEED + k) *.55 + Math.sin(x/97 - t*S.SPEED*1.7 + k*2)*.3 + Math.sin(x/43 + t*S.SPEED*2.6)*.15);
-  }
-  function d(t, k, off){ let s = ''; for (let x = 0; x <= 1440; x += 20) s += (x ? 'L' : 'M') + x + ' ' + y(x, t, k, off).toFixed(1); return s; }
-  function draw(s, t){
-    const main = d(t, s.i*1.9, 0);
-    s.a.setAttribute('d', main);
-    s.fill.setAttribute('d', main + 'L1440 60L0 60Z');
-  }
-  list.forEach(s => draw(s, 0));
-  if (REDUCED) return;
-  const io = new IntersectionObserver(es => es.forEach(e => { const s = list.find(s => s.el === e.target); s.visible = e.isIntersecting; if (s.visible) Loop.wake(); }));
-  list.forEach(s => { io.observe(s.el); let n = 0; Loop.add({ get visible(){ return s.visible; }, step(t){ if (innerWidth >= 600 || n++ % 2 === 0) draw(s, t); } }); });
+/* ===== Fade-up: everything is visible at rest; only what starts below the first screen rises 12px in ===== */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('below');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  [].forEach.call(document.querySelectorAll('.rise'),function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('below');io.observe(el)}});
 })();
 </script>
 </body>
