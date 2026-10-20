@@ -2,7 +2,7 @@
 
 ## Platform
 - Platform: web
-- Stack: static single-file HTML/CSS/JS (`index.html`), no frameworks, no tracking, system font stack. Hosted on GitHub Pages.
+- Stack: static single-file HTML/CSS/JS (`index.html`), no frameworks, no tracking. Cal Sans (Google Fonts) for headings, system stack for body. Hosted on GitHub Pages.
 
 ## Business (facts, with sources)
 - Name: ClearedCo Window Cleaning & Pressure Washing. Facebook page: "Cleared Co LLC". Logo reads "CLEARED CO — Pressure Washing & Window Cleaning". (Muse brief 2026-10-17; Facebook og meta 2026-10-17)
@@ -31,13 +31,13 @@ A new, local, hands-on window and exterior cleaning company. The name is the pro
 
 ## Brand commitments
 - Colors from the logo: deep indigo to soft violet gradient, white lettering, lavender subline. Ground never black.
-- Wordmark: heavy uppercase sans, as in the logo.
+- House look (Ellie, 2026-10-19): the calm band style learned from lpmr.co.uk: paper and indigo bands, one warm accent used as a fill (gold, inferred: the logo has no warm colour), Cal Sans headings, pill buttons, 24px cards.
 
 ## Evidence on hand
 - Logo (Facebook profile image, 720px).
-- Three before/after pairs (porch ceiling, two driveways).
+- Three before/after pairs (porch ceiling, two driveways); the front-driveway after photo also serves as the hero under an indigo overlay.
 
 ## Principles
 - Only real facts; gaps go in HANDOFF.md.
 - Speak as the business ("we": it's an LLC with no named owner, inferred).
-- One living element made of the trade's material: water on glass.
+- Calm and orderly: one hero H1 bounce-in, one quiet fade-up, a floating contact circle. The earlier fogged-window motion is opt-in now (in git history).
