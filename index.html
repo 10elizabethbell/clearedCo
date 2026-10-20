@@ -98,7 +98,7 @@ section{padding:64px 0}
 
 /* ---------- Hero: their own clean driveway under the indigo ---------- */
 .hero{padding:0;position:relative;background:var(--deep);color:var(--on-dark);overflow:hidden;isolation:isolate}
-.hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:0 0;filter:blur(3px);transform:scale(1.05)}   /* phones: soften the concrete joints so no line runs through the text */
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(28,24,64,.80) 0%,rgba(28,24,64,.78) 50%,rgba(28,24,64,.90) 100%)}
 .hero-copy{position:relative;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:72px}
 .hero h1{color:#fff;font-size:clamp(42px,12vw,80px);line-height:1.02;max-width:12ch}
@@ -208,13 +208,14 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
   .tel{font-size:20px}
   section{padding:96px 0}
   .hero-copy{padding-top:96px;padding-bottom:112px}
+  .hero-photo{object-position:50% 0;filter:none;transform:none}
   .hero::after{background:linear-gradient(90deg,rgba(28,24,64,.90) 0%,rgba(28,24,64,.80) 55%,rgba(28,24,64,.62) 100%)}
   .promise{max-width:none}
   .actions{grid-auto-flow:column;justify-content:start;width:auto}
   .actions .btn{min-width:220px}
   .services{grid-template-columns:1fr 1fr;column-gap:16px}
-  .pairs{grid-template-columns:4fr 3fr;align-items:stretch}
-  .pairs .ba:first-child{grid-row:1/3;aspect-ratio:auto!important}   /* fills the height of the two beside it */
+  .pairs{grid-template-columns:4fr 3fr;align-items:start;max-width:880px}   /* capped so the 586/695px photos aren't blown up */
+  .pairs .ba:first-child{grid-row:1/3;align-self:stretch;aspect-ratio:auto!important}   /* fills the height of the two beside it */
   .done .btns{grid-template-columns:1fr 1fr}
 }
 @media (min-width:1024px){
@@ -251,7 +252,7 @@ footer a:hover{color:var(--gold)}
 THESIS: A new local window and exterior cleaning company that earns trust through calm order (after lpmr.co.uk): their own clean driveway behind one claim (see the difference in Canfield & Boardman), the services as plain rows, three real before/afters you drag, and a free quote sent in Messenger.
 OWN-WORLD: Off-white paper, the logo's indigo (#2e2768) and deep indigo (#1c1840, faint diagonal lines) bands, one warm gold (#f5c451) as the accent (fills only; #7a5500 when it has to be text on light), the logo's violet for focus. Cal Sans display, system body at 16/1.7.
 STORY: The visitor sees who cleans homes in Canfield and Boardman, drags three real before/afters, and asks for a free quote in Messenger (or by text once a number exists).
-FIRST VIEWPORT: Paper header with the round logo and wordmark left, "Message us" top right. Hero over the client's washed driveway under an indigo overlay: eyebrow, "See the difference in Canfield & Boardman.", one promise line, two pill buttons (Get a free quote, See our work).
+FIRST VIEWPORT: Paper header with the round logo and ClearedCo wordmark left, "Message us" top right. Hero over the client's washed driveway under an indigo overlay: eyebrow, "See the difference in Canfield & Boardman.", one promise line, two pill buttons (Get a free quote, See our work).
 FORM: calm-photo band system with a real client photo hero; the earlier fogged-window world is in git history (fdba680).
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 -->
@@ -264,7 +265,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </svg>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="ClearedCo, back to top"><img src="img/logo.webp" alt="" width="40" height="40"><span><b>Cleared Co</b><small>Canfield, Ohio</small></span></a>
+    <a class="brand" href="#" aria-label="ClearedCo, back to top"><img src="img/logo.webp" alt="" width="40" height="40"><span><b>ClearedCo</b><small>Canfield, Ohio</small></span></a>
     <a class="tel" id="hdContact" href="https://m.me/61589631985029"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
   </div>
 </header>
@@ -275,7 +276,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap hero-copy">
     <span class="eyebrow">Window cleaning &amp; pressure washing</span>
     <h1 id="h1">See the difference in <span class="accent">Canfield &amp; Boardman.</span></h1>
-    <p class="promise">We take care of your home like it's our own, inside and out.</p>
+    <p class="promise">We clean your home the way we'd clean our own, from the glass to the driveway.</p>
     <div class="actions">
       <a class="btn btn-primary" href="#ask">Get a free quote</a>
       <a class="btn btn-ghost" href="#work">See our work</a>
@@ -287,8 +288,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap">
     <h2 id="h-svc" class="rise">What we <span class="accent">clean.</span></h2>
     <ul class="services">
-      <li class="rise"><a class="row" href="#ask" data-service="Windows, inside">Windows, inside<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
-      <li class="rise"><a class="row" href="#ask" data-service="Windows, outside">Windows, outside<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-service="Windows, inside|Windows, outside">Windows, inside and out<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
       <li class="rise"><a class="row" href="#ask" data-service="House washing">House washing<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
       <li class="rise"><a class="row" href="#ask" data-service="Driveway">Driveways<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
       <li class="rise"><a class="row" href="#ask" data-service="Deck">Decks<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
@@ -328,7 +328,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
     </div>
     <p class="drag">Drag across a photo to compare.</p>
-    <a class="fb rise" href="https://www.facebook.com/profile.php?id=61589631985029" rel="noopener">
+    <a class="fb rise" id="fbMore" href="https://www.facebook.com/profile.php?id=61589631985029" rel="noopener">
       <span class="lbl"><svg aria-hidden="true"><use href="#i-fb"/></svg>Click to see more of our work.</span>
       <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
     </a>
@@ -341,7 +341,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <ol class="steps">
       <li class="rise"><div><b id="step1">Message us.</b><span>Tell us what needs cleaning, and where.</span></div></li>
       <li class="rise"><div><b>Get your free quote.</b><span>We look it over and give you a price.</span></div></li>
-      <li class="rise"><div><b>We clean it.</b><span>When it suits you, at the price we quoted.</span></div></li>
+      <li class="rise"><div><b>We clean it.</b><span>When it suits you.</span></div></li>
     </ol>
   </div>
 </section>
@@ -479,7 +479,7 @@ document.documentElement.classList.add('js');
 /* ===== Service rows tick the matching chip in the form ===== */
 (function(){
   [].forEach.call(document.querySelectorAll('.row[data-service]'),function(a){
-    a.addEventListener('click',function(){var b=document.querySelector('.chips input[value="'+a.dataset.service+'"]');if(b)b.checked=true});
+    a.addEventListener('click',function(){a.dataset.service.split('|').forEach(function(v){var b=document.querySelector('.chips input[value="'+v+'"]');if(b)b.checked=true})});
   });
 })();
 
@@ -555,15 +555,15 @@ document.documentElement.classList.add('js');
   });
 })();
 
-/* ===== Floating contact circle: shows after the hero, hides while the form or the closing band is on screen ===== */
+/* ===== Floating contact circle: shows after the hero, hides wherever it would sit on another control (service rows, the Facebook row, the form, the closing band) ===== */
 (function(){
   var fl=document.getElementById('float');if(!fl)return;
   if(!CONFIG.FLOAT||!('IntersectionObserver' in window)){fl.remove();return}
   var pastHero=false,near={};
-  function sync(){var on=pastHero&&!near.quoteForm&&!near.close;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
+  function sync(){var on=pastHero&&!near.services&&!near.fbMore&&!near.quoteForm&&!near.close;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
   new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('hero'));
   var io=new IntersectionObserver(function(es){es.forEach(function(e){near[e.target.id]=e.isIntersecting});sync()},{rootMargin:'-15% 0px -15% 0px'});
-  io.observe(document.getElementById('quoteForm'));io.observe(document.getElementById('close'));
+  ['services','fbMore','quoteForm','close'].forEach(function(id){io.observe(document.getElementById(id))});
   sync();
 })();
 
