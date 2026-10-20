@@ -1,507 +1,636 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T00:05:12.330086+00:00",
+  "generatedAt": "2026-10-20T01:38:25.557556+00:00",
   "title": "Design System: ClearedCo",
   "extensions": {
     "colorMeta": {
-      "indigo": {
-        "role": "primary",
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f5f4fb",
+        "oklch": "oklch(97.0% 0.009 292.8)",
+        "tonalRamp": [
+          "#0b0a0f",
+          "#242328",
+          "#403f44",
+          "#5e5d63",
+          "#7d7c82",
+          "#9e9da4",
+          "#c4c3ca",
+          "#eeedf4"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field Lilac",
+        "canonical": "#e8e6f4",
+        "oklch": "oklch(93.1% 0.019 292.6)",
+        "tonalRamp": [
+          "#0b0a12",
+          "#24222d",
+          "#403e49",
+          "#5e5c68",
+          "#7d7b88",
+          "#9e9ca9",
+          "#c4c2d0",
+          "#eeecfa"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1f1a46",
+        "oklch": "oklch(25.2% 0.079 284.3)",
+        "tonalRamp": [
+          "#0a022a",
+          "#211c48",
+          "#3b3968",
+          "#585789",
+          "#7777ab",
+          "#9898cf",
+          "#bdbef6",
+          "#ecedfe"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body Indigo",
+        "canonical": "#2e2a52",
+        "oklch": "oklch(31.1% 0.070 286.1)",
+        "tonalRamp": [
+          "#0b0326",
+          "#221d44",
+          "#3d3a63",
+          "#5a5884",
+          "#7977a6",
+          "#9a98c9",
+          "#c0bef0",
+          "#edecff"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft Indigo",
+        "canonical": "#55507a",
+        "oklch": "oklch(45.4% 0.068 288.8)",
+        "tonalRamp": [
+          "#0c0425",
+          "#241d42",
+          "#3f3961",
+          "#5c5782",
+          "#7b77a4",
+          "#9c98c7",
+          "#c2beee",
+          "#edecfe"
+        ]
+      },
+      "navy": {
+        "role": "secondary",
         "displayName": "Logo Indigo",
-        "canonical": "#2a2260",
+        "canonical": "#2e2768",
+        "oklch": "oklch(32.1% 0.110 283.2)",
         "tonalRamp": [
-          "#191438",
-          "#2c2364",
-          "#3e328f",
-          "#5142ba",
-          "#776bcb",
-          "#9f96da",
-          "#c6c1e9",
-          "#eeecf8"
+          "#0b0032",
+          "#201656",
+          "#3a3477",
+          "#565399",
+          "#7574bc",
+          "#9595e1",
+          "#bcbdfc",
+          "#ecedfe"
         ]
       },
-      "indigo-2": {
-        "role": "primary",
-        "displayName": "Indigo Second Light",
-        "canonical": "#332a72",
+      "deep": {
+        "role": "secondary",
+        "displayName": "Night Indigo",
+        "canonical": "#1c1840",
+        "oklch": "oklch(23.9% 0.073 283.9)",
         "tonalRamp": [
-          "#191538",
-          "#2c2462",
-          "#3f348d",
-          "#5244b8",
-          "#786dc9",
-          "#9f97d9",
-          "#c7c2e8",
-          "#eeecf8"
-        ]
-      },
-      "hero-end": {
-        "role": "primary",
-        "displayName": "Hero Dusk",
-        "canonical": "#3b3184",
-        "tonalRamp": [
-          "#191538",
-          "#2c2462",
-          "#3f348d",
-          "#5244b7",
-          "#786dc9",
-          "#9f97d9",
-          "#c7c2e8",
-          "#eeecf8"
+          "#0a0328",
+          "#211d46",
+          "#3b3a65",
+          "#585886",
+          "#7878a8",
+          "#9899cb",
+          "#bebef3",
+          "#ecedfe"
         ]
       },
       "violet": {
-        "role": "primary",
+        "role": "secondary",
         "displayName": "Logo Violet",
         "canonical": "#6f64b8",
+        "oklch": "oklch(55.2% 0.128 287.5)",
         "tonalRamp": [
-          "#1c1834",
-          "#312a5c",
-          "#463d84",
-          "#5b4fac",
-          "#7f76c0",
-          "#a49ed2",
-          "#cac6e5",
-          "#efeef7"
+          "#0d002f",
+          "#250d5c",
+          "#3f2f7e",
+          "#5b4fa1",
+          "#7a6fc4",
+          "#9a91e9",
+          "#c0bbfe",
+          "#edecfe"
         ]
       },
-      "lavender": {
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "Cool Paper (on dark)",
+        "canonical": "#f5f4fb",
+        "oklch": "oklch(97.0% 0.009 292.8)",
+        "tonalRamp": [
+          "#0b0a0f",
+          "#242328",
+          "#403f44",
+          "#5e5d63",
+          "#7d7c82",
+          "#9e9da4",
+          "#c4c3ca",
+          "#eeedf4"
+        ]
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "Mist Lilac",
+        "canonical": "#cfcaf0",
+        "oklch": "oklch(85.5% 0.053 291.3)",
+        "tonalRamp": [
+          "#0c061f",
+          "#241f3b",
+          "#403b5a",
+          "#5e5979",
+          "#7d789b",
+          "#9e99bd",
+          "#c4bfe4",
+          "#eeecff"
+        ]
+      },
+      "gold": {
         "role": "primary",
-        "displayName": "Lavender Fill",
-        "canonical": "#c9c2ff",
+        "displayName": "Porch-Light Gold",
+        "canonical": "#f5c451",
+        "oklch": "oklch(84.3% 0.141 85.5)",
         "tonalRamp": [
-          "#09004c",
-          "#0f0087",
-          "#1600c1",
-          "#1d00fb",
-          "#4e37ff",
-          "#8171ff",
-          "#b5abff",
-          "#e8e6ff"
+          "#130900",
+          "#302100",
+          "#523c01",
+          "#75590e",
+          "#9c7716",
+          "#c6960c",
+          "#edbc48",
+          "#feedca"
         ]
       },
-      "water": {
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Warm Gold Hover",
+        "canonical": "#f8d47c",
+        "oklch": "oklch(88.2% 0.115 87.8)",
+        "tonalRamp": [
+          "#130900",
+          "#2f2200",
+          "#503d01",
+          "#745a0e",
+          "#9a7815",
+          "#bc9a40",
+          "#e3c068",
+          "#feedc5"
+        ]
+      },
+      "gold-ink": {
+        "role": "primary",
+        "displayName": "Gold Ink",
+        "canonical": "#7a5500",
+        "oklch": "oklch(47.7% 0.099 79.4)",
+        "tonalRamp": [
+          "#140800",
+          "#332000",
+          "#543b07",
+          "#7b5602",
+          "#9c7630",
+          "#bf9753",
+          "#e6bd78",
+          "#feeccf"
+        ]
+      },
+      "focus": {
         "role": "secondary",
-        "displayName": "Clear Water",
-        "canonical": "#3cc4dd",
+        "displayName": "Focus Violet",
+        "canonical": "#5a4fc0",
+        "oklch": "oklch(50.2% 0.171 282.7)",
         "tonalRamp": [
-          "#0b3941",
-          "#146473",
-          "#1d8fa4",
-          "#25bbd6",
-          "#54cbe1",
-          "#86daea",
-          "#b8e9f3",
-          "#e9f8fb"
-        ]
-      },
-      "water-deep": {
-        "role": "secondary",
-        "displayName": "Deep Water",
-        "canonical": "#0f8aa0",
-        "tonalRamp": [
-          "#073c46",
-          "#0c6a7b",
-          "#1198b1",
-          "#16c6e6",
-          "#48d5ee",
-          "#7de1f3",
-          "#b2edf8",
-          "#e8fafd"
-        ]
-      },
-      "indigo-ink": {
-        "role": "neutral",
-        "displayName": "Indigo Ink",
-        "canonical": "#1f1a46",
-        "tonalRamp": [
-          "#191538",
-          "#2c2562",
-          "#3e348d",
-          "#5144b7",
-          "#776dc9",
-          "#9f97d9",
-          "#c6c2e8",
-          "#eeecf8"
-        ]
-      },
-      "mist": {
-        "role": "neutral",
-        "displayName": "Mist",
-        "canonical": "#efedfa",
-        "tonalRamp": [
-          "#17113c",
-          "#291d69",
-          "#3b2a97",
-          "#4c37c5",
-          "#7462d3",
-          "#9c90e0",
-          "#c5bded",
-          "#edebf9"
-        ]
-      },
-      "mist-2": {
-        "role": "neutral",
-        "displayName": "Mist Shade",
-        "canonical": "#e3e0f5",
-        "tonalRamp": [
-          "#18133a",
-          "#2b2166",
-          "#3d2f92",
-          "#503dbe",
-          "#7668ce",
-          "#9e94dc",
-          "#c6c0eb",
-          "#eeecf9"
-        ]
-      },
-      "muted": {
-        "role": "neutral",
-        "displayName": "Muted Violet Ink",
-        "canonical": "#4d4682",
-        "tonalRamp": [
-          "#1d1b32",
-          "#342f58",
-          "#4a447d",
-          "#6158a3",
-          "#847db9",
-          "#a8a3cd",
-          "#cbc9e2",
-          "#efeef6"
-        ]
-      },
-      "lav-soft": {
-        "role": "neutral",
-        "displayName": "Soft Lavender",
-        "canonical": "#b4acdf",
-        "tonalRamp": [
-          "#1b1537",
-          "#2f2661",
-          "#43368b",
-          "#5746b5",
-          "#7c6ec7",
-          "#a298d7",
-          "#c8c3e8",
-          "#eeedf8"
-        ]
-      },
-      "field-stroke": {
-        "role": "neutral",
-        "displayName": "Field Stroke",
-        "canonical": "#857cc2",
-        "tonalRamp": [
-          "#1c1834",
-          "#312b5c",
-          "#463d84",
-          "#5c50ab",
-          "#8076bf",
-          "#a59ed2",
-          "#cac6e4",
-          "#efeef7"
-        ]
-      },
-      "frame-paint": {
-        "role": "neutral",
-        "displayName": "Frame Paint",
-        "canonical": "#f1eff9",
-        "tonalRamp": [
-          "#1c1538",
-          "#312562",
-          "#46358c",
-          "#5b45b7",
-          "#7f6dc8",
-          "#a598d8",
-          "#cac2e8",
-          "#efecf8"
+          "#0b0033",
+          "#22006a",
+          "#3a2594",
+          "#5448b9",
+          "#726ade",
+          "#928ffa",
+          "#bbbdfe",
+          "#ecedfe"
         ]
       },
       "error": {
         "role": "neutral",
         "displayName": "Error Red",
-        "canonical": "#b3243b",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
         "tonalRamp": [
-          "#400d15",
-          "#701725",
-          "#a12035",
-          "#d12a45",
-          "#dd586e",
-          "#e78998",
-          "#f1b9c2",
-          "#fbeaec"
+          "#210000",
+          "#4b0101",
+          "#7a0907",
+          "#ac1d17",
+          "#d2463a",
+          "#f96a5b",
+          "#fcada1",
+          "#fee9e5"
         ]
       },
-      "white": {
-        "role": "neutral",
-        "displayName": "White",
-        "canonical": "#ffffff",
-        "tonalRamp": [
-          "#262626",
-          "#434343",
-          "#616161",
-          "#7e7e7e",
-          "#9b9b9b",
-          "#b8b8b8",
-          "#d5d5d5",
-          "#f2f2f2"
-        ]
+      "glass-row": {
+        "role": "overlay",
+        "displayName": "Glass Row",
+        "canonical": "rgba(255,255,255,.06)"
       },
-      "facebook-blue": {
-        "role": "neutral",
-        "displayName": "Facebook Blue (third-party, scoped)",
-        "canonical": "#1877f2",
-        "tonalRamp": [
-          "#042248",
-          "#073c80",
-          "#0a55b7",
-          "#0d6fee",
-          "#418ff4",
-          "#78b0f7",
-          "#b0d0fb",
-          "#e7f1fe"
-        ]
+      "glass-arrow": {
+        "role": "overlay",
+        "displayName": "Glass Arrow",
+        "canonical": "rgba(255,255,255,.1)"
+      },
+      "glass-raised": {
+        "role": "overlay",
+        "displayName": "Glass Raised",
+        "canonical": "rgba(255,255,255,.12)"
+      },
+      "line-texture": {
+        "role": "overlay",
+        "displayName": "Line Texture",
+        "canonical": "rgba(255,255,255,.035)"
+      },
+      "ink-wash": {
+        "role": "overlay",
+        "displayName": "Ink Wash",
+        "canonical": "rgba(31,26,70,.06)"
+      },
+      "ghost-border": {
+        "role": "overlay",
+        "displayName": "Ghost Border",
+        "canonical": "rgba(245,244,251,.7)"
+      },
+      "tag-veil": {
+        "role": "overlay",
+        "displayName": "Tag Veil",
+        "canonical": "rgba(28,24,64,.6)"
+      },
+      "hero-veil-light": {
+        "role": "overlay",
+        "displayName": "Hero Veil Light",
+        "canonical": "rgba(28,24,64,.62)"
+      },
+      "hero-veil-mid": {
+        "role": "overlay",
+        "displayName": "Hero Veil Mid",
+        "canonical": "rgba(28,24,64,.78)"
+      },
+      "hero-veil": {
+        "role": "overlay",
+        "displayName": "Hero Veil",
+        "canonical": "rgba(28,24,64,.80)"
+      },
+      "hero-veil-dense": {
+        "role": "overlay",
+        "displayName": "Hero Veil Dense",
+        "canonical": "rgba(28,24,64,.90)"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero headline only; uppercase 900."
+        "purpose": "Hero H1 only."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings; uppercase 900."
+        "purpose": "Every band H2."
+      },
+      "contact-display": {
+        "displayName": "Contact Display",
+        "purpose": "Closing band Message us link."
+      },
+      "title-fb": {
+        "displayName": "Title Fb",
+        "purpose": "Facebook row label."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Sub-headings inside a section; uppercase 900."
+        "purpose": "Step titles (22px from 1024px), done panel heading, wordmark (24px from 760px)."
       },
-      "lead": {
-        "displayName": "Lead",
-        "purpose": "Service rows, step titles, area line, footer name, done heading."
+      "title-row": {
+        "displayName": "Title Row",
+        "purpose": "Service rows and step numbers."
       },
-      "body": {
-        "displayName": "Body",
-        "purpose": "All running text; 17px floor."
+      "button": {
+        "displayName": "Button",
+        "purpose": "Every pill button."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Buttons, form labels, legends, header contact."
+        "purpose": "Form labels and the header Message us link (20px from 760px)."
+      },
+      "promise": {
+        "displayName": "Promise",
+        "purpose": "Hero promise line."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section ledes."
+      },
+      "lede-close": {
+        "displayName": "Lede Close",
+        "purpose": "Closing band line."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, chips, footer."
+      },
+      "input": {
+        "displayName": "Input",
+        "purpose": "Inputs and textareas."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Drag hint, errors, send-button note."
+      },
+      "hint": {
+        "displayName": "Hint",
+        "purpose": "Optional marker beside labels."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Before / After photo tags."
+      },
+      "brand-sub": {
+        "displayName": "Brand Sub",
+        "purpose": "Wordmark sub-line only, uppercase."
+      }
+    },
+    "roundedMeta": {
+      "card": {
+        "value": "24px",
+        "purpose": "Form card, before/after frames."
+      },
+      "fb-row": {
+        "value": "20px",
+        "purpose": "Facebook row."
+      },
+      "service-row": {
+        "value": "18px",
+        "purpose": "Service rows."
+      },
+      "done-panel": {
+        "value": "16px",
+        "purpose": "Form done panel."
+      },
+      "field": {
+        "value": "10px",
+        "purpose": "Inputs and textareas."
+      },
+      "tag": {
+        "value": "8px",
+        "purpose": "Before / After photo tags."
+      },
+      "focus-ring": {
+        "value": "6px",
+        "purpose": "Radius of the global focus-visible outline."
+      },
+      "pill": {
+        "value": "999px",
+        "role": "pill",
+        "purpose": "Buttons, chips, eyebrow; circles use 50%."
       }
     },
     "shadows": [
       {
-        "name": "window-drop",
-        "value": "0 22px 40px -18px rgba(0,0,0,.55)",
-        "purpose": "Under every framed window."
+        "name": "knob-lift",
+        "value": "0 6px 16px -6px rgba(0,0,0,.5)",
+        "purpose": "Before/after knob only."
       },
       {
-        "name": "link-card-lift",
-        "value": "0 12px 28px -14px rgba(0,0,0,.55)",
-        "purpose": "White Facebook card on indigo."
+        "name": "floating-circle",
+        "value": "0 10px 28px rgba(20,16,48,.32)",
+        "purpose": "Floating contact circle only."
+      }
+    ],
+    "overlays": [
+      {
+        "name": "hero-veil-phone",
+        "value": "linear-gradient(180deg,rgba(28,24,64,.80) 0%,rgba(28,24,64,.78) 50%,rgba(28,24,64,.90) 100%)",
+        "purpose": "Hero veil below 760px over the 3px-blurred photo."
       },
       {
-        "name": "logo-disc",
-        "value": "0 2px 8px rgba(0,0,0,.3)",
-        "purpose": "Round logo in header and footer."
+        "name": "hero-veil-wide",
+        "value": "linear-gradient(90deg,rgba(28,24,64,.90) 0%,rgba(28,24,64,.80) 55%,rgba(28,24,64,.62) 100%)",
+        "purpose": "Hero veil from 760px, darkest behind the text."
       },
       {
-        "name": "field-halo",
-        "value": "0 0 0 3px rgba(60,196,221,.25)",
-        "purpose": "Focus state of inputs and chips."
+        "name": "line-texture",
+        "value": "repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.035) 22px 23px)",
+        "purpose": "Night indigo bands and footer."
       },
       {
-        "name": "frame-cast",
-        "value": "linear-gradient rgba(20,12,60,.22-.32) over 7-12px",
-        "purpose": "Canvas-drawn shadows of rails and mullions onto the glass."
+        "name": "favicon",
+        "value": "linear-gradient(135deg,#1f1a46,#6f64b8)",
+        "purpose": "Favicon disc, ink to violet, white C."
       }
     ],
     "motion": [
       {
-        "name": "state-color",
-        "value": "background .2s, color .2s",
-        "purpose": "Buttons, arrow discs, link-card arrow."
+        "name": "letter-in",
+        "value": "1s cubic-bezier(.34,1.56,.64,1), translateX(50px) to 0, 20ms stagger",
+        "purpose": "Hero H1 bounce-in only."
       },
       {
-        "name": "field-state",
-        "value": "border-color .15s, box-shadow .15s",
-        "purpose": "Inputs and chips."
+        "name": "rise",
+        "value": "opacity and translateY(12px), .4s ease-out",
+        "purpose": "Content below the first screen as it arrives."
       },
       {
-        "name": "press",
-        "value": "transform .15s; scale(.98)",
-        "purpose": "Button active state."
+        "name": "slider-hint",
+        "value": "50 > 74 > 30 > 50 percent, 700ms per leg, ease in-out, 450ms delay, at 60% in view",
+        "purpose": "One sweep per before/after slider."
       },
       {
-        "name": "glass-T",
-        "value": "REGROW .0032, BRUSH 30, GHOST_IDLE 4500, GHOST_PASSES 1.4, GHOST_PAUSE 1.5, SWELL .7, RUN_AT 3.2, MAX_RUNNERS 4/9, BEADS 45/90, DPR_CAP 1.5",
-        "purpose": "Fogged-window tuning (glass IIFE)."
+        "name": "float-in",
+        "value": "translateY(120px) to 0, .35s cubic-bezier(.2,.8,.2,1)",
+        "purpose": "Floating contact circle."
       },
       {
-        "name": "glass-PANES",
-        "value": "[[0,0,.5,.46],[.5,0,1,.46],[0,.46,.5,1],[.5,.46,1,1]]",
-        "purpose": "Ghost-wipe panes; .46 must equal F.MULLION_Y."
-      },
-      {
-        "name": "glass-PALETTE",
-        "value": "sky #3a2f7e #5e50ae #a592d8 #f0b5a6; trees #463a86 #30276a; lawn #342c6c #251f52; house #271f58; lit #ffd08a; glow 255,200,130; fog 238,235,252 @ .56/.74; rim 25,18,64",
-        "purpose": "Dusk scene and fog colors."
-      },
-      {
-        "name": "frame-F",
-        "value": "RAIL 13, SILL 18, OVER 8, PAINT #f1eff9, MULLION 10, MULLION_Y .46",
-        "purpose": "Painted sash geometry; .window padding 13/13/31 and .frame overhang 8 follow it."
-      },
-      {
-        "name": "seams-S",
-        "value": "SPEED .7, AMP 6 (viewBox 1440x60, baseline 30)",
-        "purpose": "Water-line seam swell."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Still glass with one pane pre-wiped; static seams; no transitions; hand wiping still works."
+        "name": "state",
+        "value": ".2s colour; .15s field and chip border; .12s press scale(.98)",
+        "purpose": "Hover, focus and press."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide-phone",
-        "value": "600px"
+        "name": "narrow",
+        "value": "380px",
+        "purpose": "max-width: chips tighten to 14px padding"
+      },
+      {
+        "name": "tablet",
+        "value": "760px"
       },
       {
         "name": "desktop",
         "value": "1024px"
-      },
-      {
-        "name": "phone-landscape",
-        "value": "(orientation:landscape) and (max-height:500px)"
       }
-    ],
-    "config": {
-      "PHONE": "'' (10 digits; switches header/footer to tap-to-call and the form to SMS)",
-      "FB_ID": "61589631985029",
-      "FB_URL": "https://www.facebook.com/profile.php?id=61589631985029",
-      "NAME": "ClearedCo"
-    }
+    ]
   },
   "components": [
     {
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Lavender pill on indigo; the main call to action.",
-      "html": "<div class=\"ds-dark\"><a class=\"ds-btn-primary\" href=\"#\">Get a free quote</a></div>",
-      "css": ".ds-dark{background:#2a2260;padding:24px} .ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;border:2px solid #c9c2ff;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .15s;background:#c9c2ff;color:#1f1a46} .ds-btn-primary:hover{background:#fff;border-color:#fff} .ds-btn-primary:active{transform:scale(.98)} .ds-btn-primary:focus-visible{outline:3px solid #3cc4dd;outline-offset:3px}"
+      "description": "Gold pill for every main action; ink text.",
+      "html": "<button class=\"ds-btn-primary\">Get a free quote</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;font:400 18px/1 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;background:#f5c451;color:#1f1a46;border:2px solid #f5c451;cursor:pointer;transition:background-color .2s,border-color .2s,transform .12s}.ds-btn-primary:hover{background:#f8d47c;border-color:#f8d47c}.ds-btn-primary:focus-visible{outline:3px solid #5a4fc0;outline-offset:3px}.ds-btn-primary:active{transform:scale(.98)}"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Outlined pill beside the primary on indigo.",
-      "html": "<div class=\"ds-dark\"><a class=\"ds-btn-ghost\" href=\"#\">See our work</a></div>",
-      "css": ".ds-dark{background:#2a2260;padding:24px} .ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;border:2px solid #c9c2ff;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .15s;background:transparent;color:#fff} .ds-btn-ghost:hover{background:rgba(201,194,255,.14)} .ds-btn-ghost:active{transform:scale(.98)} .ds-btn-ghost:focus-visible{outline:3px solid #3cc4dd;outline-offset:3px}"
-    },
-    {
-      "name": "Send Button",
-      "kind": "button",
-      "refersTo": "button-send",
-      "description": "Full-width indigo submit on the mist quote form; water border on hover/focus.",
-      "html": "<div class=\"ds-light\"><button class=\"ds-btn-send\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\"><path fill=\"currentColor\" d=\"M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2zm1 12.5l-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8z\"/></svg><span>Send in Messenger</span></button></div>",
-      "css": ".ds-light{background:#efedfa;padding:24px} .ds-btn-send{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;font:800 17px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;border:2px solid #c9c2ff;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .15s;width:100%;background:#2a2260;border-color:#2a2260;color:#fff} .ds-btn-send:hover,.ds-btn-send:focus-visible{border-color:#0f8aa0;background:#332a72} .ds-btn-send:focus-visible{outline:3px solid #0f8aa0;outline-offset:3px} .ds-btn-send:active{transform:scale(.98)}"
+      "description": "Second action on the hero, over indigo.",
+      "html": "<div class=\"ds-ghost-wrap\"><button class=\"ds-btn-ghost\">See our work</button></div>",
+      "css": ".ds-ghost-wrap{background:#1c1840;padding:20px}.ds-btn-ghost{display:inline-flex;align-items:center;min-height:56px;padding:0 26px;border-radius:999px;font:400 18px/1 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;background:transparent;color:#f5f4fb;border:2px solid rgba(245,244,251,.7);cursor:pointer;transition:background-color .2s,border-color .2s,transform .12s}.ds-btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}.ds-btn-ghost:focus-visible{outline:3px solid #f5c451;outline-offset:3px}.ds-btn-ghost:active{transform:scale(.98)}"
     },
     {
       "name": "Text Field",
       "kind": "input",
-      "refersTo": "input-field",
-      "description": "Outlined field; one accent (water) on hover and focus.",
-      "html": "<div class=\"ds-light\"><label class=\"ds-field\"><span>Town or street <em>(optional)</em></span><input type=\"text\"></label></div>",
-      "css": ".ds-light{background:#efedfa;padding:24px;color:#1f1a46} .ds-field{display:grid;gap:8px;font:800 17px/1.3 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-field em{font-style:normal;font-weight:500;color:#4d4682} .ds-field input{width:100%;box-sizing:border-box;font:500 17px/1.4 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#1f1a46;background:#fff;border:2px solid #857cc2;border-radius:12px;padding:14px;min-height:54px;caret-color:#2a2260;transition:border-color .15s,box-shadow .15s} .ds-field input:hover{border-color:#0f8aa0} .ds-field input:focus{outline:none;border-color:#0f8aa0;box-shadow:0 0 0 3px rgba(60,196,221,.25)}"
+      "refersTo": "input",
+      "description": "Tinted borderless field on the white form card.",
+      "html": "<label class=\"ds-label\">Your name<input class=\"ds-input\" type=\"text\" placeholder=\"First name is fine\"></label>",
+      "css": ".ds-label{display:grid;gap:8px;font:400 17px/1.2 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;color:#1f1a46;background:#fff;padding:24px;border-radius:24px}.ds-input{width:100%;font:16px/1.4 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Helvetica Neue\",Arial,sans-serif;color:#1f1a46;background:#e8e6f4;border:2px solid transparent;border-radius:10px;padding:13px 14px;min-height:52px;caret-color:#2e2768;transition:border-color .15s}.ds-input::placeholder{color:#55507a}.ds-input:hover,.ds-input:focus{outline:none;border-color:#5a4fc0}"
     },
     {
-      "name": "Service Chip",
+      "name": "Chips",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Checkbox chip; checked goes indigo with a lavender tick box.",
-      "html": "<div class=\"ds-light\"><label class=\"ds-chip\"><input type=\"checkbox\"><span>Windows, inside</span></label> <label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Deck</span></label></div>",
-      "css": ".ds-light{background:#efedfa;padding:24px;color:#1f1a46} .ds-chip{display:inline-block;margin:4px} .ds-chip input{position:absolute;width:1px;height:1px;opacity:0} .ds-chip span{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;background:#fff;border:2px solid #857cc2;font:700 17px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;cursor:pointer;transition:border-color .15s,background .15s,color .15s} .ds-chip span::before{content:'';width:16px;height:16px;border-radius:4px;border:2px solid #857cc2;flex:none} .ds-chip:hover span{border-color:#0f8aa0} .ds-chip input:focus-visible+span{border-color:#0f8aa0;box-shadow:0 0 0 3px rgba(60,196,221,.25)} .ds-chip input:checked+span{background:#2a2260;border-color:#2a2260;color:#fff} .ds-chip input:checked+span::before{background:#c9c2ff;border-color:#c9c2ff} .ds-chip input:checked:hover+span{border-color:#0f8aa0}"
+      "description": "Pick what needs cleaning; selected fills ink.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\">Windows, outside</button><button class=\"ds-chip is-on\">Driveway</button><button class=\"ds-chip\">Deck</button></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:10px;background:#fff;padding:20px;border-radius:24px}.ds-chip{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border-radius:999px;background:#e8e6f4;border:2px solid transparent;font:16px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Helvetica Neue\",Arial,sans-serif;color:#1f1a46;cursor:pointer;transition:border-color .15s,background-color .15s,color .15s}.ds-chip:hover,.ds-chip:focus-visible{border-color:#5a4fc0;outline:none}.ds-chip.is-on{background:#1f1a46;color:#fff}.ds-chip.is-on:focus-visible{outline:3px solid #5a4fc0;outline-offset:2px}"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Slim paper header: logo and wordmark left, Message us right. Not sticky.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-logo\"></span><span><b>ClearedCo</b><small>Canfield, Ohio</small></span></a><a class=\"ds-tel\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2z\"/></svg>Message us</a></header>",
+      "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:0 20px;background:#f5f4fb;color:#1f1a46}.ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;line-height:1}.ds-logo{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1f1a46,#6f64b8)}.ds-brand b{display:block;font:400 21px/1 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;letter-spacing:.01em}.ds-brand small{display:block;font:600 11px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Helvetica Neue\",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#55507a;margin-top:5px}.ds-tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:400 17px/1 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;color:inherit;text-decoration:none}.ds-tel svg{width:20px;height:20px;color:#6f64b8}.ds-tel:hover{color:#5a4fc0}"
     },
     {
       "name": "Service Row",
       "kind": "custom",
       "refersTo": "service-row",
-      "description": "Whole row links to the quote; only the arrow disc reacts.",
-      "html": "<div class=\"ds-light\"><a class=\"ds-row\" href=\"#\">House washing<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\"><path d=\"M5 12h13M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
-      "css": ".ds-light{background:#efedfa;padding:24px;color:#1f1a46} .ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:8px 2px;border-top:1px solid #e3e0f5;border-bottom:1px solid #e3e0f5;color:#1f1a46;text-decoration:none;font:700 22px/1.2 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-row:hover,.ds-row:focus-visible{outline:none;background:none} .ds-arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#e3e0f5;color:#1f1a46;flex:none;transition:background .2s,color .2s} .ds-row:hover .ds-arrow,.ds-row:focus-visible .ds-arrow{background:#6f64b8;color:#fff} .ds-row:focus-visible .ds-arrow{outline:3px solid #6f64b8;outline-offset:3px}"
+      "description": "A service as a plain row on indigo; only the arrow changes on hover.",
+      "html": "<div class=\"ds-band\"><a class=\"ds-row\" href=\"#\">House washing<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
+      "css": ".ds-band{background:#2e2768;padding:20px}.ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:10px 12px 10px 22px;background:rgba(255,255,255,.06);border-radius:18px;color:#f5f4fb;text-decoration:none;font:400 20px/1.2 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif}.ds-row:hover,.ds-row:focus-visible{outline:none;background:rgba(255,255,255,.06)}.ds-arrow{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);color:#f5f4fb;transition:background-color .2s,color .2s}.ds-arrow svg{width:18px;height:18px}.ds-row:hover .ds-arrow{background:#f5c451;color:#1f1a46}.ds-row:focus-visible .ds-arrow{background:#f5c451;color:#1f1a46;outline:3px solid #f5c451;outline-offset:3px}"
     },
     {
-      "name": "Facebook Link Card",
+      "name": "Before / After Slider",
+      "kind": "custom",
+      "refersTo": "slider-knob",
+      "description": "Real before/after pair with a plain gold divider and round gold knob.",
+      "html": "<div class=\"ds-ba\"><span class=\"ds-tag\">Before</span><span class=\"ds-tag ds-tag-r\">After</span><span class=\"ds-line\"><span class=\"ds-knob\"><svg viewBox=\"0 0 24 24\"><path d=\"M9 6l-5 6 5 6M15 6l5 6-5 6\"/></svg></span></span></div>",
+      "css": ".ds-ba{position:relative;height:260px;border-radius:24px;overflow:hidden;background:linear-gradient(90deg,#55507a 0 50%,#cfcaf0 50% 100%);cursor:ew-resize}.ds-tag{position:absolute;top:14px;left:14px;font:500 13px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Helvetica Neue\",Arial,sans-serif;letter-spacing:.04em;color:#fff;background:rgba(28,24,64,.6);padding:7px 10px;border-radius:8px}.ds-tag-r{left:auto;right:14px}.ds-line{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#f5c451}.ds-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#f5c451;color:#1f1a46;display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}.ds-knob svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.ds-ba:focus-within .ds-knob{outline:3px solid #5a4fc0;outline-offset:3px}"
+    },
+    {
+      "name": "Quote Form Card",
       "kind": "card",
-      "refersTo": "link-card",
-      "description": "White card under the work photo; arrow disc turns Facebook blue on hover.",
-      "html": "<div class=\"ds-dark2\"><a class=\"ds-fb\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\"><path fill=\"#1877f2\" d=\"M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z\"/></svg><span>Click to see the after photo and more of our work.</span><span class=\"ds-go\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\"><path d=\"M5 12h13M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
-      "css": ".ds-dark2{background:#332a72;padding:24px} .ds-fb{display:flex;align-items:center;gap:14px;padding:16px 18px;min-height:64px;max-width:460px;border-radius:14px;background:#fff;color:#1f1a46;text-decoration:none;font:800 17px/1.35 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;box-shadow:0 12px 28px -14px rgba(0,0,0,.55)} .ds-fb svg{flex:none} .ds-go{flex:none;margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#e3e0f5;transition:background .2s,color .2s} .ds-go svg{width:16px;height:16px} .ds-fb:hover .ds-go{background:#1877f2;color:#fff} .ds-fb:focus-visible{outline:3px solid #3cc4dd;outline-offset:3px}"
+      "refersTo": "form-card",
+      "description": "White 24px card holding the quote form.",
+      "html": "<form class=\"ds-card\"><b>Free quote</b><p>Opens Messenger with your message written out.</p></form>",
+      "css": ".ds-card{background:#fff;border-radius:24px;padding:clamp(20px,5vw,32px);display:grid;gap:20px;max-width:600px;color:#2e2a52;font:16px/1.7 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Helvetica Neue\",Arial,sans-serif}.ds-card b{font:400 21px/1.2 \"Cal Sans\",\"Avenir Next\",\"Segoe UI\",system-ui,sans-serif;color:#1f1a46}.ds-card p{margin:0;font-size:15px;color:#55507a}"
     },
     {
-      "name": "Header",
-      "kind": "nav",
-      "refersTo": "header",
-      "description": "Static indigo header: brand lockup left, contact top-right only.",
-      "html": "<header class=\"ds-hd\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-logo\"></span><span><b>Cleared Co</b><small>Canfield, Ohio</small></span></a><a class=\"ds-contact\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\"><path fill=\"currentColor\" d=\"M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2zm1 12.5l-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8z\"/></svg><span>Message us</span></a></header>",
-      "css": ".ds-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;padding:0 20px;background:#2a2260;color:#fff;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none} .ds-logo{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1f1a46,#6f64b8);box-shadow:0 2px 8px rgba(0,0,0,.3)} .ds-brand b{display:block;font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;line-height:1} .ds-brand small{display:block;font-size:13px;font-weight:700;color:#b4acdf;margin-top:4px} .ds-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-weight:800;font-size:17px;text-decoration:none} .ds-contact svg{color:#c9c2ff} .ds-contact:hover span{text-decoration:underline;text-underline-offset:4px} .ds-contact:focus-visible{outline:3px solid #3cc4dd;outline-offset:3px}"
+      "name": "Floating Contact Circle",
+      "kind": "custom",
+      "refersTo": "contact-circle",
+      "description": "One gold circle bottom right once the hero is passed; never a bar.",
+      "html": "<a class=\"ds-float\" href=\"#\" aria-label=\"Message ClearedCo\"><svg viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M12 2C6.4 2 2 6.1 2 11.4c0 2.9 1.3 5.4 3.4 7.1V22l3.2-1.8c1.1.3 2.2.5 3.4.5 5.6 0 10-4.1 10-9.3S17.6 2 12 2z\"/></svg></a>",
+      "css": ".ds-float{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#f5c451;color:#1f1a46;box-shadow:0 10px 28px rgba(20,16,48,.32);transition:transform .35s cubic-bezier(.2,.8,.2,1)}.ds-float svg{width:28px;height:28px}.ds-float:focus-visible{outline:3px solid #5a4fc0;outline-offset:3px}"
     }
   ],
   "narrative": {
-    "northStar": "The Fogged Dusk Window",
-    "overview": "The whole page is the view through a window at dusk, in the logo's own indigo-to-violet. Its signature is a painted wooden sash with mullions that holds live glass: condensation haze over a dusk yard, beaded drops that swell and run, and a fog the visitor wipes clear with a finger (or that wipes itself when left alone). The same painted frame holds the one real work photo, so the evidence sits inside the same window as the demonstration. Sections are not boxed; they are separated by a moving water line, as if the page were water rising and falling against glass.\n\nEverything around the window stays plain and heavy: dark indigo grounds, cool mist light sections, heavy uppercase system type, pill buttons, and a single clear-water cyan that appears only when a form control is hovered or focused. Density is low and phone-first: one column, 17px minimum reading size, 44px+ touch targets, generous vertical rhythm. Depth comes from the painted frame, the fog and the drops, never from cards floating on cards.\n\nThe world was shaped by Ellie's pitch-site house rules, which are binding on future edits: the system font stack is mandated (no webfonts); the layout is designed at 360-430px first and adapts up; there is no sticky bottom bar; the phone number (or the Messenger link until a phone exists) appears top-right in the header only; color accents appear on hover, not at rest; form controls outline in one accent (water) on hover and focus; service rows highlight only their arrow; the Facebook link sits directly under the work photo.",
+    "northStar": "The Swept Driveway",
+    "overview": "The page reads like a job just finished: clean, ordered, nothing left lying around. It is Ellie's house calm band style. Full-bleed bands alternate between a cool off-white paper and two indigos taken from the logo, so every new section is obvious at a glance on a phone. One warm gold carries every action. The only photograph in the hero is the client's own washed driveway, held under an indigo veil so white type sits on it without effort.\n\nDensity is low and generous: one idea per band, a 20px phone gutter, 64px of band padding on phones and 96px from tablet width. Shapes are soft and borderless (24px cards, full pills, tinted fields), depth comes from band colour and translucent white glass, not from shadows. Motion is small and earned: the hero headline bounces in letter by letter once, things below the first screen rise 12px as they arrive, each before/after slider sweeps once to show it moves, and a single gold contact circle floats in after the hero.\n\nThe earlier \"fogged dusk window\" world (mist, painted frames, canvas fog, water seams) is gone and is not part of this system.",
     "keyCharacteristics": [
-      "Logo indigo grounds (never black), alternating with mist-lavender light sections.",
-      "One living element made of the trade's material: water on glass, inside a painted wooden sash.",
-      "Heavy (900) uppercase system type for headings; 17px body floor.",
-      "Moving water-line seams between every section instead of borders or hard cuts.",
-      "Accent appears on interaction only; cyan is reserved for form controls."
+      "Alternating full-bleed bands: paper, navy, paper, deep indigo with a faint 135deg line texture.",
+      "One warm accent, gold, used as a fill; gold text only on dark bands, a darker gold-ink on light.",
+      "Cal Sans for every heading and every tappable label; the system stack for running text at 16/1.7.",
+      "Soft borderless shapes on a fixed radius ladder (24 / 20 / 18 / 16 / 10 / 8 / pill).",
+      "Flat surfaces; only the slider knob and the floating circle cast a shadow.",
+      "Real photography only: the client's driveway and three real before/after pairs."
     ],
     "rules": [
       {
-        "name": "The Never Black Rule",
-        "body": "Dark grounds are logo indigo or its lighter steps. No #000 or neutral grey surfaces anywhere; shadows are tinted indigo (rgba(20,12,60,...)) inside the frame.",
+        "name": "The Gold Is A Fill Rule",
+        "body": "Gold is a fill with ink on it. As text it appears only on indigo (the heading accent phrase, the closing phone link hover, footer link hover); on paper the same phrase uses gold-ink.",
         "section": "colors"
       },
       {
-        "name": "The Water Is For Hands Rule",
-        "body": "Cyan appears only in response to a hand: hover or focus on a form control or button. Nothing in the resting page is cyan.",
+        "name": "The Two Indigos Rule",
+        "body": "A dark band is either logo indigo (plain) or night indigo (with the line texture). No third dark, and never black.",
         "section": "colors"
       },
       {
-        "name": "The 17px Floor Rule",
-        "body": "Nothing a visitor must read is smaller than 17px. The two 13px exceptions (brand subline, photo tag) are short decorative captions and must not spread.",
+        "name": "The Faint Lines Rule",
+        "body": "The deep-band texture is `repeating-linear-gradient(135deg, transparent 0 22px, line-texture 22px 23px)` and stays at 3.5% white so it never reads as lines through text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tappable Is Display Rule",
+        "body": "Anything you can press is set in Cal Sans; running text never is.",
         "section": "typography"
       },
       {
-        "name": "The Uppercase Is For Headings Rule",
-        "body": "Uppercase belongs to headings and the wordmark. Buttons, labels and rows stay in sentence case.",
+        "name": "The One Weight Rule",
+        "body": "Cal Sans is only ever used at 400. Hierarchy comes from size, not weight.",
         "section": "typography"
       },
       {
-        "name": "The Depth Is Material Rule",
-        "body": "Shadows are soft, negative-spread and below the object. Depth is earned by things that are physically raised (sash, sill, a card held in the hand), never by stacking surfaces.",
+        "name": "The Two Shadows Rule",
+        "body": "Only things that float over content (the slider knob and the contact circle) cast a shadow. Cards, rows, buttons and the form stay flat.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep every dark ground on logo indigo, indigo-2 or the hero dusk ramp; light grounds on mist.",
-      "Do join every section to the next with a water-line seam whose fill is the next section's color.",
-      "Do put new proof photos inside the painted sash with a 3px-cornered image and the window drop shadow, and keep the Facebook link card directly beneath them.",
-      "Do use water (water-deep inside light sections) as the single hover/focus outline color for inputs, chips and form buttons, with the 3px 25% halo on focus.",
-      "Do keep service-row hover confined to the arrow disc turning violet.",
-      "Do keep readable text at 17px or larger and touch targets at 44px or larger (buttons 56px, fields 54px, chips 46px).",
-      "Do keep `PANES`, `F.MULLION_Y` and the `.window` padding in agreement when resizing the frame."
+      "Do alternate full-bleed bands (paper, navy, paper, deep with the 3.5% line texture) so each new section is obvious.",
+      "Do put ink text on every gold fill, and switch accent text on paper to gold-ink.",
+      "Do keep hover and focus outlines on light grounds focus-violet, and switch them to gold on indigo bands, the hero and the footer.",
+      "Do give every control a 44px or larger tap target, and inputs 16px or larger type.",
+      "Do keep the before/after divider a plain 3px gold line with the round gold knob.",
+      "Do wrap every hover style in `(hover: hover)` and honour reduced motion."
     ],
     "donts": [
-      "Don't load a webfont; the system stack is a house mandate.",
-      "Don't add a sticky bottom bar or a floating call button; the contact lives top-right in the header.",
-      "Don't show the phone number anywhere but the header contact and the footer list.",
-      "Don't use cyan (or any accent) at rest; accents answer a hover or focus.",
-      "Don't give service rows a background, outline or shadow on hover.",
-      "Don't use black or neutral grey grounds or shadows inside the window world.",
-      "Don't use Facebook blue outside the Facebook link.",
-      "Don't add small uppercase tracked labels above headings; the 13px uppercase style belongs only to the tag on a photo."
+      "Don't add a sticky header or a bottom contact bar; the one floating circle is the only fixed element.",
+      "Don't show an email address anywhere except the footer.",
+      "Don't change a service row or the Facebook row on hover beyond its arrow: no fill change, no lift, no shadow.",
+      "Don't decorate the slider divider (no glow, gradient, handles or labels on the line).",
+      "Don't use gold as text on paper or white, or white text on gold.",
+      "Don't add shadows to cards, rows, buttons or the form.",
+      "Don't add letter animation to any heading other than the hero H1, or bring back the fog, mist, painted frames or water seams."
     ]
   }
 }

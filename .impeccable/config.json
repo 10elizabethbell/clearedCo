@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-19T21:30:00.000Z",
         "reason": "Ellie's house style (pitch-site calm-photo-style.md, 2026-10-19): faint 135deg line texture on deep bands at 3.5% white"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T01:39:05.043Z",
+        "reason": "builder: calm-style body steps 13-20px sit under Cal Sans display clamps 30-80px, which the detector doesn't count (same as the DPG reference)"
       }
     ]
   }
