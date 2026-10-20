@@ -54,7 +54,7 @@ The business hasn't been contacted, so the whole page was rebuilt under the new 
 - **Impeccable, every mode except `live`:** audit, critique (by the finish reviewer), harden, optimize, adapt, typeset, layout, colorize, clarify, distill, quieter, animate, delight, bolder, overdrive, extract (an assessment only: the tokens already live in `:root`), polish and document. `onboard` doesn't apply (no first-run flow).
   - Fixes applied: Cal Sans no longer blocks first paint; a no-JS line in the form; side-by-side work from 760px.
   - Bolder/delight/overdrive point at a signature motion. That's opt-in now, so it's listed under Ideas instead.
-- **Detector:** the remaining findings were all from the old fog-world `DESIGN.md`. They clear once the new `DESIGN.md` is in. The line texture is suppressed in `.impeccable/config.json` (your calm-style choice), and I dropped the old build's stale suppressions.
+- **Detector:** clean (0 findings) after the documenter rewrote `DESIGN.md` and `.impeccable/design.json` for the calm style. The flat-type-hierarchy rule is suppressed: body steps of 13–20px sit under Cal Sans display clamps of 30–80px, which the detector doesn't count. The line texture is suppressed in `.impeccable/config.json` (your calm-style choice), and I dropped the old build's stale suppressions.
 - **Finish reviewer:** one round, verdict "fix", 8 material fixes, all applied:
   - WebKit collapsed the work grid at 1024px and up (Safari desktop lost the proof section).
   - The floating circle sat on row arrows.
